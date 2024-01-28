@@ -1,0 +1,845 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	//
+Acceleration	include/kontiki/trajectories/trajectory.h	/^    bool Acceleration() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+Acceleration	include/kontiki/trajectories/trajectory.h	/^  Vector3 Acceleration(T t) const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+Accelerometer	include/kontiki/sensors/basic_imu.h	/^  Vector3 Accelerometer(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::BasicImuView	typeref:typename:Vector3
+Accelerometer	include/kontiki/sensors/constant_bias_imu.h	/^  Vector3 Accelerometer(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Vector3
+Accelerometer	include/kontiki/sensors/imu.h	/^  Vector3 Accelerometer(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:Vector3
+AccelerometerBiasIsLocked	include/kontiki/sensors/constant_bias_imu.h	/^  bool AccelerometerBiasIsLocked() const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:bool
+AccelerometerMeasurement	include/kontiki/measurements/accelerometer_measurement.h	/^  AccelerometerMeasurement(std::shared_ptr<ImuModel> imu, double t, const Vector3& a) :$/;"	f	class:kontiki::measurements::AccelerometerMeasurement
+AccelerometerMeasurement	include/kontiki/measurements/accelerometer_measurement.h	/^  AccelerometerMeasurement(std::shared_ptr<ImuModel> imu, double t, const Vector3& a, double wei/;"	f	class:kontiki::measurements::AccelerometerMeasurement
+AccelerometerMeasurement	include/kontiki/measurements/accelerometer_measurement.h	/^class AccelerometerMeasurement {$/;"	c	namespace:kontiki::measurements
+AddCallback	include/kontiki/trajectory_estimator.h	/^  void AddCallback(std::unique_ptr<ceres::IterationCallback> callback, bool needs_state=false) {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:void
+AddMeasurement	include/kontiki/trajectory_estimator.h	/^  void AddMeasurement(std::shared_ptr<MeasurementType> m) {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:void
+AddObservation	include/kontiki/sfm/landmark_impl.h	/^void Landmark::AddObservation(std::shared_ptr<Observation> obs) {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:void
+AddParameter	include/entity/paramstore/dynamic_pstore.h	/^  size_t AddParameter(size_t ndims, ceres::LocalParameterization *parameterization=nullptr) over/;"	f	class:entity::DynamicParameterStore	typeref:typename:size_t
+AddParameter	include/entity/paramstore/empty_pstore.h	/^  size_t AddParameter(size_t ndims, ceres::LocalParameterization *parameterization) override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:size_t
+AddParameter	include/entity/paramstore/pointer_pstore.h	/^  size_t AddParameter(size_t ndims, ceres::LocalParameterization *parameterization) override {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:size_t
+AddToEstimator	include/kontiki/measurements/accelerometer_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/gyroscope_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/lidar_orientation_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/lidar_position_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/lidar_surfel_point.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/newton_rscamera_measurement.h	/^    void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/orientation_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::OrientationMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/position_measurement.h	/^  void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::PositionMeasurement	typeref:typename:void
+AddToEstimator	include/kontiki/measurements/static_rscamera_measurement.h	/^    void AddToEstimator(kontiki::TrajectoryEstimator<TrajectoryModel>& estimator) {$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:void
+AddToProblem	include/kontiki/sensors/constant_bias_imu.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:void
+AddToProblem	include/kontiki/sensors/imu.h	/^   void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::sensors::internal::ImuEntity	typeref:typename:void
+AddToProblem	include/kontiki/sensors/pinhole_camera.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::sensors::internal::PinholeEntity	typeref:typename:void
+AddToProblem	include/kontiki/sensors/sensors.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:void
+AddToProblem	include/kontiki/sensors/vlp16_lidar.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::sensors::internal::VLP16Entity	typeref:typename:void
+AddToProblem	include/kontiki/trajectories/spline_base.h	/^    void AddToProblem(ceres::Problem &problem,$/;"	f	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity	typeref:typename:void
+AddToProblem	include/kontiki/trajectories/spline_base.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:void
+AddToProblem	include/kontiki/trajectories/split_trajectory.h	/^  void AddToProblem(ceres::Problem &problem,$/;"	f	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:void
+AddTrajectoryForTimes	include/kontiki/trajectory_estimator.h	/^  bool AddTrajectoryForTimes(const time_init_t &times,$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:bool
+AngularVelocity	include/kontiki/trajectories/trajectory.h	/^    bool AngularVelocity() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+AngularVelocity	include/kontiki/trajectories/trajectory.h	/^  Vector3 AngularVelocity(T t) const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+AnotherMeasurement	include/kontiki/measurements/position_measurement.h	/^  AnotherMeasurement(double t, const Vector3 &p) : t_(t), p_(p) {};$/;"	f	class:kontiki::measurements::AnotherMeasurement
+AnotherMeasurement	include/kontiki/measurements/position_measurement.h	/^class AnotherMeasurement {$/;"	c	namespace:kontiki::measurements
+AnyLinear	include/kontiki/trajectories/trajectory.h	/^    bool AnyLinear() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+AnyRotation	include/kontiki/trajectories/trajectory.h	/^    bool AnyRotation() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+AppendKnot	include/kontiki/trajectories/spline_base.h	/^    void AppendKnot(const ControlPointType& cp) {$/;"	f	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity	typeref:typename:void
+AppendKnot	include/kontiki/trajectories/spline_base.h	/^  void AppendKnot(const ControlPointType& cp) {$/;"	f	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:void
+AtanCamera	include/kontiki/sensors/atan_camera.h	/^class AtanCamera : public internal::AtanEntity<internal::AtanView,$/;"	c	namespace:kontiki::sensors
+AtanEntity	include/kontiki/sensors/atan_camera.h	/^  AtanEntity(size_t rows, size_t cols, double readout, const Eigen::Matrix3d &camera_matrix, con/;"	f	class:kontiki::sensors::internal::AtanEntity
+AtanEntity	include/kontiki/sensors/atan_camera.h	/^class AtanEntity : public PinholeEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+AtanMeta	include/kontiki/sensors/atan_camera.h	/^struct AtanMeta : public PinholeMeta {$/;"	s	namespace:kontiki::sensors::internal
+AtanView	include/kontiki/sensors/atan_camera.h	/^class AtanView : public PinholeView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+Base	include/entity/entity.h	/^  using Base = ViewTemplate<double, MetaType>;$/;"	t	class:entity::Entity	typeref:typename:ViewTemplate<double,MetaType>
+Base	include/kontiki/sensors/atan_camera.h	/^  using Base = PinholeEntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::sensors::internal::AtanEntity	typeref:typename:PinholeEntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/sensors/atan_camera.h	/^  using Base = PinholeView<T, MetaType>;$/;"	t	class:kontiki::sensors::internal::AtanView	typeref:typename:PinholeView<T,MetaType>
+Base	include/kontiki/sensors/basic_imu.h	/^  using Base = ImuView<T, MetaType, BasicImuView<T, MetaType>>;$/;"	t	class:kontiki::sensors::internal::BasicImuView	typeref:typename:ImuView<T,MetaType,BasicImuView<T,MetaType>>
+Base	include/kontiki/sensors/constant_bias_imu.h	/^  using Base = BasicImuEntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:BasicImuEntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/sensors/constant_bias_imu.h	/^  using Base = ImuView<T, MetaType, ConstantBiasImuView<T, MetaType>>;$/;"	t	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:ImuView<T,MetaType,ConstantBiasImuView<T,MetaType>>
+Base	include/kontiki/sensors/imu.h	/^  using Base = SensorEntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::sensors::internal::ImuEntity	typeref:typename:SensorEntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/sensors/pinhole_camera.h	/^  using Base = CameraEntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::sensors::internal::PinholeEntity	typeref:typename:CameraEntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/sensors/vlp16_lidar.h	/^  using Base = LiDAREntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::sensors::internal::VLP16Entity	typeref:typename:LiDAREntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/trajectories/spline_base.h	/^    using Base = TrajectoryEntity<SegmentView, SplineSegmentMeta, entity::DynamicParameterStore</;"	t	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity	typeref:typename:TrajectoryEntity<SegmentView,SplineSegmentMeta,entity::DynamicParameterStore<double>>
+Base	include/kontiki/trajectories/spline_base.h	/^  using Base = TrajectoryEntity<SplineFactory<SegmentViewTemplate>::template View, SplineMeta, _/;"	t	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:TrajectoryEntity<SplineFactory<SegmentViewTemplate>::template View,SplineMeta,_SplineParamStore>
+Base	include/kontiki/trajectories/spline_base.h	/^  using Base = TrajectoryView<T, MetaType>;$/;"	t	class:kontiki::trajectories::internal::SplineView	typeref:typename:TrajectoryView<T,MetaType>
+Base	include/kontiki/trajectories/split_trajectory.h	/^  using Base = TrajectoryEntity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:TrajectoryEntity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/trajectories/split_trajectory.h	/^  using Base = TrajectoryView<T, MetaType>;$/;"	t	class:kontiki::trajectories::internal::SplitView	typeref:typename:TrajectoryView<T,MetaType>
+Base	include/kontiki/trajectories/trajectory.h	/^  using Base = type::Entity<ViewTemplate, MetaType, StoreType>;$/;"	t	class:kontiki::trajectories::TrajectoryEntity	typeref:typename:type::Entity<ViewTemplate,MetaType,StoreType>
+Base	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  using Base = SplineSegmentView<T, R3SplineControlPointInfo<T>>;$/;"	t	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:SplineSegmentView<T,R3SplineControlPointInfo<T>>
+Base	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  using Base = SplineSegmentView<T, SO3SplineControlPointInfo<T>>;$/;"	t	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:SplineSegmentView<T,SO3SplineControlPointInfo<T>>
+BasicImu	include/kontiki/sensors/basic_imu.h	/^class BasicImu : public internal::BasicImuEntity<internal::BasicImuView,$/;"	c	namespace:kontiki::sensors
+BasicImuEntity	include/kontiki/sensors/basic_imu.h	/^class BasicImuEntity : public ImuEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+BasicImuMeta	include/kontiki/sensors/basic_imu.h	/^struct BasicImuMeta : public ImuMeta {$/;"	s	namespace:kontiki::sensors::internal
+BasicImuView	include/kontiki/sensors/basic_imu.h	/^class BasicImuView : public ImuView<T, MetaType, BasicImuView<T, MetaType>> {$/;"	c	namespace:kontiki::sensors::internal
+CLASS_ID	include/kontiki/sensors/atan_camera.h	/^  static constexpr const char *CLASS_ID = "AtanCamera";$/;"	m	class:kontiki::sensors::AtanCamera	typeref:typename:const char *
+CLASS_ID	include/kontiki/sensors/basic_imu.h	/^  static constexpr const char* CLASS_ID = "BasicImu";$/;"	m	class:kontiki::sensors::BasicImu	typeref:typename:const char *
+CLASS_ID	include/kontiki/sensors/constant_bias_imu.h	/^static constexpr const char* CLASS_ID = "ConstantBiasImu";$/;"	m	class:kontiki::sensors::ConstantBiasImu	typeref:typename:const char *
+CLASS_ID	include/kontiki/sensors/pinhole_camera.h	/^  static constexpr const char *CLASS_ID = "PinholeCamera";$/;"	m	class:kontiki::sensors::PinholeCamera	typeref:typename:const char *
+CLASS_ID	include/kontiki/sensors/vlp16_lidar.h	/^  static constexpr const char *CLASS_ID = "VLP16LiDAR";$/;"	m	class:kontiki::sensors::VLP16LiDAR	typeref:typename:const char *
+CLASS_ID	include/kontiki/trajectories/split_trajectory.h	/^  static constexpr const char* CLASS_ID = "SplitTrajectory";$/;"	m	class:kontiki::trajectories::SplitTrajectory	typeref:typename:const char *
+CLASS_ID	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  static constexpr const char* CLASS_ID = "UniformR3SplineTrajectory";$/;"	m	class:kontiki::trajectories::UniformR3SplineTrajectory	typeref:typename:const char *
+CLASS_ID	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  static constexpr const char* CLASS_ID = "UniformSO3SplineTrajectory";$/;"	m	class:kontiki::trajectories::UniformSO3SplineTrajectory	typeref:typename:const char *
+CMAKE_BUILD_TYPE	CMakeLists.txt	/^    set(CMAKE_BUILD_TYPE Release)$/;"	v
+CMAKE_CXX_STANDARD	CMakeLists.txt	/^set(CMAKE_CXX_STANDARD 14)$/;"	v
+CalculateIndexAndInterpolationAmount	include/kontiki/trajectories/spline_base.h	/^  void CalculateIndexAndInterpolationAmount(T t, int& i0, T& u) const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:void
+CalculateIndexAndInterpolationAmount	include/kontiki/trajectories/spline_base.h	/^  void CalculateIndexAndInterpolationAmount(T t, int& i0, T& u) const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:void
+Camera	include/kontiki/sensors/camera.h	/^using Camera = typename entity::type::base::ForView<_Entity, sensors::internal::CameraView, T>;$/;"	t	namespace:kontiki::type	typeref:typename:entity::type::base::ForView<_Entity,sensors::internal::CameraView,T>
+CameraEntity	include/kontiki/sensors/camera.h	/^  CameraEntity(size_t rows, size_t cols, double readout) {$/;"	f	class:kontiki::sensors::internal::CameraEntity
+CameraEntity	include/kontiki/sensors/camera.h	/^class CameraEntity : public SensorEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+CameraEvaluation	include/kontiki/sensors/camera.h	/^  CameraEvaluation(bool derive) :$/;"	f	struct:kontiki::sensors::internal::CameraEvaluation
+CameraEvaluation	include/kontiki/sensors/camera.h	/^struct CameraEvaluation {$/;"	s	namespace:kontiki::sensors::internal
+CameraMatrix	include/kontiki/sensors/pinhole_camera.h	/^  using CameraMatrix = Eigen::Matrix3d;$/;"	t	class:kontiki::sensors::internal::PinholeEntity	typeref:typename:Eigen::Matrix3d
+CameraMatrix	include/kontiki/sensors/pinhole_camera.h	/^  using CameraMatrix = Eigen::Matrix<T, 3, 3>;$/;"	t	class:kontiki::sensors::internal::PinholeView	typeref:typename:Eigen::Matrix<T,3,3>
+CameraMeta	include/kontiki/sensors/camera.h	/^struct CameraMeta : public SensorMeta {$/;"	s	namespace:kontiki::sensors::internal
+CameraView	include/kontiki/sensors/camera.h	/^class CameraView : public SensorView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+CheckTimeSpans	include/kontiki/trajectory_estimator.h	/^  void CheckTimeSpans(const time_init_t &times) {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:void
+ConcreteSegmentViewOrError	include/kontiki/trajectories/spline_base.h	/^  const std::shared_ptr<SegmentView> ConcreteSegmentViewOrError() const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:const std::shared_ptr<SegmentView>
+ConstantBiasImu	include/kontiki/sensors/constant_bias_imu.h	/^class ConstantBiasImu : public internal::ConstantBiasImuEntity<internal::ConstantBiasImuView,$/;"	c	namespace:kontiki::sensors
+ConstantBiasImuEntity	include/kontiki/sensors/constant_bias_imu.h	/^  ConstantBiasImuEntity() :$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity
+ConstantBiasImuEntity	include/kontiki/sensors/constant_bias_imu.h	/^  ConstantBiasImuEntity(const Eigen::Vector3d &abias, const Eigen::Vector3d &gbias) :$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity
+ConstantBiasImuEntity	include/kontiki/sensors/constant_bias_imu.h	/^class ConstantBiasImuEntity : public BasicImuEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+ConstantBiasImuMeta	include/kontiki/sensors/constant_bias_imu.h	/^struct ConstantBiasImuMeta : public BasicImuMeta {$/;"	s	namespace:kontiki::sensors::internal
+ConstantBiasImuView	include/kontiki/sensors/constant_bias_imu.h	/^class ConstantBiasImuView : public ImuView<T, MetaType, ConstantBiasImuView<T, MetaType>> {$/;"	c	namespace:kontiki::sensors::internal
+Constants	include/kontiki/constants.h	/^class Constants {$/;"	c	namespace:kontiki
+ControlPoint	include/kontiki/trajectories/spline_base.h	/^  const ControlPointMap ControlPoint(int i) const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:const ControlPointMap
+ControlPoint	include/kontiki/trajectories/spline_base.h	/^  const ControlPointMap ControlPoint(int i) const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:const ControlPointMap
+ControlPointInfo	include/kontiki/trajectories/spline_base.h	/^struct ControlPointInfo {$/;"	s	namespace:kontiki::trajectories::internal
+ControlPointMap	include/kontiki/trajectories/spline_base.h	/^  using ControlPointMap = Eigen::Map<ControlPointType>;$/;"	t	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:Eigen::Map<ControlPointType>
+ControlPointMap	include/kontiki/trajectories/spline_base.h	/^  using ControlPointMap = typename SegmentView::ControlPointMap;$/;"	t	class:kontiki::trajectories::internal::SplineView	typeref:typename:SegmentView::ControlPointMap
+ControlPointParameterization	include/kontiki/trajectories/spline_base.h	/^  virtual ceres::LocalParameterization* ControlPointParameterization() {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:ceres::LocalParameterization *
+ControlPointType	include/kontiki/trajectories/spline_base.h	/^    using ControlPointType = typename Base::ControlPointType;$/;"	t	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity	typeref:typename:Base::ControlPointType
+ControlPointType	include/kontiki/trajectories/spline_base.h	/^  using ControlPointType = typename Base::ControlPointType;$/;"	t	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:Base::ControlPointType
+ControlPointType	include/kontiki/trajectories/spline_base.h	/^  using ControlPointType = typename SegmentView::ControlPointType;$/;"	t	class:kontiki::trajectories::internal::SplineView	typeref:typename:SegmentView::ControlPointType
+ControlPointType	include/kontiki/trajectories/spline_base.h	/^  using ControlPointType = typename _ControlPointInfo::type;$/;"	t	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:_ControlPointInfo::type
+CreateObservation	include/kontiki/sfm/view_impl.h	/^std::shared_ptr<Observation> View::CreateObservation(std::shared_ptr<Landmark> landmark, const E/;"	f	class:kontiki::sfm::View	typeref:typename:std::shared_ptr<Observation>
+DefaultProblemOptions	include/kontiki/trajectory_estimator.h	/^  static ceres::Problem::Options DefaultProblemOptions() {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:ceres::Problem::Options
+DynamicParameterStore	include/entity/paramstore/dynamic_pstore.h	/^class DynamicParameterStore : public ParameterStore<T> {$/;"	c	namespace:entity
+ENTITY_DYNAMIC_PSTORE_H	include/entity/paramstore/dynamic_pstore.h	/^#define ENTITY_DYNAMIC_PSTORE_H$/;"	d
+ENTITY_EMPTY_PSTORE_H	include/entity/paramstore/empty_pstore.h	/^#define ENTITY_EMPTY_PSTORE_H$/;"	d
+ENTITY_ENTITY_H	include/entity/entity.h	/^#define ENTITY_ENTITY_H$/;"	d
+ENTITY_PARAMSTORE_H	include/entity/paramstore/paramstore.h	/^#define ENTITY_PARAMSTORE_H$/;"	d
+ENTITY_POINTER_PSTORE_H	include/entity/paramstore/pointer_pstore.h	/^#define ENTITY_POINTER_PSTORE_H$/;"	d
+EmptyParameterStore	include/entity/paramstore/empty_pstore.h	/^class EmptyParameterStore : public ParameterStore<T> {$/;"	c	namespace:entity
+Entity	include/entity/entity.h	/^  Entity() : Base(MetaType(), new StoreType()) { };$/;"	f	class:entity::Entity
+Entity	include/entity/entity.h	/^  Entity(const Entity& rhs) :$/;"	f	class:entity::Entity
+Entity	include/entity/entity.h	/^class Entity : public ViewTemplate<double, MetaType> {$/;"	c	namespace:entity
+Entity	include/kontiki/types.h	/^class Entity : public entity::Entity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::type
+EntityView	include/entity/entity.h	/^  EntityView(const MetaType& meta, ParameterStore<T> *holder) :$/;"	f	class:entity::EntityView
+EntityView	include/entity/entity.h	/^class EntityView {$/;"	c	namespace:entity
+Error	include/kontiki/measurements/accelerometer_measurement.h	/^  Eigen::Matrix<T, 3, 1> Error(const type::Imu<ImuModel, T> &imu, const type::Trajectory<Traject/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Error	include/kontiki/measurements/accelerometer_measurement.h	/^  Vector3 Error(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Vector3
+Error	include/kontiki/measurements/gyroscope_measurement.h	/^  Eigen::Matrix<T, 3, 1> Error(const type::Imu<ImuModel, T> &imu, const type::Trajectory<Traject/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Error	include/kontiki/measurements/gyroscope_measurement.h	/^  Vector3 Error(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Vector3
+Error	include/kontiki/measurements/lidar_orientation_measurement.h	/^  T Error(const type::Trajectory<TrajectoryModel, T> &trajectory, const type::LiDAR<LiDARModel, /;"	f	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:T
+Error	include/kontiki/measurements/lidar_position_measurement.h	/^  Eigen::Matrix<T, 3, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Error	include/kontiki/measurements/lidar_position_measurement.h	/^  Eigen::Matrix<double, 3, 1> Error(const type::Trajectory<TrajectoryModel, double> &trajectory)/;"	f	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:Eigen::Matrix<double,3,1>
+Error	include/kontiki/measurements/lidar_surfel_point.h	/^  Eigen::Matrix<T, 1, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:Eigen::Matrix<T,1,1>
+Error	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    Eigen::Matrix<T, 3, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Error	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    Vector3 Error(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Vector3
+Error	include/kontiki/measurements/newton_rscamera_measurement.h	/^    Eigen::Matrix<T, 2, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,2,1>
+Error	include/kontiki/measurements/newton_rscamera_measurement.h	/^    Vector2 Error(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Vector2
+Error	include/kontiki/measurements/orientation_measurement.h	/^  T Error(const type::Trajectory<TrajectoryModel, T> &trajectory) const {$/;"	f	class:kontiki::measurements::OrientationMeasurement	typeref:typename:T
+Error	include/kontiki/measurements/position_measurement.h	/^  Eigen::Matrix<T, 3, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory) const {$/;"	f	class:kontiki::measurements::PositionMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Error	include/kontiki/measurements/static_rscamera_measurement.h	/^    Eigen::Matrix<T, 2, 1> Error(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,2,1>
+Error	include/kontiki/measurements/static_rscamera_measurement.h	/^    Vector2 Error(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Vector2
+ErrorRaw	include/kontiki/measurements/accelerometer_measurement.h	/^  Vector3 ErrorRaw(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Vector3
+ErrorRaw	include/kontiki/measurements/gyroscope_measurement.h	/^  Vector3 ErrorRaw(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Vector3
+EvalAcceleration	include/kontiki/trajectories/trajectory.h	/^  EvalAcceleration = 4,$/;"	e	enum:kontiki::trajectories::EvaluationFlags
+EvalAngularVelocity	include/kontiki/trajectories/trajectory.h	/^  EvalAngularVelocity = 16$/;"	e	enum:kontiki::trajectories::EvaluationFlags
+EvalOrientation	include/kontiki/trajectories/trajectory.h	/^  EvalOrientation = 8,$/;"	e	enum:kontiki::trajectories::EvaluationFlags
+EvalPosition	include/kontiki/trajectories/trajectory.h	/^  EvalPosition = 1,$/;"	e	enum:kontiki::trajectories::EvaluationFlags
+EvalVelocity	include/kontiki/trajectories/trajectory.h	/^  EvalVelocity = 2,$/;"	e	enum:kontiki::trajectories::EvaluationFlags
+Evaluate	include/kontiki/trajectories/spline_base.h	/^  Result Evaluate(T t, int flags) const override {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:Result
+Evaluate	include/kontiki/trajectories/split_trajectory.h	/^  virtual Result Evaluate(T t, int flags) const override {$/;"	f	class:kontiki::trajectories::internal::SplitView	typeref:typename:Result
+Evaluate	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  Result Evaluate(T t, int flags) const override {$/;"	f	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:Result
+Evaluate	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  Result Evaluate(T t, int flags) const override {$/;"	f	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:Result
+EvaluateProjection	include/kontiki/sensors/atan_camera.h	/^  Result EvaluateProjection(const Vector3 &X, const Vector3 &dX, bool derive) const override {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:Result
+EvaluateProjection	include/kontiki/sensors/pinhole_camera.h	/^  Result EvaluateProjection(const Vector3 &X, const Vector3 &dX, bool derive) const override {$/;"	f	class:kontiki::sensors::internal::PinholeView	typeref:typename:Result
+EvaluationFlags	include/kontiki/trajectories/trajectory.h	/^enum EvaluationFlags {$/;"	g	namespace:kontiki::trajectories
+ExtendTo	include/kontiki/trajectories/spline_base.h	/^  void ExtendTo(double t, const ControlPointType& fill_value) {$/;"	f	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:void
+Flags	include/kontiki/measurements/lifting_rscamera_measurement.h	/^  using Flags = trajectories::EvaluationFlags;$/;"	t	function:kontiki::measurements::reproject_lifting	typeref:typename:trajectories::EvaluationFlags
+Flags	include/kontiki/measurements/newton_rscamera_measurement.h	/^  using Flags = trajectories::EvaluationFlags;$/;"	t	function:kontiki::measurements::reproject_newton	typeref:typename:trajectories::EvaluationFlags
+Flags	include/kontiki/measurements/static_rscamera_measurement.h	/^  using Flags = trajectories::EvaluationFlags;$/;"	t	function:kontiki::measurements::reproject_static	typeref:typename:trajectories::EvaluationFlags
+Flags	include/kontiki/sensors/imu.h	/^  using Flags = trajectories::EvaluationFlags;$/;"	t	class:kontiki::sensors::internal::ImuView	typeref:typename:trajectories::EvaluationFlags
+FlagsLinear	include/kontiki/trajectories/trajectory.h	/^    int FlagsLinear() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:int
+FlagsRotation	include/kontiki/trajectories/trajectory.h	/^    int FlagsRotation() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:int
+ForEntity	include/entity/entity.h	/^using ForEntity = typename Base::template View<T, typename _Entity::Meta>;$/;"	t	namespace:entity::type::base	typeref:typename:Base::template View<T,typename _Entity::Meta>
+ForView	include/entity/entity.h	/^using ForView = ViewTemplate<T, typename _Entity::Meta>;$/;"	t	namespace:entity::type::base	typeref:typename:ViewTemplate<T,typename _Entity::Meta>
+FromTrajectory	include/kontiki/sensors/sensors.h	/^  Vector3 FromTrajectory(const Vector3 &X_trajectory) const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:Vector3
+FromWorld	include/kontiki/trajectories/trajectory.h	/^  Vector3 FromWorld(Vector3 &Xw, T t) {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+Gravity	include/kontiki/constants.h	/^  static const Vector3 Gravity;$/;"	m	class:kontiki::Constants	typeref:typename:const Vector3
+Gravity	include/kontiki/constants.h	/^const Eigen::Matrix<T, 3, 1> Constants<T>::Gravity = Eigen::Matrix<T, 3, 1>(T(0), T(0), T(-_cons/;"	m	class:kontiki::Constants<T>	typeref:typename:const Eigen::Matrix<T,3,1>
+Gyroscope	include/kontiki/sensors/basic_imu.h	/^  Vector3 Gyroscope(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::BasicImuView	typeref:typename:Vector3
+Gyroscope	include/kontiki/sensors/constant_bias_imu.h	/^  Vector3 Gyroscope(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Vector3
+Gyroscope	include/kontiki/sensors/imu.h	/^  Vector3 Gyroscope(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:Vector3
+GyroscopeBiasIsLocked	include/kontiki/sensors/constant_bias_imu.h	/^  bool GyroscopeBiasIsLocked() const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:bool
+GyroscopeMeasurement	include/kontiki/measurements/gyroscope_measurement.h	/^  GyroscopeMeasurement(std::shared_ptr<ImuModel> imu, double t, const Vector3& w) :$/;"	f	class:kontiki::measurements::GyroscopeMeasurement
+GyroscopeMeasurement	include/kontiki/measurements/gyroscope_measurement.h	/^  GyroscopeMeasurement(std::shared_ptr<ImuModel> imu, double t, const Vector3& w, double weight)/;"	f	class:kontiki::measurements::GyroscopeMeasurement
+GyroscopeMeasurement	include/kontiki/measurements/gyroscope_measurement.h	/^class GyroscopeMeasurement {$/;"	c	namespace:kontiki::measurements
+Holder	include/entity/entity.h	/^  using Holder = StoreType;$/;"	t	class:entity::Entity	typeref:typename:StoreType
+Imu	include/kontiki/sensors/imu.h	/^using Imu = typename sensors::internal::ImuView<T,$/;"	t	namespace:kontiki::type	typeref:typename:sensors::internal::ImuView<T,typename E::Meta,typename E::template View<T,typename E::Meta>>
+ImuEntity	include/kontiki/sensors/imu.h	/^   ImuEntity() :$/;"	f	class:kontiki::sensors::internal::ImuEntity
+ImuEntity	include/kontiki/sensors/imu.h	/^   ImuEntity(double g_r, double g_p) :$/;"	f	class:kontiki::sensors::internal::ImuEntity
+ImuEntity	include/kontiki/sensors/imu.h	/^class ImuEntity : public SensorEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+ImuMeta	include/kontiki/sensors/imu.h	/^struct ImuMeta : public SensorMeta {$/;"	s	namespace:kontiki::sensors::internal
+ImuView	include/kontiki/sensors/imu.h	/^class ImuView : public SensorView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+IsLocked	include/kontiki/measurements/lidar_surfel_point.h	/^  bool IsLocked() {$/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:bool
+IsLocked	include/kontiki/sfm/landmark_impl.h	/^bool Landmark::IsLocked() const {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:bool
+IsLocked	include/kontiki/trajectories/split_trajectory.h	/^  bool IsLocked() const override {$/;"	f	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:bool
+IsLocked	include/kontiki/trajectories/trajectory.h	/^  virtual bool IsLocked() const {$/;"	f	class:kontiki::trajectories::TrajectoryEntity	typeref:typename:bool
+IsReference	include/kontiki/sfm/observation_impl.h	/^bool Observation::IsReference() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:bool
+IsUnitQuaternion	include/kontiki/math/quaternion_math.h	/^bool IsUnitQuaternion(const Eigen::Quaternion<T>& q) {$/;"	f	namespace:kontiki::math	typeref:typename:bool
+KONTIKIV2_ACCELEROMETER_MEASUREMENT_H	include/kontiki/measurements/accelerometer_measurement.h	/^#define KONTIKIV2_ACCELEROMETER_MEASUREMENT_H$/;"	d
+KONTIKIV2_BASIC_IMU_H	include/kontiki/sensors/basic_imu.h	/^#define KONTIKIV2_BASIC_IMU_H$/;"	d
+KONTIKIV2_CONSTANTS_H	include/kontiki/constants.h	/^#define KONTIKIV2_CONSTANTS_H$/;"	d
+KONTIKIV2_CONSTANT_BIAS_IMU_H	include/kontiki/sensors/constant_bias_imu.h	/^#define KONTIKIV2_CONSTANT_BIAS_IMU_H$/;"	d
+KONTIKIV2_GYROSCOPE_MEASUREMENT_H	include/kontiki/measurements/gyroscope_measurement.h	/^#define KONTIKIV2_GYROSCOPE_MEASUREMENT_H$/;"	d
+KONTIKIV2_IMU_H	include/kontiki/sensors/imu.h	/^#define KONTIKIV2_IMU_H$/;"	d
+KONTIKIV2_LANDMARK_IMPL_H	include/kontiki/sfm/landmark_impl.h	/^#define KONTIKIV2_LANDMARK_IMPL_H$/;"	d
+KONTIKIV2_LIDAR_ORIENTATION_MEASUREMENT_H	include/kontiki/measurements/lidar_orientation_measurement.h	/^#define KONTIKIV2_LIDAR_ORIENTATION_MEASUREMENT_H$/;"	d
+KONTIKIV2_LIDAR_POSITION_MEASUREMENT_H	include/kontiki/measurements/lidar_position_measurement.h	/^#define KONTIKIV2_LIDAR_POSITION_MEASUREMENT_H$/;"	d
+KONTIKIV2_LIFTING_RSCAMERA_MEASUREMENT_H	include/kontiki/measurements/lifting_rscamera_measurement.h	/^#define KONTIKIV2_LIFTING_RSCAMERA_MEASUREMENT_H$/;"	d
+KONTIKIV2_NEWTON_RSCAMERA_MEASUREMENT_H	include/kontiki/measurements/newton_rscamera_measurement.h	/^#define KONTIKIV2_NEWTON_RSCAMERA_MEASUREMENT_H$/;"	d
+KONTIKIV2_OBSERVATION_IMPL_H	include/kontiki/sfm/observation_impl.h	/^#define KONTIKIV2_OBSERVATION_IMPL_H$/;"	d
+KONTIKIV2_ORIENTATION_MEASUREMENT_H	include/kontiki/measurements/orientation_measurement.h	/^#define KONTIKIV2_ORIENTATION_MEASUREMENT_H$/;"	d
+KONTIKIV2_POSITION_MEASUREMENT_H	include/kontiki/measurements/position_measurement.h	/^#define KONTIKIV2_POSITION_MEASUREMENT_H$/;"	d
+KONTIKIV2_QUATERNION_MATH_H	include/kontiki/math/quaternion_math.h	/^#define KONTIKIV2_QUATERNION_MATH_H$/;"	d
+KONTIKIV2_SENSORS_H	include/kontiki/sensors/sensors.h	/^#define KONTIKIV2_SENSORS_H$/;"	d
+KONTIKIV2_SFM_H	include/kontiki/sfm/sfm.h	/^#define KONTIKIV2_SFM_H$/;"	d
+KONTIKIV2_SPLINE_BASE_H	include/kontiki/trajectories/spline_base.h	/^#define KONTIKIV2_SPLINE_BASE_H$/;"	d
+KONTIKIV2_SPLIT_TRAJECTORY_H	include/kontiki/trajectories/split_trajectory.h	/^#define KONTIKIV2_SPLIT_TRAJECTORY_H$/;"	d
+KONTIKIV2_STATIC_RSCAMERA_MEASUREMENT_H	include/kontiki/measurements/static_rscamera_measurement.h	/^#define KONTIKIV2_STATIC_RSCAMERA_MEASUREMENT_H$/;"	d
+KONTIKIV2_TRAJECTORY_ESTIMATOR_H	include/kontiki/trajectory_estimator.h	/^#define KONTIKIV2_TRAJECTORY_ESTIMATOR_H$/;"	d
+KONTIKIV2_TRAJECTORY_H	include/kontiki/trajectories/trajectory.h	/^#define KONTIKIV2_TRAJECTORY_H$/;"	d
+KONTIKIV2_TYPES_H	include/kontiki/types.h	/^#define KONTIKIV2_TYPES_H$/;"	d
+KONTIKIV2_UNIFORM_R3_SPLINE_TRAJECTORY_H	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^#define KONTIKIV2_UNIFORM_R3_SPLINE_TRAJECTORY_H$/;"	d
+KONTIKIV2_UNIFORM_SO3_SPLINE_TRAJECTORY_H	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^#define KONTIKIV2_UNIFORM_SO3_SPLINE_TRAJECTORY_H$/;"	d
+KONTIKIV2_VIEW_IMPL_H	include/kontiki/sfm/view_impl.h	/^#define KONTIKIV2_VIEW_IMPL_H$/;"	d
+KONTIKI_ATAN_H	include/kontiki/sensors/atan_camera.h	/^#define KONTIKI_ATAN_H$/;"	d
+KONTIKI_CAMERA_H	include/kontiki/sensors/camera.h	/^#define KONTIKI_CAMERA_H$/;"	d
+KONTIKI_LANDMARK_H	include/kontiki/sfm/landmark.h	/^#define KONTIKI_LANDMARK_H$/;"	d
+KONTIKI_OBSERVATION_H	include/kontiki/sfm/observation.h	/^#define KONTIKI_OBSERVATION_H$/;"	d
+KONTIKI_PINHOLE_CAMERA_H	include/kontiki/sensors/pinhole_camera.h	/^#define KONTIKI_PINHOLE_CAMERA_H$/;"	d
+KONTIKI_VIEW_H	include/kontiki/sfm/view.h	/^#define KONTIKI_VIEW_H$/;"	d
+Kontiki	CMakeLists.txt	/^add_library(Kontiki INTERFACE)$/;"	t
+Kontiki	CMakeLists.txt	/^project(Kontiki VERSION 0.9)$/;"	p
+Kontiki - the continuous time toolkit	README.md	/^Kontiki - the continuous time toolkit$/;"	c
+Kontiki_CMAKE_EXPORT_DIR	CMakeLists.txt	/^set(Kontiki_CMAKE_EXPORT_DIR ${CMAKE_INSTALL_DATADIR}\/Kontiki\/cmake)$/;"	v
+LIDAR_H	include/kontiki/sensors/lidar.h	/^#define LIDAR_H$/;"	d
+LIDAR_SURFEL_POINT_H	include/kontiki/measurements/lidar_surfel_point.h	/^#define LIDAR_SURFEL_POINT_H$/;"	d
+Landmark	include/kontiki/sfm/landmark.h	/^class Landmark {$/;"	c	namespace:kontiki::sfm
+Landmark	include/kontiki/sfm/landmark_impl.h	/^Landmark::Landmark() :$/;"	f	class:kontiki::sfm::Landmark
+LiDAR	include/kontiki/sensors/lidar.h	/^using LiDAR = typename entity::type::base::ForView<_Entity, sensors::internal::LiDARView, T>;$/;"	t	namespace:kontiki::type	typeref:typename:entity::type::base::ForView<_Entity,sensors::internal::LiDARView,T>
+LiDAREntity	include/kontiki/sensors/lidar.h	/^  LiDAREntity() {}$/;"	f	class:kontiki::sensors::internal::LiDAREntity
+LiDAREntity	include/kontiki/sensors/lidar.h	/^class LiDAREntity : public SensorEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+LiDAREvaluation	include/kontiki/sensors/lidar.h	/^struct LiDAREvaluation {$/;"	s	namespace:kontiki::sensors::internal
+LiDARMeta	include/kontiki/sensors/lidar.h	/^struct LiDARMeta : public SensorMeta {$/;"	s	namespace:kontiki::sensors::internal
+LiDAROrientationMeasurement	include/kontiki/measurements/lidar_orientation_measurement.h	/^  LiDAROrientationMeasurement(std::shared_ptr<LiDARModel> lidar, double t, const Quat &q)$/;"	f	class:kontiki::measurements::LiDAROrientationMeasurement
+LiDAROrientationMeasurement	include/kontiki/measurements/lidar_orientation_measurement.h	/^class LiDAROrientationMeasurement {$/;"	c	namespace:kontiki::measurements
+LiDARPositionMeasurement	include/kontiki/measurements/lidar_position_measurement.h	/^  LiDARPositionMeasurement(std::shared_ptr<LiDARModel> lidar, double t, const Vector3 &p)$/;"	f	class:kontiki::measurements::LiDARPositionMeasurement
+LiDARPositionMeasurement	include/kontiki/measurements/lidar_position_measurement.h	/^class LiDARPositionMeasurement {$/;"	c	namespace:kontiki::measurements
+LiDARSurfelPoint	include/kontiki/measurements/lidar_surfel_point.h	/^  LiDARSurfelPoint(std::shared_ptr<LiDARModel> lidar, Eigen::Vector3d lidar_point, double* plane/;"	f	class:kontiki::measurements::LiDARSurfelPoint
+LiDARSurfelPoint	include/kontiki/measurements/lidar_surfel_point.h	/^class LiDARSurfelPoint {$/;"	c	namespace:kontiki::measurements
+LiDARView	include/kontiki/sensors/lidar.h	/^class LiDARView : public SensorView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+LiftingRsCameraMeasurement	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    LiftingRsCameraMeasurement(std::shared_ptr<CameraModel> camera, std::shared_ptr<sfm::Observa/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement
+LiftingRsCameraMeasurement	include/kontiki/measurements/lifting_rscamera_measurement.h	/^  class LiftingRsCameraMeasurement {$/;"	c	namespace:kontiki::measurements
+Lock	include/kontiki/measurements/lidar_surfel_point.h	/^  void Lock(bool lock) {$/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:void
+Lock	include/kontiki/sfm/landmark_impl.h	/^void Landmark::Lock(bool flag) {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:void
+Lock	include/kontiki/trajectories/split_trajectory.h	/^  void Lock(bool lock) override {$/;"	f	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:void
+Lock	include/kontiki/trajectories/trajectory.h	/^  virtual void Lock(bool lock) {$/;"	f	class:kontiki::trajectories::TrajectoryEntity	typeref:typename:void
+LockAccelerometerBias	include/kontiki/sensors/constant_bias_imu.h	/^  void LockAccelerometerBias(bool lock) {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:void
+LockGyroscopeBias	include/kontiki/sensors/constant_bias_imu.h	/^  void LockGyroscopeBias(bool lock) {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:void
+LockRelativeOrientation	include/kontiki/sensors/sensors.h	/^  void LockRelativeOrientation(bool flag) {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:void
+LockRelativePosition	include/kontiki/sensors/sensors.h	/^  void LockRelativePosition(bool flag) {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:void
+LockTimeOffset	include/kontiki/sensors/sensors.h	/^  void LockTimeOffset(bool flag) {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:void
+M	include/kontiki/trajectories/spline_base.h	/^static const Eigen::Matrix4d M = (Eigen::Matrix4d() <<$/;"	v	namespace:kontiki::trajectories::internal	typeref:typename:const Eigen::Matrix4d
+M_cumul	include/kontiki/trajectories/spline_base.h	/^static const Eigen::Matrix4d M_cumul = (Eigen::Matrix4d() <<$/;"	v	namespace:kontiki::trajectories::internal	typeref:typename:const Eigen::Matrix4d
+Map	include/entity/entity.h	/^static type::View<_Entity, T> Map(T const* const* params, const typename _Entity::Meta& meta) {$/;"	f	namespace:entity	typeref:typename:type::View<_Entity,T>
+Matrix3	include/kontiki/sensors/imu.h	/^  using Matrix3 = Eigen::Matrix<T, 3, 3>;$/;"	t	class:kontiki::sensors::internal::ImuView	typeref:typename:Eigen::Matrix<T,3,3>
+MaxTime	include/kontiki/trajectories/spline_base.h	/^  double MaxTime() const override {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:double
+MaxTime	include/kontiki/trajectories/spline_base.h	/^  double MaxTime() const override {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:double
+MaxTime	include/kontiki/trajectories/spline_base.h	/^  double MaxTime() const {$/;"	f	struct:kontiki::trajectories::internal::SplineMeta	typeref:typename:double
+MaxTime	include/kontiki/trajectories/spline_base.h	/^  double MaxTime() const {$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:double
+MaxTime	include/kontiki/trajectories/split_trajectory.h	/^  double MaxTime() const override {$/;"	f	class:kontiki::trajectories::internal::SplitView	typeref:typename:double
+Measure	include/kontiki/measurements/accelerometer_measurement.h	/^  Eigen::Matrix<T, 3, 1> Measure(const type::Imu<ImuModel, T> &imu, const type::Trajectory<Traje/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Measure	include/kontiki/measurements/accelerometer_measurement.h	/^  Vector3 Measure(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Vector3
+Measure	include/kontiki/measurements/gyroscope_measurement.h	/^  Eigen::Matrix<T, 3, 1> Measure(const type::Imu<ImuModel, T> &imu, const type::Trajectory<Traje/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Measure	include/kontiki/measurements/gyroscope_measurement.h	/^  Vector3 Measure(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Vector3
+Measure	include/kontiki/measurements/lidar_orientation_measurement.h	/^  Eigen::Quaternion<T> Measure(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:Eigen::Quaternion<T>
+Measure	include/kontiki/measurements/lidar_position_measurement.h	/^  Eigen::Matrix<T, 3, 1> Measure(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Measure	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    Vector2 Measure(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Vector2
+Measure	include/kontiki/measurements/newton_rscamera_measurement.h	/^    Vector2 Measure(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Vector2
+Measure	include/kontiki/measurements/orientation_measurement.h	/^  Eigen::Quaternion<T> Measure(const type::Trajectory<TrajectoryModel, T> &trajectory) const {$/;"	f	class:kontiki::measurements::OrientationMeasurement	typeref:typename:Eigen::Quaternion<T>
+Measure	include/kontiki/measurements/position_measurement.h	/^  Eigen::Matrix<T, 3, 1> Measure(const type::Trajectory<TrajectoryModel, T> &trajectory) const {$/;"	f	class:kontiki::measurements::PositionMeasurement	typeref:typename:Eigen::Matrix<T,3,1>
+Measure	include/kontiki/measurements/static_rscamera_measurement.h	/^    Vector2 Measure(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Vector2
+Meta	include/entity/entity.h	/^  using Meta = MetaType;$/;"	t	class:entity::Entity	typeref:typename:MetaType
+Meta	include/kontiki/trajectory_estimator.h	/^  using Meta = typename TrajectoryModel::Meta;$/;"	t	class:kontiki::TrajectoryEstimator	typeref:typename:TrajectoryModel::Meta
+MetaData	include/entity/entity.h	/^struct MetaData {$/;"	s	namespace:entity
+MinTime	include/kontiki/trajectories/spline_base.h	/^  double MinTime() const override {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:double
+MinTime	include/kontiki/trajectories/spline_base.h	/^  double MinTime() const override{$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:double
+MinTime	include/kontiki/trajectories/spline_base.h	/^  double MinTime() const {$/;"	f	struct:kontiki::trajectories::internal::SplineMeta	typeref:typename:double
+MinTime	include/kontiki/trajectories/spline_base.h	/^  double MinTime() const {$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:double
+MinTime	include/kontiki/trajectories/split_trajectory.h	/^  double MinTime() const override {$/;"	f	class:kontiki::trajectories::internal::SplitView	typeref:typename:double
+MutableConcreteSegmentViewOrError	include/kontiki/trajectories/spline_base.h	/^  std::shared_ptr<SegmentView> MutableConcreteSegmentViewOrError() {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:std::shared_ptr<SegmentView>
+MutableControlPoint	include/kontiki/trajectories/spline_base.h	/^  ControlPointMap MutableControlPoint(int i) {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:ControlPointMap
+MutableControlPoint	include/kontiki/trajectories/spline_base.h	/^  ControlPointMap MutableControlPoint(int i) {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:ControlPointMap
+Needs	include/kontiki/trajectories/trajectory.h	/^    Needs(int flags) : flags(flags) { };$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs
+Needs	include/kontiki/trajectories/trajectory.h	/^  struct Needs {$/;"	s	struct:kontiki::trajectories::TrajectoryEvaluation
+NewtonRsCameraMeasurement	include/kontiki/measurements/newton_rscamera_measurement.h	/^    NewtonRsCameraMeasurement(std::shared_ptr<CameraModel> camera, std::shared_ptr<sfm::Observat/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement
+NewtonRsCameraMeasurement	include/kontiki/measurements/newton_rscamera_measurement.h	/^  class NewtonRsCameraMeasurement {$/;"	c	namespace:kontiki::measurements
+NumKnots	include/kontiki/trajectories/spline_base.h	/^  int NumKnots() const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:int
+NumKnots	include/kontiki/trajectories/spline_base.h	/^  size_t NumKnots() const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/atan_camera.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::AtanMeta	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/constant_bias_imu.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::ConstantBiasImuMeta	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/imu.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::ImuMeta	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/pinhole_camera.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::PinholeMeta	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/sensors.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::SensorMeta	typeref:typename:size_t
+NumParameters	include/kontiki/sensors/vlp16_lidar.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::sensors::internal::VLP16Meta	typeref:typename:size_t
+NumParameters	include/kontiki/trajectories/spline_base.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::trajectories::internal::SplineMeta	typeref:typename:size_t
+NumParameters	include/kontiki/trajectories/spline_base.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:size_t
+NumParameters	include/kontiki/trajectories/split_trajectory.h	/^  size_t NumParameters() const override {$/;"	f	struct:kontiki::trajectories::internal::SplitMeta	typeref:typename:size_t
+Observation	include/kontiki/sfm/observation.h	/^class Observation {$/;"	c	namespace:kontiki::sfm
+Observation	include/kontiki/sfm/observation_impl.h	/^Observation::Observation(const Eigen::Vector2d &uv, std::shared_ptr<Landmark> landmark, std::sha/;"	f	class:kontiki::sfm::Observation
+Orientation	include/kontiki/trajectories/trajectory.h	/^    bool Orientation() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+Orientation	include/kontiki/trajectories/trajectory.h	/^  Quaternion Orientation(T t) const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Quaternion
+OrientationMeasurement	include/kontiki/measurements/orientation_measurement.h	/^  OrientationMeasurement(double t, const Eigen::Vector4d &qvec, double weight)$/;"	f	class:kontiki::measurements::OrientationMeasurement
+OrientationMeasurement	include/kontiki/measurements/orientation_measurement.h	/^  OrientationMeasurement(double t, const Quaternion &q, double weight) : t(t), q(q), weight(weig/;"	f	class:kontiki::measurements::OrientationMeasurement
+OrientationMeasurement	include/kontiki/measurements/orientation_measurement.h	/^class OrientationMeasurement {$/;"	c	namespace:kontiki::measurements
+PARAM_ABIAS	include/kontiki/sensors/constant_bias_imu.h	/^  const size_t PARAM_ABIAS = 5;$/;"	m	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:const size_t
+PARAM_GBIAS	include/kontiki/sensors/constant_bias_imu.h	/^  const size_t PARAM_GBIAS = 6;$/;"	m	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:const size_t
+PARAM_GRAVITY_PITCH	include/kontiki/sensors/imu.h	/^    const size_t PARAM_GRAVITY_PITCH = 4;$/;"	m	class:kontiki::sensors::internal::ImuView	typeref:typename:const size_t
+PARAM_GRAVITY_ROLL	include/kontiki/sensors/imu.h	/^    const size_t PARAM_GRAVITY_ROLL = 3;$/;"	m	class:kontiki::sensors::internal::ImuView	typeref:typename:const size_t
+Parameter	include/entity/paramstore/dynamic_pstore.h	/^  entity::ParameterInfo<T> Parameter(size_t i) const override {$/;"	f	class:entity::DynamicParameterStore	typeref:typename:entity::ParameterInfo<T>
+Parameter	include/entity/paramstore/empty_pstore.h	/^  ParameterInfo<T> Parameter(size_t i) const override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:ParameterInfo<T>
+Parameter	include/entity/paramstore/pointer_pstore.h	/^  ParameterInfo<T> Parameter(size_t i) const override {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:ParameterInfo<T>
+Parameter	include/kontiki/trajectories/spline_base.h	/^    entity::ParameterInfo<double> Parameter(size_t i) {$/;"	f	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity	typeref:typename:entity::ParameterInfo<double>
+ParameterData	include/entity/paramstore/dynamic_pstore.h	/^  T* ParameterData(int i) {$/;"	f	class:entity::DynamicParameterStore	typeref:typename:T *
+ParameterData	include/entity/paramstore/dynamic_pstore.h	/^  const T* ParameterData(int i) const {$/;"	f	class:entity::DynamicParameterStore	typeref:typename:const T *
+ParameterData	include/entity/paramstore/empty_pstore.h	/^  T *ParameterData(int i) override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:T *
+ParameterData	include/entity/paramstore/empty_pstore.h	/^  const T *ParameterData(int i) const override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:const T *
+ParameterData	include/entity/paramstore/pointer_pstore.h	/^  T *ParameterData(int i) override {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:T *
+ParameterData	include/entity/paramstore/pointer_pstore.h	/^  const T *ParameterData(int i) const override {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:const T *
+ParameterInfo	include/entity/paramstore/paramstore.h	/^  ParameterInfo(T *data, size_t size) :$/;"	f	struct:entity::ParameterInfo
+ParameterInfo	include/entity/paramstore/paramstore.h	/^  ParameterInfo(T* data, size_t size, ceres::LocalParameterization* parameterization) :$/;"	f	struct:entity::ParameterInfo
+ParameterInfo	include/entity/paramstore/paramstore.h	/^struct ParameterInfo {$/;"	s	namespace:entity
+ParameterStore	include/entity/paramstore/paramstore.h	/^struct ParameterStore {$/;"	s	namespace:entity
+PinholeCamera	include/kontiki/sensors/pinhole_camera.h	/^class PinholeCamera : public internal::PinholeEntity<internal::PinholeView,$/;"	c	namespace:kontiki::sensors
+PinholeEntity	include/kontiki/sensors/pinhole_camera.h	/^  PinholeEntity(size_t rows, size_t cols, double readout) :$/;"	f	class:kontiki::sensors::internal::PinholeEntity
+PinholeEntity	include/kontiki/sensors/pinhole_camera.h	/^  PinholeEntity(size_t rows, size_t cols, double readout, const CameraMatrix &camera_matrix) :$/;"	f	class:kontiki::sensors::internal::PinholeEntity
+PinholeEntity	include/kontiki/sensors/pinhole_camera.h	/^class PinholeEntity : public CameraEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+PinholeMeta	include/kontiki/sensors/pinhole_camera.h	/^struct PinholeMeta : public CameraMeta {$/;"	s	namespace:kontiki::sensors::internal
+PinholeView	include/kontiki/sensors/pinhole_camera.h	/^class PinholeView : public CameraView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+PointerParameterStore	include/entity/paramstore/pointer_pstore.h	/^  PointerParameterStore(T const* const* params) :$/;"	f	struct:entity::PointerParameterStore
+PointerParameterStore	include/entity/paramstore/pointer_pstore.h	/^struct PointerParameterStore : public ParameterStore<T> {$/;"	s	namespace:entity
+Position	include/kontiki/trajectories/trajectory.h	/^    bool Position() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+Position	include/kontiki/trajectories/trajectory.h	/^  Vector3 Position(T t) const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+PositionMeasurement	include/kontiki/measurements/position_measurement.h	/^  PositionMeasurement(double t, const Vector3 &p, double weight) : t(t), p(p), weight(weight) {}/;"	f	class:kontiki::measurements::PositionMeasurement
+PositionMeasurement	include/kontiki/measurements/position_measurement.h	/^class PositionMeasurement {$/;"	c	namespace:kontiki::measurements
+PotentiallyUnsafeFloor	include/kontiki/trajectories/spline_base.h	/^  int PotentiallyUnsafeFloor(const ceres::Jet<Scalar, N>& x) const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:int
+PotentiallyUnsafeFloor	include/kontiki/trajectories/spline_base.h	/^  int PotentiallyUnsafeFloor(double x) const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:int
+Project	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    Eigen::Matrix<T, 2, 1> Project(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,2,1>
+Project	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    Vector2 Project(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Vector2
+Project	include/kontiki/measurements/newton_rscamera_measurement.h	/^    Eigen::Matrix<T, 2, 1> Project(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,2,1>
+Project	include/kontiki/measurements/newton_rscamera_measurement.h	/^    Vector2 Project(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Vector2
+Project	include/kontiki/measurements/static_rscamera_measurement.h	/^    Eigen::Matrix<T, 2, 1> Project(const type::Trajectory<TrajectoryModel, T> &trajectory,$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Eigen::Matrix<T,2,1>
+Project	include/kontiki/measurements/static_rscamera_measurement.h	/^    Vector2 Project(const type::Trajectory<TrajectoryModel, double> &trajectory) const {$/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Vector2
+Project	include/kontiki/sensors/camera.h	/^  Vector2 Project(const Vector3 &X) const {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:Vector2
+Quat	include/kontiki/measurements/lidar_orientation_measurement.h	/^  using Quat = Eigen::Quaternion<double>;$/;"	t	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:Eigen::Quaternion<double>
+Quaternion	include/kontiki/measurements/newton_rscamera_measurement.h	/^  using Quaternion = Eigen::Quaternion<T>;$/;"	t	function:kontiki::measurements::reproject_newton	typeref:typename:Eigen::Quaternion<T>
+Quaternion	include/kontiki/measurements/orientation_measurement.h	/^  using Quaternion = Eigen::Quaterniond;$/;"	t	class:kontiki::measurements::OrientationMeasurement	typeref:typename:Eigen::Quaterniond
+Quaternion	include/kontiki/sensors/sensors.h	/^  using Quaternion = Eigen::Quaternion<T>;$/;"	t	class:kontiki::sensors::internal::SensorView	typeref:typename:Eigen::Quaternion<T>
+Quaternion	include/kontiki/trajectories/trajectory.h	/^  using Quaternion = Eigen::Quaternion<T>;$/;"	t	class:kontiki::trajectories::TrajectoryView	typeref:typename:Eigen::Quaternion<T>
+Quaternion	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  using Quaternion = Eigen::Quaternion<T>;$/;"	t	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:Eigen::Quaternion<T>
+QuaternionMap	include/kontiki/measurements/newton_rscamera_measurement.h	/^  using QuaternionMap = Eigen::Map<Quaternion>;$/;"	t	function:kontiki::measurements::reproject_newton	typeref:typename:Eigen::Map<Quaternion>
+QuaternionMap	include/kontiki/sensors/sensors.h	/^  using QuaternionMap = Eigen::Map<Quaternion>;$/;"	t	class:kontiki::sensors::internal::SensorView	typeref:typename:Eigen::Map<Quaternion>
+QuaternionMap	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  using QuaternionMap = Eigen::Map<Quaternion>;$/;"	t	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:Eigen::Map<Quaternion>
+R3Meta	include/kontiki/trajectories/split_trajectory.h	/^  using R3Meta = UniformR3SplineTrajectory::Meta;$/;"	t	struct:kontiki::trajectories::internal::SplitMeta	typeref:typename:UniformR3SplineTrajectory::Meta
+R3Spline	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<UniformR3SplineTrajectory> R3Spline() const {$/;"	f	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:std::shared_ptr<UniformR3SplineTrajectory>
+R3SplineControlPointInfo	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^struct R3SplineControlPointInfo : public ControlPointInfo<Eigen::Matrix<T, 3, 1>, 3> {$/;"	s	namespace:kontiki::trajectories::internal
+R3View	include/kontiki/trajectories/split_trajectory.h	/^  using R3View = type::View<UniformR3SplineTrajectory, T>;$/;"	t	class:kontiki::trajectories::internal::SplitView	typeref:typename:type::View<UniformR3SplineTrajectory,T>
+RelativeOrientationIsLocked	include/kontiki/sensors/sensors.h	/^  bool RelativeOrientationIsLocked() const {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+RelativePositionIsLocked	include/kontiki/sensors/sensors.h	/^  bool RelativePositionIsLocked() const {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+RemoveObservation	include/kontiki/sfm/landmark_impl.h	/^void Landmark::RemoveObservation(std::shared_ptr<Observation> obs) {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:void
+RemoveObservation	include/kontiki/sfm/view_impl.h	/^void View::RemoveObservation(std::shared_ptr<Observation> obs) {$/;"	f	class:kontiki::sfm::View	typeref:typename:void
+Residual	include/kontiki/measurements/accelerometer_measurement.h	/^    Residual(const AccelerometerMeasurement &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::AccelerometerMeasurement::Residual
+Residual	include/kontiki/measurements/accelerometer_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::AccelerometerMeasurement
+Residual	include/kontiki/measurements/gyroscope_measurement.h	/^    Residual(const GyroscopeMeasurement &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::GyroscopeMeasurement::Residual
+Residual	include/kontiki/measurements/gyroscope_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::GyroscopeMeasurement
+Residual	include/kontiki/measurements/lidar_orientation_measurement.h	/^    Residual(const LiDAROrientationMeasurement<LiDARModel> &m) : measurement(m) {}$/;"	f	struct:kontiki::measurements::LiDAROrientationMeasurement::Residual
+Residual	include/kontiki/measurements/lidar_orientation_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::LiDAROrientationMeasurement
+Residual	include/kontiki/measurements/lidar_position_measurement.h	/^    Residual(const LiDARPositionMeasurement<LiDARModel> &m) : measurement(m) {}$/;"	f	struct:kontiki::measurements::LiDARPositionMeasurement::Residual
+Residual	include/kontiki/measurements/lidar_position_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::LiDARPositionMeasurement
+Residual	include/kontiki/measurements/lidar_surfel_point.h	/^    Residual(const LiDARSurfelPoint<LiDARModel> &m) : measurement(m){}$/;"	f	struct:kontiki::measurements::LiDARSurfelPoint::Residual
+Residual	include/kontiki/measurements/lidar_surfel_point.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::LiDARSurfelPoint
+Residual	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      Residual(const LiftingRsCameraMeasurement<CameraModel> &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::LiftingRsCameraMeasurement::Residual
+Residual	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    struct Residual {$/;"	s	class:kontiki::measurements::LiftingRsCameraMeasurement
+Residual	include/kontiki/measurements/newton_rscamera_measurement.h	/^      Residual(const NewtonRsCameraMeasurement<CameraModel> &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::NewtonRsCameraMeasurement::Residual
+Residual	include/kontiki/measurements/newton_rscamera_measurement.h	/^    struct Residual {$/;"	s	class:kontiki::measurements::NewtonRsCameraMeasurement
+Residual	include/kontiki/measurements/orientation_measurement.h	/^    Residual(const OrientationMeasurement &m) : measurement(m) {}$/;"	f	struct:kontiki::measurements::OrientationMeasurement::Residual
+Residual	include/kontiki/measurements/orientation_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::OrientationMeasurement
+Residual	include/kontiki/measurements/position_measurement.h	/^    Residual(const PositionMeasurement &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::PositionMeasurement::Residual
+Residual	include/kontiki/measurements/position_measurement.h	/^  struct Residual {$/;"	s	class:kontiki::measurements::PositionMeasurement
+Residual	include/kontiki/measurements/static_rscamera_measurement.h	/^      Residual(const StaticRsCameraMeasurement<CameraModel> &m) : measurement(m) {};$/;"	f	struct:kontiki::measurements::StaticRsCameraMeasurement::Residual
+Residual	include/kontiki/measurements/static_rscamera_measurement.h	/^    struct Residual {$/;"	s	class:kontiki::measurements::StaticRsCameraMeasurement
+ResidualImpl	include/kontiki/measurements/accelerometer_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::AccelerometerMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/gyroscope_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::GyroscopeMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/lidar_orientation_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::LiDAROrientationMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/lidar_position_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::LiDARPositionMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/lidar_surfel_point.h	/^      using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::LiDARSurfelPoint::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::LiftingRsCameraMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/newton_rscamera_measurement.h	/^      using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::NewtonRsCameraMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/orientation_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::OrientationMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/position_measurement.h	/^    using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::PositionMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+ResidualImpl	include/kontiki/measurements/static_rscamera_measurement.h	/^      using ResidualImpl = Residual<TrajectoryModel>;$/;"	t	function:kontiki::measurements::StaticRsCameraMeasurement::AddToEstimator	typeref:typename:Residual<TrajectoryModel>
+Result	include/kontiki/sensors/atan_camera.h	/^  using Result = std::unique_ptr<CameraEvaluation<T>>;$/;"	t	class:kontiki::sensors::internal::AtanView	typeref:typename:std::unique_ptr<CameraEvaluation<T>>
+Result	include/kontiki/sensors/camera.h	/^  using Result = std::unique_ptr<CameraEvaluation<T>>;$/;"	t	class:kontiki::sensors::internal::CameraView	typeref:typename:std::unique_ptr<CameraEvaluation<T>>
+Result	include/kontiki/sensors/lidar.h	/^  using Result = std::unique_ptr<LiDAREvaluation<T>>;$/;"	t	class:kontiki::sensors::internal::LiDARView	typeref:typename:std::unique_ptr<LiDAREvaluation<T>>
+Result	include/kontiki/sensors/pinhole_camera.h	/^  using Result = std::unique_ptr<CameraEvaluation<T>>;$/;"	t	class:kontiki::sensors::internal::PinholeView	typeref:typename:std::unique_ptr<CameraEvaluation<T>>
+Result	include/kontiki/sensors/vlp16_lidar.h	/^  using Result = std::unique_ptr<LiDAREvaluation<T>>;$/;"	t	class:kontiki::sensors::internal::VLP16View	typeref:typename:std::unique_ptr<LiDAREvaluation<T>>
+Result	include/kontiki/trajectories/spline_base.h	/^  using Result = std::unique_ptr<TrajectoryEvaluation<T>>;$/;"	t	class:kontiki::trajectories::internal::SplineView	typeref:typename:std::unique_ptr<TrajectoryEvaluation<T>>
+Result	include/kontiki/trajectories/split_trajectory.h	/^  using Result = std::unique_ptr<TrajectoryEvaluation<T>>;$/;"	t	class:kontiki::trajectories::internal::SplitView	typeref:typename:std::unique_ptr<TrajectoryEvaluation<T>>
+Result	include/kontiki/trajectories/trajectory.h	/^  using Result = std::unique_ptr<TrajectoryEvaluation<T>>;$/;"	t	class:kontiki::trajectories::TrajectoryView	typeref:typename:std::unique_ptr<TrajectoryEvaluation<T>>
+Result	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  using Result = std::unique_ptr<TrajectoryEvaluation<T>>;$/;"	t	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:std::unique_ptr<TrajectoryEvaluation<T>>
+Result	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  using Result = std::unique_ptr<TrajectoryEvaluation<T>>;$/;"	t	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:std::unique_ptr<TrajectoryEvaluation<T>>
+SO3Meta	include/kontiki/trajectories/split_trajectory.h	/^  using SO3Meta = UniformSO3SplineTrajectory::Meta;$/;"	t	struct:kontiki::trajectories::internal::SplitMeta	typeref:typename:UniformSO3SplineTrajectory::Meta
+SO3Spline	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<UniformSO3SplineTrajectory> SO3Spline() const {$/;"	f	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:std::shared_ptr<UniformSO3SplineTrajectory>
+SO3SplineControlPointInfo	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  SO3SplineControlPointInfo() :$/;"	f	struct:kontiki::trajectories::internal::SO3SplineControlPointInfo
+SO3SplineControlPointInfo	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^struct SO3SplineControlPointInfo : public ControlPointInfo<Eigen::Quaternion<T>, 4> {$/;"	s	namespace:kontiki::trajectories::internal
+SO3View	include/kontiki/trajectories/split_trajectory.h	/^  using SO3View = type::View<UniformSO3SplineTrajectory, T>;$/;"	t	class:kontiki::trajectories::internal::SplitView	typeref:typename:type::View<UniformSO3SplineTrajectory,T>
+STANDARD_GRAVITY	include/kontiki/constants.h	/^  static const double STANDARD_GRAVITY = 9.79;$/;"	v	namespace:kontiki::_constants	typeref:typename:const double
+STANDARD_GRAVITY	include/kontiki/sensors/imu.h	/^static const double STANDARD_GRAVITY = -9.79;$/;"	v	namespace:kontiki::sensors::internal	typeref:typename:const double
+SegmentEntity	include/kontiki/trajectories/spline_base.h	/^    SegmentEntity(double dt, double t0) {$/;"	f	struct:kontiki::trajectories::internal::SplineFactory::SegmentEntity
+SegmentEntity	include/kontiki/trajectories/spline_base.h	/^  struct SegmentEntity : public TrajectoryEntity<SegmentView,$/;"	s	struct:kontiki::trajectories::internal::SplineFactory
+SegmentType	include/kontiki/trajectories/spline_base.h	/^  using SegmentType = typename SplineFactory<SegmentViewTemplate>::SegmentEntity;$/;"	t	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:SplineFactory<SegmentViewTemplate>::SegmentEntity
+SegmentView	include/kontiki/trajectories/spline_base.h	/^  struct SegmentView : public SegmentViewTemplate<T> {$/;"	s	struct:kontiki::trajectories::internal::SplineFactory
+SegmentView	include/kontiki/trajectories/spline_base.h	/^  using SegmentView = SegmentTemplate<T>;$/;"	t	class:kontiki::trajectories::internal::SplineView	typeref:typename:SegmentTemplate<T>
+Sensor	include/kontiki/sensors/sensors.h	/^using Sensor = typename entity::type::base::ForView<E, sensors::internal::SensorView, T>;$/;"	t	namespace:kontiki::type	typeref:typename:entity::type::base::ForView<E,sensors::internal::SensorView,T>
+SensorEntity	include/kontiki/sensors/sensors.h	/^  SensorEntity() :$/;"	f	class:kontiki::sensors::internal::SensorEntity
+SensorEntity	include/kontiki/sensors/sensors.h	/^class SensorEntity : public type::Entity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+SensorMeta	include/kontiki/sensors/sensors.h	/^struct SensorMeta : public entity::MetaData {$/;"	s	namespace:kontiki::sensors::internal
+SensorView	include/kontiki/sensors/sensors.h	/^class SensorView : public entity::EntityView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+Size	include/entity/paramstore/dynamic_pstore.h	/^  size_t Size() const override {$/;"	f	class:entity::DynamicParameterStore	typeref:typename:size_t
+Size	include/entity/paramstore/empty_pstore.h	/^  size_t Size() const override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:size_t
+Size	include/entity/paramstore/pointer_pstore.h	/^  size_t Size() const override {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:size_t
+Slice	include/entity/paramstore/dynamic_pstore.h	/^  ParameterStore<T> *Slice(size_t offset, size_t length) const override {$/;"	f	class:entity::DynamicParameterStore	typeref:typename:ParameterStore<T> *
+Slice	include/entity/paramstore/empty_pstore.h	/^  ParameterStore<T>* Slice(size_t offset, size_t length) const override {$/;"	f	class:entity::EmptyParameterStore	typeref:typename:ParameterStore<T> *
+Slice	include/entity/paramstore/pointer_pstore.h	/^  ParameterStore<T>* Slice(size_t offset, size_t length) const {$/;"	f	struct:entity::PointerParameterStore	typeref:typename:ParameterStore<T> *
+Solve	include/kontiki/trajectory_estimator.h	/^  ceres::Solver::Summary Solve(int max_iterations=50, bool progress=true, int num_threads=-1) {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:ceres::Solver::Summary
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^  SplineEntity() :$/;"	f	class:kontiki::trajectories::internal::SplineEntity
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^  SplineEntity(const SplineEntity &rhs) :$/;"	f	class:kontiki::trajectories::internal::SplineEntity
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^  SplineEntity(double dt) :$/;"	f	class:kontiki::trajectories::internal::SplineEntity
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^  SplineEntity(double dt, double t0) :$/;"	f	class:kontiki::trajectories::internal::SplineEntity
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^  SplineEntity(double dt, double t0, ceres::LocalParameterization* control_point_parameterizatio/;"	f	class:kontiki::trajectories::internal::SplineEntity
+SplineEntity	include/kontiki/trajectories/spline_base.h	/^class SplineEntity : public TrajectoryEntity<SplineFactory<SegmentViewTemplate>::template View,$/;"	c	namespace:kontiki::trajectories::internal
+SplineFactory	include/kontiki/trajectories/spline_base.h	/^struct SplineFactory {$/;"	s	namespace:kontiki::trajectories::internal
+SplineMeta	include/kontiki/trajectories/spline_base.h	/^struct SplineMeta : public entity::MetaData {$/;"	s	namespace:kontiki::trajectories::internal
+SplineSegmentMeta	include/kontiki/trajectories/spline_base.h	/^  SplineSegmentMeta() :$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta
+SplineSegmentMeta	include/kontiki/trajectories/spline_base.h	/^  SplineSegmentMeta(double dt, double t0) :$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta
+SplineSegmentMeta	include/kontiki/trajectories/spline_base.h	/^struct SplineSegmentMeta : public entity::MetaData {$/;"	s	namespace:kontiki::trajectories::internal
+SplineSegmentView	include/kontiki/trajectories/spline_base.h	/^class SplineSegmentView : public TrajectoryView<T, SplineSegmentMeta> {$/;"	c	namespace:kontiki::trajectories::internal
+SplineView	include/kontiki/trajectories/spline_base.h	/^  SplineView(const MetaType &meta, entity::ParameterStore<T> *holder) :$/;"	f	class:kontiki::trajectories::internal::SplineView
+SplineView	include/kontiki/trajectories/spline_base.h	/^class SplineView : public TrajectoryView<T, MetaType> {$/;"	c	namespace:kontiki::trajectories::internal
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^  SplitEntity() :$/;"	f	class:kontiki::trajectories::internal::SplitEntity
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^  SplitEntity(const SplitEntity &rhs) :$/;"	f	class:kontiki::trajectories::internal::SplitEntity
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^  SplitEntity(double r3_dt, double so3_dt) :$/;"	f	class:kontiki::trajectories::internal::SplitEntity
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^  SplitEntity(double r3_dt, double so3_dt, double r3_t0, double so3_t0) :$/;"	f	class:kontiki::trajectories::internal::SplitEntity
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^  SplitEntity(std::shared_ptr<UniformR3SplineTrajectory> r3_trajectory,$/;"	f	class:kontiki::trajectories::internal::SplitEntity
+SplitEntity	include/kontiki/trajectories/split_trajectory.h	/^class SplitEntity : public TrajectoryEntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::trajectories::internal
+SplitMeta	include/kontiki/trajectories/split_trajectory.h	/^struct SplitMeta : public entity::MetaData {$/;"	s	namespace:kontiki::trajectories::internal
+SplitTrajectory	include/kontiki/trajectories/split_trajectory.h	/^class SplitTrajectory : public internal::SplitEntity<internal::SplitView,$/;"	c	namespace:kontiki::trajectories
+SplitView	include/kontiki/trajectories/split_trajectory.h	/^  SplitView(const MetaType &meta, entity::ParameterStore<T> *holder) :$/;"	f	class:kontiki::trajectories::internal::SplitView
+SplitView	include/kontiki/trajectories/split_trajectory.h	/^class SplitView : public TrajectoryView<T, MetaType> {$/;"	c	namespace:kontiki::trajectories::internal
+StandardAccelerometer	include/kontiki/sensors/imu.h	/^  Vector3 StandardAccelerometer(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) con/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:Vector3
+StandardGyroscope	include/kontiki/sensors/imu.h	/^  Vector3 StandardGyroscope(const type::Trajectory<TrajectoryModel, T> &trajectory, T t) const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:Vector3
+StaticRsCameraMeasurement	include/kontiki/measurements/static_rscamera_measurement.h	/^    StaticRsCameraMeasurement(std::shared_ptr<CameraModel> camera, std::shared_ptr<sfm::Observat/;"	f	class:kontiki::measurements::StaticRsCameraMeasurement
+StaticRsCameraMeasurement	include/kontiki/measurements/static_rscamera_measurement.h	/^  class StaticRsCameraMeasurement {$/;"	c	namespace:kontiki::measurements
+TimeOffsetIsLocked	include/kontiki/sensors/sensors.h	/^  bool TimeOffsetIsLocked() const {$/;"	f	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+ToParameterBlocks	include/entity/paramstore/paramstore.h	/^  static std::vector<T*> ToParameterBlocks(const std::vector<ParameterInfo<T>> &infolist) {$/;"	f	struct:entity::ParameterInfo	typeref:typename:std::vector<T * >
+ToTrajectory	include/kontiki/sensors/sensors.h	/^  Vector3 ToTrajectory(const Vector3 &X_camera) const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:Vector3
+ToWorld	include/kontiki/trajectories/trajectory.h	/^  Vector3 ToWorld(Vector3 &Xt, T t) {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+Trajectory	include/kontiki/trajectories/trajectory.h	/^using Trajectory = typename entity::type::base::ForView<_Entity, trajectories::TrajectoryView, T/;"	t	namespace:kontiki::type	typeref:typename:entity::type::base::ForView<_Entity,trajectories::TrajectoryView,T>
+TrajectoryEntity	include/kontiki/trajectories/trajectory.h	/^  TrajectoryEntity() :$/;"	f	class:kontiki::trajectories::TrajectoryEntity
+TrajectoryEntity	include/kontiki/trajectories/trajectory.h	/^class TrajectoryEntity : public type::Entity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::trajectories
+TrajectoryEstimator	include/kontiki/trajectory_estimator.h	/^  TrajectoryEstimator(std::shared_ptr<TrajectoryModel> trajectory) :$/;"	f	class:kontiki::TrajectoryEstimator
+TrajectoryEstimator	include/kontiki/trajectory_estimator.h	/^class TrajectoryEstimator {$/;"	c	namespace:kontiki
+TrajectoryEvaluation	include/kontiki/trajectories/trajectory.h	/^  TrajectoryEvaluation(int flags) :$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation
+TrajectoryEvaluation	include/kontiki/trajectories/trajectory.h	/^struct TrajectoryEvaluation {$/;"	s	namespace:kontiki::trajectories
+TrajectoryView	include/kontiki/trajectories/trajectory.h	/^class TrajectoryView : public entity::EntityView<T, MetaType> {$/;"	c	namespace:kontiki::trajectories
+UniformR3SplineSegmentView	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^class UniformR3SplineSegmentView : public SplineSegmentView<T, R3SplineControlPointInfo<T>> {$/;"	c	namespace:kontiki::trajectories::internal
+UniformR3SplineTrajectory	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^class UniformR3SplineTrajectory : public internal::SplineEntity<internal::UniformR3SplineSegment/;"	c	namespace:kontiki::trajectories
+UniformSO3SplineSegmentView	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^class UniformSO3SplineSegmentView : public SplineSegmentView<T, SO3SplineControlPointInfo<T>> {$/;"	c	namespace:kontiki::trajectories::internal
+UniformSO3SplineTrajectory	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^class UniformSO3SplineTrajectory : public internal::SplineEntity<internal::UniformSO3SplineSegme/;"	c	namespace:kontiki::trajectories
+Unproject	include/kontiki/sensors/atan_camera.h	/^  Vector3 Unproject(const Vector2 &y) const override {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:Vector3
+Unproject	include/kontiki/sensors/pinhole_camera.h	/^  Vector3 Unproject(const Vector2 &y) const override {$/;"	f	class:kontiki::sensors::internal::PinholeView	typeref:typename:Vector3
+VLP16Entity	include/kontiki/sensors/vlp16_lidar.h	/^  VLP16Entity() : Base() {}$/;"	f	class:kontiki::sensors::internal::VLP16Entity
+VLP16Entity	include/kontiki/sensors/vlp16_lidar.h	/^class VLP16Entity : public LiDAREntity<ViewTemplate, MetaType, StoreType> {$/;"	c	namespace:kontiki::sensors::internal
+VLP16LiDAR	include/kontiki/sensors/vlp16_lidar.h	/^class VLP16LiDAR : public internal::VLP16Entity<internal::VLP16View,$/;"	c	namespace:kontiki::sensors
+VLP16Meta	include/kontiki/sensors/vlp16_lidar.h	/^struct VLP16Meta : public LiDARMeta {$/;"	s	namespace:kontiki::sensors::internal
+VLP16View	include/kontiki/sensors/vlp16_lidar.h	/^class VLP16View : public LiDARView<T, MetaType> {$/;"	c	namespace:kontiki::sensors::internal
+VLP16_LIDAR_H	include/kontiki/sensors/vlp16_lidar.h	/^#define VLP16_LIDAR_H$/;"	d
+ValidTime	include/kontiki/trajectories/trajectory.h	/^  std::pair<double, double> ValidTime() const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:std::pair<double,double>
+Validate	include/kontiki/trajectories/spline_base.h	/^  virtual void Validate(const Type&) const {$/;"	f	struct:kontiki::trajectories::internal::ControlPointInfo	typeref:typename:void
+Validate	include/kontiki/trajectories/spline_base.h	/^  void Validate() const {$/;"	f	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:void
+Validate	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  void Validate(const Eigen::Quaternion<T> &cp) const override {$/;"	f	struct:kontiki::trajectories::internal::SO3SplineControlPointInfo	typeref:typename:void
+Vector2	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    using Vector2 = Eigen::Vector2d;$/;"	t	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Eigen::Vector2d
+Vector2	include/kontiki/measurements/lifting_rscamera_measurement.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	function:kontiki::measurements::reproject_lifting	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/measurements/newton_rscamera_measurement.h	/^    using Vector2 = Eigen::Vector2d;$/;"	t	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:Eigen::Vector2d
+Vector2	include/kontiki/measurements/newton_rscamera_measurement.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	function:kontiki::measurements::reproject_newton	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/measurements/static_rscamera_measurement.h	/^    using Vector2 = Eigen::Vector2d;$/;"	t	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:Eigen::Vector2d
+Vector2	include/kontiki/measurements/static_rscamera_measurement.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	function:kontiki::measurements::reproject_static	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/sensors/atan_camera.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	class:kontiki::sensors::internal::AtanView	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/sensors/camera.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	class:kontiki::sensors::internal::CameraView	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/sensors/camera.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	struct:kontiki::sensors::internal::CameraEvaluation	typeref:typename:Eigen::Matrix<T,2,1>
+Vector2	include/kontiki/sensors/pinhole_camera.h	/^  using Vector2 = Eigen::Matrix<T, 2, 1>;$/;"	t	class:kontiki::sensors::internal::PinholeView	typeref:typename:Eigen::Matrix<T,2,1>
+Vector3	include/kontiki/constants.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::Constants	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/measurements/accelerometer_measurement.h	/^  using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/measurements/gyroscope_measurement.h	/^  using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/measurements/lidar_position_measurement.h	/^  using Vector3 = Eigen::Matrix<double, 3, 1>;$/;"	t	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:Eigen::Matrix<double,3,1>
+Vector3	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/measurements/lifting_rscamera_measurement.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	function:kontiki::measurements::reproject_lifting	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/measurements/newton_rscamera_measurement.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	function:kontiki::measurements::reproject_newton	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/measurements/position_measurement.h	/^  using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::measurements::AnotherMeasurement	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/measurements/position_measurement.h	/^  using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::measurements::PositionMeasurement	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/measurements/static_rscamera_measurement.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	function:kontiki::measurements::reproject_static	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/atan_camera.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::AtanView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/basic_imu.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::BasicImuView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/camera.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::CameraView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/constant_bias_imu.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/imu.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::ImuView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/imu.h	/^  using Vector3 = Eigen::Vector3d;$/;"	t	class:kontiki::sensors::internal::ImuEntity	typeref:typename:Eigen::Vector3d
+Vector3	include/kontiki/sensors/lidar.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::LiDARView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/lidar.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	struct:kontiki::sensors::internal::LiDAREvaluation	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/pinhole_camera.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::PinholeView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/sensors.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::SensorView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/sensors/vlp16_lidar.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::sensors::internal::VLP16View	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/trajectories/trajectory.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::trajectories::TrajectoryView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/trajectories/trajectory.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  using Vector3 = Eigen::Matrix<T, 3, 1>;$/;"	t	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:Eigen::Matrix<T,3,1>
+Vector3Map	include/kontiki/sensors/constant_bias_imu.h	/^  using Vector3Map = Eigen::Map<Vector3>;$/;"	t	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Eigen::Map<Vector3>
+Vector3Map	include/kontiki/sensors/sensors.h	/^  using Vector3Map = Eigen::Map<Vector3>;$/;"	t	class:kontiki::sensors::internal::SensorView	typeref:typename:Eigen::Map<Vector3>
+Vector3Map	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  using Vector3Map = Eigen::Map<Vector3>;$/;"	t	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:Eigen::Map<Vector3>
+Vector4	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^  using Vector4 = Eigen::Matrix<T, 4, 1>;$/;"	t	class:kontiki::trajectories::internal::UniformR3SplineSegmentView	typeref:typename:Eigen::Matrix<T,4,1>
+Vector4	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  using Vector4 = Eigen::Matrix<T, 4, 1>;$/;"	t	class:kontiki::trajectories::internal::UniformSO3SplineSegmentView	typeref:typename:Eigen::Matrix<T,4,1>
+Velocity	include/kontiki/trajectories/trajectory.h	/^    bool Velocity() const {$/;"	f	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:bool
+Velocity	include/kontiki/trajectories/trajectory.h	/^  Vector3 Velocity(T t) const {$/;"	f	class:kontiki::trajectories::TrajectoryView	typeref:typename:Vector3
+View	include/entity/entity.h	/^  using View = ViewTemplate<T, MetaT>;$/;"	t	class:entity::Entity	typeref:typename:ViewTemplate<T,MetaT>
+View	include/entity/entity.h	/^using View = typename _Entity::template View<T>;$/;"	t	namespace:entity::type	typeref:typename:_Entity::template View<T>
+View	include/kontiki/sfm/view.h	/^class View : public std::enable_shared_from_this<View> {$/;"	c	namespace:kontiki::sfm
+View	include/kontiki/sfm/view_impl.h	/^View::View(size_t frame, double t0)$/;"	f	class:kontiki::sfm::View
+View	include/kontiki/trajectories/spline_base.h	/^  struct View : public SplineView<T, MetaType, SegmentViewTemplate> {$/;"	s	struct:kontiki::trajectories::internal::SplineFactory
+_SplineParamStore	include/kontiki/trajectories/spline_base.h	/^using _SplineParamStore = entity::EmptyParameterStore<double>;$/;"	t	namespace:kontiki::trajectories::internal	typeref:typename:entity::EmptyParameterStore<double>
+__anon1e2d58260102	include/kontiki/sfm/landmark_impl.h	/^  auto found_it = std::find_if(observations_.begin(), observations_.end(), [&obs](auto &wp) {$/;"	f	function:kontiki::sfm::Landmark::RemoveObservation	file:
+_constants	include/kontiki/constants.h	/^namespace _constants {$/;"	n	namespace:kontiki
+a	include/kontiki/measurements/accelerometer_measurement.h	/^  Vector3 a; \/\/ Accelerometer measurement (m\/s^2)$/;"	m	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:Vector3
+acc_bias_locked_	include/kontiki/sensors/constant_bias_imu.h	/^  bool acc_bias_locked_;$/;"	m	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:bool
+acceleration	include/kontiki/trajectories/trajectory.h	/^  Vector3 acceleration; \/\/ Acceleration relative to world coordinates$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Vector3
+accelerometer_bias	include/kontiki/sensors/constant_bias_imu.h	/^  Vector3Map accelerometer_bias() const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Vector3Map
+angular_velocity	include/kontiki/math/quaternion_math.h	/^Eigen::Matrix<T, 3, 1> angular_velocity(const Eigen::Quaternion<T> &q, const Eigen::Quaternion<T/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Matrix<T,3,1>
+angular_velocity	include/kontiki/trajectories/trajectory.h	/^  Vector3 angular_velocity; \/\/ Angular velocity in world coordinate frame$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Vector3
+base	include/entity/entity.h	/^namespace base {$/;"	n	namespace:entity::type
+callback_needs_state_	include/kontiki/trajectory_estimator.h	/^  bool callback_needs_state_;$/;"	m	class:kontiki::TrajectoryEstimator	typeref:typename:bool
+callbacks_	include/kontiki/trajectory_estimator.h	/^  std::vector<std::unique_ptr<ceres::IterationCallback>> callbacks_;$/;"	m	class:kontiki::TrajectoryEstimator	typeref:typename:std::vector<std::unique_ptr<ceres::IterationCallback>>
+camera	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    std::shared_ptr<CameraModel> camera;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:std::shared_ptr<CameraModel>
+camera	include/kontiki/measurements/newton_rscamera_measurement.h	/^    std::shared_ptr<CameraModel> camera;$/;"	m	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:std::shared_ptr<CameraModel>
+camera	include/kontiki/measurements/static_rscamera_measurement.h	/^    std::shared_ptr<CameraModel> camera;$/;"	m	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:std::shared_ptr<CameraModel>
+camera_matrix	include/kontiki/sensors/pinhole_camera.h	/^  CameraMatrix camera_matrix() const {$/;"	f	class:kontiki::sensors::internal::PinholeView	typeref:typename:CameraMatrix
+camera_matrix	include/kontiki/sensors/pinhole_camera.h	/^  Eigen::Matrix3d camera_matrix; \/\/ FIXME: This should be a set of parameters$/;"	m	struct:kontiki::sensors::internal::PinholeMeta	typeref:typename:Eigen::Matrix3d
+camera_meta	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      typename CameraModel::Meta camera_meta;$/;"	m	struct:kontiki::measurements::LiftingRsCameraMeasurement::Residual	typeref:typename:CameraModel::Meta
+camera_meta	include/kontiki/measurements/newton_rscamera_measurement.h	/^      typename CameraModel::Meta camera_meta;$/;"	m	struct:kontiki::measurements::NewtonRsCameraMeasurement::Residual	typeref:typename:CameraModel::Meta
+camera_meta	include/kontiki/measurements/static_rscamera_measurement.h	/^      typename CameraModel::Meta camera_meta;$/;"	m	struct:kontiki::measurements::StaticRsCameraMeasurement::Residual	typeref:typename:CameraModel::Meta
+cols	include/kontiki/sensors/camera.h	/^  size_t cols() const {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:size_t
+cols	include/kontiki/sensors/camera.h	/^  size_t cols;$/;"	m	struct:kontiki::sensors::internal::CameraMeta	typeref:typename:size_t
+control_point_info_	include/kontiki/trajectories/spline_base.h	/^  _ControlPointInfo control_point_info_;$/;"	m	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:_ControlPointInfo
+control_point_parameterization_	include/kontiki/trajectories/spline_base.h	/^  std::unique_ptr<ceres::LocalParameterization> control_point_parameterization_;$/;"	m	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:std::unique_ptr<ceres::LocalParameterization>
+data	include/entity/paramstore/paramstore.h	/^  T* data;     \/\/ Pointer to data$/;"	m	struct:entity::ParameterInfo	typeref:typename:T *
+derive	include/kontiki/sensors/camera.h	/^  bool derive;$/;"	m	struct:kontiki::sensors::internal::CameraEvaluation	typeref:typename:bool
+dq_from_angular_velocity	include/kontiki/math/quaternion_math.h	/^Eigen::Quaternion<T> dq_from_angular_velocity(const Eigen::Matrix<T, 3, 1> &w, const Eigen::Quat/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Quaternion<T>
+dt	include/kontiki/trajectories/spline_base.h	/^  T dt() const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:T
+dt	include/kontiki/trajectories/spline_base.h	/^  double dt() const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:double
+dt	include/kontiki/trajectories/spline_base.h	/^  double dt; \/\/ Knot spacing$/;"	m	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:double
+dy	include/kontiki/sensors/camera.h	/^  Vector2 dy;$/;"	m	struct:kontiki::sensors::internal::CameraEvaluation	typeref:typename:Vector2
+embed_vector	include/kontiki/math/quaternion_math.h	/^Eigen::Quaternion<T> embed_vector(const Eigen::Matrix<T, 3, 1> &v) {$/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Quaternion<T>
+entity	include/entity/entity.h	/^namespace entity {$/;"	n
+entity	include/entity/paramstore/dynamic_pstore.h	/^namespace entity {$/;"	n
+entity	include/entity/paramstore/empty_pstore.h	/^namespace entity {$/;"	n
+entity	include/entity/paramstore/paramstore.h	/^namespace entity {$/;"	n
+entity	include/entity/paramstore/pointer_pstore.h	/^namespace entity {$/;"	n
+eps	include/kontiki/math/quaternion_math.h	/^static const double eps = 1e-16;$/;"	v	namespace:kontiki::math	typeref:typename:const double
+eps_unit_check	include/kontiki/math/quaternion_math.h	/^static const double eps_unit_check = 1e-5;$/;"	v	namespace:kontiki::math	typeref:typename:const double
+expq	include/kontiki/math/quaternion_math.h	/^Eigen::Quaternion<T> expq(const Eigen::Quaternion<T>& q)$/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Quaternion<T>
+flags	include/kontiki/trajectories/trajectory.h	/^    int flags;$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation::Needs	typeref:typename:int
+frame_nr	include/kontiki/sfm/view_impl.h	/^size_t View::frame_nr() const {$/;"	f	class:kontiki::sfm::View	typeref:typename:size_t
+frame_nr_	include/kontiki/sfm/view.h	/^  size_t frame_nr_;$/;"	m	class:kontiki::sfm::View	typeref:typename:size_t
+gamma	include/kontiki/sensors/atan_camera.h	/^  T gamma() const {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:T
+gamma	include/kontiki/sensors/atan_camera.h	/^  double gamma;$/;"	m	struct:kontiki::sensors::internal::AtanMeta	typeref:typename:double
+gravity_orientation_pitch	include/kontiki/sensors/imu.h	/^  T& gravity_orientation_pitch() const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:T &
+gravity_orientation_roll	include/kontiki/sensors/imu.h	/^  T& gravity_orientation_roll() const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:T &
+gyro_bias_locked_	include/kontiki/sensors/constant_bias_imu.h	/^  bool gyro_bias_locked_;$/;"	m	class:kontiki::sensors::internal::ConstantBiasImuEntity	typeref:typename:bool
+gyroscope_bias	include/kontiki/sensors/constant_bias_imu.h	/^  Vector3Map gyroscope_bias() const {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:Vector3Map
+hello	include/kontiki/measurements/position_measurement.h	/^  void hello() {$/;"	f	class:kontiki::measurements::AnotherMeasurement	typeref:typename:void
+id	include/kontiki/sfm/landmark_impl.h	/^size_t Landmark::id() const {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:size_t
+id_	include/kontiki/sfm/landmark.h	/^  size_t id_;$/;"	m	class:kontiki::sfm::Landmark	typeref:typename:size_t
+imu_	include/kontiki/measurements/accelerometer_measurement.h	/^  std::shared_ptr<ImuModel> imu_;$/;"	m	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:std::shared_ptr<ImuModel>
+imu_	include/kontiki/measurements/gyroscope_measurement.h	/^  std::shared_ptr<ImuModel> imu_;$/;"	m	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:std::shared_ptr<ImuModel>
+imu_meta	include/kontiki/measurements/accelerometer_measurement.h	/^    typename ImuModel::Meta imu_meta;$/;"	m	struct:kontiki::measurements::AccelerometerMeasurement::Residual	typeref:typename:ImuModel::Meta
+imu_meta	include/kontiki/measurements/gyroscope_measurement.h	/^    typename ImuModel::Meta imu_meta;$/;"	m	struct:kontiki::measurements::GyroscopeMeasurement::Residual	typeref:typename:ImuModel::Meta
+internal	include/kontiki/sensors/atan_camera.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/basic_imu.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/camera.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/constant_bias_imu.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/imu.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/lidar.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/pinhole_camera.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/sensors.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/sensors/vlp16_lidar.h	/^namespace internal {$/;"	n	namespace:kontiki::sensors
+internal	include/kontiki/trajectories/spline_base.h	/^namespace internal {$/;"	n	namespace:kontiki::trajectories
+internal	include/kontiki/trajectories/split_trajectory.h	/^namespace internal {$/;"	n	namespace:kontiki::trajectories
+internal	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^namespace internal {$/;"	n	namespace:kontiki::trajectories
+internal	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^namespace internal {$/;"	n	namespace:kontiki::trajectories
+inverse_depth	include/kontiki/sfm/landmark_impl.h	/^double Landmark::inverse_depth() const {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:double
+inverse_depth_	include/kontiki/sfm/landmark.h	/^  double inverse_depth_;$/;"	m	class:kontiki::sfm::Landmark	typeref:typename:double
+inverse_depth_ptr	include/kontiki/sfm/landmark_impl.h	/^double* Landmark::inverse_depth_ptr() {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:double *
+kontiki	include/kontiki/constants.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/math/quaternion_math.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/accelerometer_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/gyroscope_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/lidar_orientation_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/lidar_position_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/lidar_surfel_point.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/lifting_rscamera_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/newton_rscamera_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/orientation_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/position_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/measurements/static_rscamera_measurement.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/atan_camera.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/basic_imu.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/camera.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/constant_bias_imu.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/imu.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/lidar.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/pinhole_camera.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/sensors.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sensors/vlp16_lidar.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/landmark.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/landmark_impl.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/observation.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/observation_impl.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/view.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/sfm/view_impl.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectories/spline_base.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectories/split_trajectory.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectories/trajectory.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/trajectory_estimator.h	/^namespace kontiki {$/;"	n
+kontiki	include/kontiki/types.h	/^namespace kontiki {$/;"	n
+kontiki_lib_ide_target	CMakeLists.txt	/^add_custom_target(kontiki_lib_ide_target SOURCES ${Kontiki_HEADER_FILES})$/;"	t
+landmark	include/kontiki/sfm/observation_impl.h	/^std::shared_ptr<Landmark> Observation::landmark() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:std::shared_ptr<Landmark>
+landmark_	include/kontiki/sfm/observation.h	/^  std::shared_ptr<Landmark> landmark_;$/;"	m	class:kontiki::sfm::Observation	typeref:typename:std::shared_ptr<Landmark>
+lidar_	include/kontiki/measurements/lidar_orientation_measurement.h	/^  std::shared_ptr<LiDARModel> lidar_;$/;"	m	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:std::shared_ptr<LiDARModel>
+lidar_	include/kontiki/measurements/lidar_position_measurement.h	/^  std::shared_ptr<LiDARModel> lidar_;$/;"	m	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:std::shared_ptr<LiDARModel>
+lidar_	include/kontiki/measurements/lidar_surfel_point.h	/^  std::shared_ptr<LiDARModel> lidar_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:std::shared_ptr<LiDARModel>
+lidar_meta	include/kontiki/measurements/lidar_orientation_measurement.h	/^    typename LiDARModel::Meta lidar_meta;$/;"	m	struct:kontiki::measurements::LiDAROrientationMeasurement::Residual	typeref:typename:LiDARModel::Meta
+lidar_meta	include/kontiki/measurements/lidar_position_measurement.h	/^    typename LiDARModel::Meta lidar_meta;$/;"	m	struct:kontiki::measurements::LiDARPositionMeasurement::Residual	typeref:typename:LiDARModel::Meta
+lidar_meta	include/kontiki/measurements/lidar_surfel_point.h	/^    typename LiDARModel::Meta lidar_meta;$/;"	m	struct:kontiki::measurements::LiDARSurfelPoint::Residual	typeref:typename:LiDARModel::Meta
+lidar_point_	include/kontiki/measurements/lidar_surfel_point.h	/^  Eigen::Vector3d lidar_point_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:Eigen::Vector3d
+locked_	include/kontiki/measurements/lidar_surfel_point.h	/^  bool locked_ = true;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:bool
+locked_	include/kontiki/sfm/landmark.h	/^  bool locked_;$/;"	m	class:kontiki::sfm::Landmark	typeref:typename:bool
+locked_	include/kontiki/trajectories/trajectory.h	/^  bool locked_; \/\/ Locked: Trajectory not updated by optimizer$/;"	m	class:kontiki::trajectories::TrajectoryEntity	typeref:typename:bool
+logq	include/kontiki/math/quaternion_math.h	/^Eigen::Quaternion <T> logq(const Eigen::Quaternion <T> &q) {$/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Quaternion<T>
+loss_function_	include/kontiki/measurements/lidar_surfel_point.h	/^  ceres::HuberLoss loss_function_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:ceres::HuberLoss
+loss_function_	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    ceres::HuberLoss loss_function_;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:ceres::HuberLoss
+loss_function_	include/kontiki/measurements/newton_rscamera_measurement.h	/^    ceres::HuberLoss loss_function_;$/;"	m	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:ceres::HuberLoss
+loss_function_	include/kontiki/measurements/static_rscamera_measurement.h	/^    ceres::HuberLoss loss_function_;$/;"	m	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:ceres::HuberLoss
+map_time_	include/kontiki/measurements/lidar_surfel_point.h	/^  double map_time_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:double
+math	include/kontiki/math/quaternion_math.h	/^namespace math {$/;"	n	namespace:kontiki
+max_iterations_	include/kontiki/measurements/newton_rscamera_measurement.h	/^    int max_iterations_;$/;"	m	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:int
+max_time_offset	include/kontiki/sensors/sensors.h	/^  double max_time_offset() const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:double
+max_time_offset	include/kontiki/sensors/sensors.h	/^  double max_time_offset;$/;"	m	struct:kontiki::sensors::internal::SensorMeta	typeref:typename:double
+measurement	include/kontiki/measurements/accelerometer_measurement.h	/^    const AccelerometerMeasurement& measurement;$/;"	m	struct:kontiki::measurements::AccelerometerMeasurement::Residual	typeref:typename:const AccelerometerMeasurement &
+measurement	include/kontiki/measurements/gyroscope_measurement.h	/^    const GyroscopeMeasurement& measurement;$/;"	m	struct:kontiki::measurements::GyroscopeMeasurement::Residual	typeref:typename:const GyroscopeMeasurement &
+measurement	include/kontiki/measurements/lidar_orientation_measurement.h	/^    const LiDAROrientationMeasurement& measurement;$/;"	m	struct:kontiki::measurements::LiDAROrientationMeasurement::Residual	typeref:typename:const LiDAROrientationMeasurement &
+measurement	include/kontiki/measurements/lidar_position_measurement.h	/^    const LiDARPositionMeasurement& measurement;$/;"	m	struct:kontiki::measurements::LiDARPositionMeasurement::Residual	typeref:typename:const LiDARPositionMeasurement &
+measurement	include/kontiki/measurements/lidar_surfel_point.h	/^    const LiDARSurfelPoint &measurement;$/;"	m	struct:kontiki::measurements::LiDARSurfelPoint::Residual	typeref:typename:const LiDARSurfelPoint &
+measurement	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      const LiftingRsCameraMeasurement<CameraModel> &measurement;$/;"	m	struct:kontiki::measurements::LiftingRsCameraMeasurement::Residual	typeref:typename:const LiftingRsCameraMeasurement<CameraModel> &
+measurement	include/kontiki/measurements/newton_rscamera_measurement.h	/^      const NewtonRsCameraMeasurement<CameraModel> &measurement;$/;"	m	struct:kontiki::measurements::NewtonRsCameraMeasurement::Residual	typeref:typename:const NewtonRsCameraMeasurement<CameraModel> &
+measurement	include/kontiki/measurements/orientation_measurement.h	/^    const OrientationMeasurement& measurement;$/;"	m	struct:kontiki::measurements::OrientationMeasurement::Residual	typeref:typename:const OrientationMeasurement &
+measurement	include/kontiki/measurements/position_measurement.h	/^    const PositionMeasurement& measurement;$/;"	m	struct:kontiki::measurements::PositionMeasurement::Residual	typeref:typename:const PositionMeasurement &
+measurement	include/kontiki/measurements/static_rscamera_measurement.h	/^      const StaticRsCameraMeasurement<CameraModel> &measurement;$/;"	m	struct:kontiki::measurements::StaticRsCameraMeasurement::Residual	typeref:typename:const StaticRsCameraMeasurement<CameraModel> &
+measurements	include/kontiki/measurements/accelerometer_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/gyroscope_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/lidar_orientation_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/lidar_position_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/lidar_surfel_point.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/lifting_rscamera_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/newton_rscamera_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/orientation_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/position_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+measurements	include/kontiki/measurements/static_rscamera_measurement.h	/^namespace measurements {$/;"	n	namespace:kontiki
+meta	include/kontiki/measurements/orientation_measurement.h	/^    typename TrajectoryModel::Meta meta;$/;"	m	struct:kontiki::measurements::OrientationMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+meta	include/kontiki/measurements/position_measurement.h	/^    typename TrajectoryModel::Meta meta;$/;"	m	struct:kontiki::measurements::PositionMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+meta_	include/entity/entity.h	/^  MetaType meta_;$/;"	m	class:entity::EntityView	typeref:typename:MetaType
+n	include/kontiki/trajectories/spline_base.h	/^  size_t n; \/\/ Number of knots$/;"	m	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:size_t
+needs	include/kontiki/trajectories/trajectory.h	/^  } needs;$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:struct:kontiki::trajectories::TrajectoryEvaluation::Needs
+new_id	include/kontiki/sfm/landmark.h	/^  static size_t new_id() {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:size_t
+observation	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    std::shared_ptr<sfm::Observation> observation;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:std::shared_ptr<sfm::Observation>
+observation	include/kontiki/measurements/newton_rscamera_measurement.h	/^    std::shared_ptr<sfm::Observation> observation;$/;"	m	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:std::shared_ptr<sfm::Observation>
+observation	include/kontiki/measurements/static_rscamera_measurement.h	/^    std::shared_ptr<sfm::Observation> observation;$/;"	m	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:std::shared_ptr<sfm::Observation>
+observations	include/kontiki/sfm/landmark_impl.h	/^std::vector<std::shared_ptr<Observation>> Landmark::observations() const {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:std::vector<std::shared_ptr<Observation>>
+observations	include/kontiki/sfm/view_impl.h	/^std::vector<std::shared_ptr<Observation>> View::observations() const {$/;"	f	class:kontiki::sfm::View	typeref:typename:std::vector<std::shared_ptr<Observation>>
+observations_	include/kontiki/sfm/landmark.h	/^  std::vector<std::weak_ptr<Observation>> observations_;$/;"	m	class:kontiki::sfm::Landmark	typeref:typename:std::vector<std::weak_ptr<Observation>>
+observations_	include/kontiki/sfm/view.h	/^  std::vector<std::shared_ptr<Observation>> observations_;$/;"	m	class:kontiki::sfm::View	typeref:typename:std::vector<std::shared_ptr<Observation>>
+operator ()	include/kontiki/measurements/accelerometer_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::AccelerometerMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/gyroscope_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::GyroscopeMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/lidar_orientation_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::LiDAROrientationMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/lidar_position_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::LiDARPositionMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/lidar_surfel_point.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::LiDARSurfelPoint::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::LiftingRsCameraMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/newton_rscamera_measurement.h	/^      bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::NewtonRsCameraMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/orientation_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::OrientationMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/position_measurement.h	/^    bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::PositionMeasurement::Residual	typeref:typename:bool
+operator ()	include/kontiki/measurements/static_rscamera_measurement.h	/^      bool operator()(T const* const* params, T* residual) const {$/;"	f	struct:kontiki::measurements::StaticRsCameraMeasurement::Residual	typeref:typename:bool
+orientation	include/kontiki/trajectories/trajectory.h	/^  Eigen::Quaternion<T> orientation; \/\/ Orientation in world coordinates. x_world = orientation/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Eigen::Quaternion<T>
+orientation_parameterization_	include/kontiki/sensors/sensors.h	/^  std::unique_ptr<ceres::EigenQuaternionParameterization> orientation_parameterization_;$/;"	m	class:kontiki::sensors::internal::SensorEntity	typeref:typename:std::unique_ptr<ceres::EigenQuaternionParameterization>
+p	include/kontiki/measurements/position_measurement.h	/^  Vector3 p;$/;"	m	class:kontiki::measurements::PositionMeasurement	typeref:typename:Vector3
+p_	include/kontiki/measurements/lidar_position_measurement.h	/^  Vector3 p_;$/;"	m	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:Vector3
+p_	include/kontiki/measurements/position_measurement.h	/^  Vector3 p_;$/;"	m	class:kontiki::measurements::AnotherMeasurement	typeref:typename:Vector3
+parameterization	include/entity/paramstore/paramstore.h	/^  ceres::LocalParameterization* parameterization;$/;"	m	struct:entity::ParameterInfo	typeref:typename:ceres::LocalParameterization *
+parameterization	include/kontiki/trajectories/spline_base.h	/^  virtual ceres::LocalParameterization* parameterization() const {$/;"	f	struct:kontiki::trajectories::internal::ControlPointInfo	typeref:typename:ceres::LocalParameterization *
+parameterization	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  ceres::LocalParameterization *parameterization() const override {$/;"	f	struct:kontiki::trajectories::internal::SO3SplineControlPointInfo	typeref:typename:ceres::LocalParameterization *
+parameterization_	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^  std::unique_ptr<ceres::EigenQuaternionParameterization> parameterization_;$/;"	m	struct:kontiki::trajectories::internal::SO3SplineControlPointInfo	typeref:typename:std::unique_ptr<ceres::EigenQuaternionParameterization>
+parameters_	include/entity/paramstore/dynamic_pstore.h	/^  std::vector<ParameterInfo<T>> parameters_;$/;"	m	class:entity::DynamicParameterStore	typeref:typename:std::vector<ParameterInfo<T>>
+params	include/entity/paramstore/pointer_pstore.h	/^  T const* const* params;$/;"	m	struct:entity::PointerParameterStore	typeref:typename:T const * const *
+plane_	include/kontiki/measurements/lidar_surfel_point.h	/^  double* plane_; \/\/ double plane_[3]; \/\/Eigen::Vector4d plane_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:double *
+point2plane	include/kontiki/measurements/lidar_surfel_point.h	/^  Eigen::Matrix<double, 1, 1> point2plane(const type::Trajectory<TrajectoryModel, double> &traje/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:Eigen::Matrix<double,1,1>
+position	include/kontiki/trajectories/trajectory.h	/^  Vector3 position; \/\/ Position in world coordinates$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Vector3
+problem	include/kontiki/trajectory_estimator.h	/^  ceres::Problem& problem() {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:ceres::Problem &
+problem_	include/kontiki/trajectory_estimator.h	/^  ceres::Problem problem_;$/;"	m	class:kontiki::TrajectoryEstimator	typeref:typename:ceres::Problem
+pstore_	include/entity/entity.h	/^  std::unique_ptr<ParameterStore<T>> pstore_;$/;"	m	class:entity::EntityView	typeref:typename:std::unique_ptr<ParameterStore<T>>
+q	include/kontiki/measurements/orientation_measurement.h	/^  Quaternion q;$/;"	m	class:kontiki::measurements::OrientationMeasurement	typeref:typename:Quaternion
+q_	include/kontiki/measurements/lidar_orientation_measurement.h	/^  Quat q_;$/;"	m	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:Quat
+r3_meta	include/kontiki/trajectories/split_trajectory.h	/^  R3Meta r3_meta;$/;"	m	struct:kontiki::trajectories::internal::SplitMeta	typeref:typename:R3Meta
+r3_trajectory_	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<UniformR3SplineTrajectory> r3_trajectory_;$/;"	m	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:std::shared_ptr<UniformR3SplineTrajectory>
+r3_view_	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<R3View> r3_view_;$/;"	m	class:kontiki::trajectories::internal::SplitView	typeref:typename:std::shared_ptr<R3View>
+readout	include/kontiki/sensors/camera.h	/^  T readout() const {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:T
+readout	include/kontiki/sensors/camera.h	/^  double readout;$/;"	m	struct:kontiki::sensors::internal::CameraMeta	typeref:typename:double
+reference	include/kontiki/sfm/landmark_impl.h	/^std::shared_ptr<Observation> Landmark::reference() const {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:std::shared_ptr<Observation>
+reference_observation_	include/kontiki/sfm/landmark.h	/^  std::weak_ptr<Observation> reference_observation_;$/;"	m	class:kontiki::sfm::Landmark	typeref:typename:std::weak_ptr<Observation>
+refined_gravity	include/kontiki/sensors/imu.h	/^  Vector3 refined_gravity() const {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:Vector3
+relative_orientation	include/kontiki/sensors/sensors.h	/^  QuaternionMap relative_orientation() const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:QuaternionMap
+relative_orientation_locked_	include/kontiki/sensors/sensors.h	/^  bool relative_orientation_locked_;$/;"	m	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+relative_position	include/kontiki/sensors/sensors.h	/^  Vector3Map relative_position() const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:Vector3Map
+relative_position_locked_	include/kontiki/sensors/sensors.h	/^  bool relative_position_locked_;$/;"	m	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+reprojectPoint2map	include/kontiki/measurements/lidar_surfel_point.h	/^  Eigen::Matrix<T, 1, 1> reprojectPoint2map(const type::Trajectory<TrajectoryModel, T>& trajecto/;"	f	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:Eigen::Matrix<T,1,1>
+reproject_lifting	include/kontiki/measurements/lifting_rscamera_measurement.h	/^Eigen::Matrix<T, 2, 1> reproject_lifting(const sfm::Observation& ref,$/;"	f	namespace:kontiki::measurements	typeref:typename:Eigen::Matrix<T,2,1>
+reproject_newton	include/kontiki/measurements/newton_rscamera_measurement.h	/^Eigen::Matrix<T, 2, 1> reproject_newton(const sfm::Observation& ref,$/;"	f	namespace:kontiki::measurements	typeref:typename:Eigen::Matrix<T,2,1>
+reproject_static	include/kontiki/measurements/static_rscamera_measurement.h	/^Eigen::Matrix<T, 2, 1> reproject_static(const sfm::Observation& ref,$/;"	f	namespace:kontiki::measurements	typeref:typename:Eigen::Matrix<T,2,1>
+rows	include/kontiki/sensors/camera.h	/^  size_t rows() const {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:size_t
+rows	include/kontiki/sensors/camera.h	/^  size_t rows;$/;"	m	struct:kontiki::sensors::internal::CameraMeta	typeref:typename:size_t
+segment_entity_	include/kontiki/trajectories/spline_base.h	/^  std::shared_ptr<SegmentType> segment_entity_;$/;"	m	class:kontiki::trajectories::internal::SplineEntity	typeref:typename:std::shared_ptr<SegmentType>
+segments	include/kontiki/trajectories/spline_base.h	/^  std::vector<SplineSegmentMeta> segments;$/;"	m	struct:kontiki::trajectories::internal::SplineMeta	typeref:typename:std::vector<SplineSegmentMeta>
+segments	include/kontiki/trajectories/spline_base.h	/^  std::vector<std::shared_ptr<SegmentView>> segments;$/;"	m	class:kontiki::trajectories::internal::SplineView	typeref:typename:std::vector<std::shared_ptr<SegmentView>>
+sensors	include/kontiki/sensors/atan_camera.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/basic_imu.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/camera.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/constant_bias_imu.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/imu.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/lidar.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/pinhole_camera.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/sensors.h	/^namespace sensors {$/;"	n	namespace:kontiki
+sensors	include/kontiki/sensors/vlp16_lidar.h	/^namespace sensors {$/;"	n	namespace:kontiki
+set_accelerometer_bias	include/kontiki/sensors/constant_bias_imu.h	/^  void set_accelerometer_bias(const Vector3& b) {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:void
+set_camera_matrix	include/kontiki/sensors/pinhole_camera.h	/^  void set_camera_matrix(const CameraMatrix& K) {$/;"	f	class:kontiki::sensors::internal::PinholeView	typeref:typename:void
+set_cols	include/kontiki/sensors/camera.h	/^  void set_cols(size_t c) {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:void
+set_frame_nr	include/kontiki/sfm/view_impl.h	/^void View::set_frame_nr(size_t fnr) {$/;"	f	class:kontiki::sfm::View	typeref:typename:void
+set_gamma	include/kontiki/sensors/atan_camera.h	/^  void set_gamma(T gamma) {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:void
+set_gravity_orientation_pitch	include/kontiki/sensors/imu.h	/^  void set_gravity_orientation_pitch(T gp) {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:void
+set_gravity_orientation_roll	include/kontiki/sensors/imu.h	/^  void set_gravity_orientation_roll(T gr) {$/;"	f	class:kontiki::sensors::internal::ImuView	typeref:typename:void
+set_gyroscope_bias	include/kontiki/sensors/constant_bias_imu.h	/^  void set_gyroscope_bias(const Vector3 &b) {$/;"	f	class:kontiki::sensors::internal::ConstantBiasImuView	typeref:typename:void
+set_inverse_depth	include/kontiki/sfm/landmark_impl.h	/^void Landmark::set_inverse_depth(double x) {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:void
+set_max_time_offset	include/kontiki/sensors/sensors.h	/^  void set_max_time_offset(double max) {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:void
+set_readout	include/kontiki/sensors/camera.h	/^  void set_readout(T r) {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:void
+set_reference	include/kontiki/sfm/landmark_impl.h	/^void Landmark::set_reference(std::shared_ptr<Observation> new_ref) {$/;"	f	class:kontiki::sfm::Landmark	typeref:typename:void
+set_relative_orientation	include/kontiki/sensors/sensors.h	/^  void set_relative_orientation(const Quaternion &q) {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:void
+set_relative_position	include/kontiki/sensors/sensors.h	/^  void set_relative_position(const Vector3 &p) {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:void
+set_rows	include/kontiki/sensors/camera.h	/^  void set_rows(size_t r) {$/;"	f	class:kontiki::sensors::internal::CameraView	typeref:typename:void
+set_t0	include/kontiki/sfm/view_impl.h	/^void View::set_t0(double t0) {$/;"	f	class:kontiki::sfm::View	typeref:typename:void
+set_time_offset	include/kontiki/sensors/sensors.h	/^  void set_time_offset(T d) {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:void
+set_uv	include/kontiki/sfm/observation_impl.h	/^void Observation::set_uv(const Eigen::Vector2d &uv) {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:void
+set_wc	include/kontiki/sensors/atan_camera.h	/^  void set_wc(const Vector2& wc) {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:void
+sfm	include/kontiki/sfm/landmark.h	/^namespace sfm {$/;"	n	namespace:kontiki
+sfm	include/kontiki/sfm/landmark_impl.h	/^namespace sfm {$/;"	n	namespace:kontiki
+sfm	include/kontiki/sfm/observation.h	/^namespace sfm {$/;"	n	namespace:kontiki
+sfm	include/kontiki/sfm/observation_impl.h	/^namespace sfm {$/;"	n	namespace:kontiki
+sfm	include/kontiki/sfm/view.h	/^namespace sfm {$/;"	n	namespace:kontiki
+sfm	include/kontiki/sfm/view_impl.h	/^namespace sfm {$/;"	n	namespace:kontiki
+size	include/entity/paramstore/paramstore.h	/^  size_t size;      \/\/ Size of data$/;"	m	struct:entity::ParameterInfo	typeref:typename:size_t
+size	include/kontiki/trajectories/spline_base.h	/^  const int size = Size;$/;"	m	struct:kontiki::trajectories::internal::ControlPointInfo	typeref:typename:const int
+so3_meta	include/kontiki/trajectories/split_trajectory.h	/^  SO3Meta so3_meta;$/;"	m	struct:kontiki::trajectories::internal::SplitMeta	typeref:typename:SO3Meta
+so3_trajectory_	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<UniformSO3SplineTrajectory> so3_trajectory_;$/;"	m	class:kontiki::trajectories::internal::SplitEntity	typeref:typename:std::shared_ptr<UniformSO3SplineTrajectory>
+so3_view_	include/kontiki/trajectories/split_trajectory.h	/^  std::shared_ptr<SO3View> so3_view_;$/;"	m	class:kontiki::trajectories::internal::SplitView	typeref:typename:std::shared_ptr<SO3View>
+t	include/kontiki/measurements/accelerometer_measurement.h	/^  double t;  \/\/ Time$/;"	m	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:double
+t	include/kontiki/measurements/gyroscope_measurement.h	/^  double t;  \/\/ Time$/;"	m	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:double
+t	include/kontiki/measurements/lidar_orientation_measurement.h	/^  double t;$/;"	m	class:kontiki::measurements::LiDAROrientationMeasurement	typeref:typename:double
+t	include/kontiki/measurements/lidar_position_measurement.h	/^  double t;$/;"	m	class:kontiki::measurements::LiDARPositionMeasurement	typeref:typename:double
+t	include/kontiki/measurements/orientation_measurement.h	/^  double t;$/;"	m	class:kontiki::measurements::OrientationMeasurement	typeref:typename:double
+t	include/kontiki/measurements/position_measurement.h	/^  double t;$/;"	m	class:kontiki::measurements::PositionMeasurement	typeref:typename:double
+t0	include/kontiki/sfm/view_impl.h	/^double View::t0() const {$/;"	f	class:kontiki::sfm::View	typeref:typename:double
+t0	include/kontiki/trajectories/spline_base.h	/^  T t0() const {$/;"	f	class:kontiki::trajectories::internal::SplineSegmentView	typeref:typename:T
+t0	include/kontiki/trajectories/spline_base.h	/^  double t0() const {$/;"	f	class:kontiki::trajectories::internal::SplineView	typeref:typename:double
+t0	include/kontiki/trajectories/spline_base.h	/^  double t0; \/\/ First valid time$/;"	m	struct:kontiki::trajectories::internal::SplineSegmentMeta	typeref:typename:double
+t0_	include/kontiki/sfm/view.h	/^  double t0_;$/;"	m	class:kontiki::sfm::View	typeref:typename:double
+t_	include/kontiki/measurements/position_measurement.h	/^  double t_;$/;"	m	class:kontiki::measurements::AnotherMeasurement	typeref:typename:double
+time_init_t	include/kontiki/types.h	/^using time_init_t = std::initializer_list<time_span_t>;$/;"	t	namespace:kontiki	typeref:typename:std::initializer_list<time_span_t>
+time_offset	include/kontiki/sensors/sensors.h	/^  T& time_offset() const {$/;"	f	class:kontiki::sensors::internal::SensorView	typeref:typename:T &
+time_offset_locked_	include/kontiki/sensors/sensors.h	/^  bool time_offset_locked_;$/;"	m	class:kontiki::sensors::internal::SensorEntity	typeref:typename:bool
+time_span_t	include/kontiki/types.h	/^using time_span_t = std::pair<double, double>;$/;"	t	namespace:kontiki	typeref:typename:std::pair<double,double>
+timestamp_	include/kontiki/measurements/lidar_surfel_point.h	/^  double timestamp_;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:double
+trajectories	include/kontiki/trajectories/spline_base.h	/^namespace trajectories {$/;"	n	namespace:kontiki
+trajectories	include/kontiki/trajectories/split_trajectory.h	/^namespace trajectories {$/;"	n	namespace:kontiki
+trajectories	include/kontiki/trajectories/trajectory.h	/^namespace trajectories {$/;"	n	namespace:kontiki
+trajectories	include/kontiki/trajectories/uniform_r3_spline_trajectory.h	/^namespace trajectories {$/;"	n	namespace:kontiki
+trajectories	include/kontiki/trajectories/uniform_so3_spline_trajectory.h	/^namespace trajectories {$/;"	n	namespace:kontiki
+trajectory	include/kontiki/trajectory_estimator.h	/^  auto trajectory() const {$/;"	f	class:kontiki::TrajectoryEstimator	typeref:typename:auto
+trajectory_	include/kontiki/trajectory_estimator.h	/^  std::shared_ptr<TrajectoryModel> trajectory_;$/;"	m	class:kontiki::TrajectoryEstimator	typeref:typename:std::shared_ptr<TrajectoryModel>
+trajectory_meta	include/kontiki/measurements/accelerometer_measurement.h	/^    typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::AccelerometerMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/gyroscope_measurement.h	/^    typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::GyroscopeMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/lidar_orientation_measurement.h	/^    typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::LiDAROrientationMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/lidar_position_measurement.h	/^    typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::LiDARPositionMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/lidar_surfel_point.h	/^    typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::LiDARSurfelPoint::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/lifting_rscamera_measurement.h	/^      typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::LiftingRsCameraMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/newton_rscamera_measurement.h	/^      typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::NewtonRsCameraMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+trajectory_meta	include/kontiki/measurements/static_rscamera_measurement.h	/^      typename TrajectoryModel::Meta trajectory_meta;$/;"	m	struct:kontiki::measurements::StaticRsCameraMeasurement::Residual	typeref:typename:TrajectoryModel::Meta
+type	include/entity/entity.h	/^namespace type {$/;"	n	namespace:entity
+type	include/kontiki/sensors/camera.h	/^namespace type {$/;"	n	namespace:kontiki
+type	include/kontiki/sensors/imu.h	/^namespace type {$/;"	n	namespace:kontiki
+type	include/kontiki/sensors/lidar.h	/^namespace type {$/;"	n	namespace:kontiki
+type	include/kontiki/sensors/sensors.h	/^namespace type {$/;"	n	namespace:kontiki
+type	include/kontiki/trajectories/spline_base.h	/^  using type = Type;$/;"	t	struct:kontiki::trajectories::internal::ControlPointInfo	typeref:typename:Type
+type	include/kontiki/trajectories/trajectory.h	/^namespace type {$/;"	n	namespace:kontiki
+type	include/kontiki/types.h	/^namespace type {$/;"	n	namespace:kontiki
+u	include/kontiki/sfm/observation_impl.h	/^double Observation::u() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:double
+uv	include/kontiki/sfm/observation_impl.h	/^Eigen::Vector2d Observation::uv() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:Eigen::Vector2d
+uv_	include/kontiki/sfm/observation.h	/^  Eigen::Vector2d uv_;$/;"	m	class:kontiki::sfm::Observation	typeref:typename:Eigen::Vector2d
+v	include/kontiki/sfm/observation_impl.h	/^double Observation::v() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:double
+vector_sandwich	include/kontiki/math/quaternion_math.h	/^Eigen::Matrix<T, 3, 1> vector_sandwich(const Eigen::Quaternion<T> &qa,$/;"	f	namespace:kontiki::math	typeref:typename:Eigen::Matrix<T,3,1>
+velocity	include/kontiki/trajectories/trajectory.h	/^  Vector3 velocity; \/\/ Velocity relative to world coordinates$/;"	m	struct:kontiki::trajectories::TrajectoryEvaluation	typeref:typename:Vector3
+view	include/kontiki/sfm/observation_impl.h	/^std::shared_ptr<View> Observation::view() const {$/;"	f	class:kontiki::sfm::Observation	typeref:typename:std::shared_ptr<View>
+view_	include/kontiki/sfm/observation.h	/^  std::weak_ptr<View> view_;$/;"	m	class:kontiki::sfm::Observation	typeref:typename:std::weak_ptr<View>
+vt_	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    double vt_;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:double
+vt_orig_	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    const double vt_orig_;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:const double
+w	include/kontiki/measurements/gyroscope_measurement.h	/^  Vector3 w; \/\/ Gyroscope angular velocity measurement (rad\/s)$/;"	m	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:Vector3
+wc	include/kontiki/sensors/atan_camera.h	/^  Eigen::Vector2d wc;$/;"	m	struct:kontiki::sensors::internal::AtanMeta	typeref:typename:Eigen::Vector2d
+wc	include/kontiki/sensors/atan_camera.h	/^  Vector2 wc() const {$/;"	f	class:kontiki::sensors::internal::AtanView	typeref:typename:Vector2
+weight	include/kontiki/measurements/accelerometer_measurement.h	/^  double weight;$/;"	m	class:kontiki::measurements::AccelerometerMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/gyroscope_measurement.h	/^  double weight;$/;"	m	class:kontiki::measurements::GyroscopeMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/lidar_surfel_point.h	/^  double weight;$/;"	m	class:kontiki::measurements::LiDARSurfelPoint	typeref:typename:double
+weight	include/kontiki/measurements/lifting_rscamera_measurement.h	/^    double weight;$/;"	m	class:kontiki::measurements::LiftingRsCameraMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/newton_rscamera_measurement.h	/^    double weight;$/;"	m	class:kontiki::measurements::NewtonRsCameraMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/orientation_measurement.h	/^  double weight;$/;"	m	class:kontiki::measurements::OrientationMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/position_measurement.h	/^  double weight;$/;"	m	class:kontiki::measurements::PositionMeasurement	typeref:typename:double
+weight	include/kontiki/measurements/static_rscamera_measurement.h	/^    double weight;$/;"	m	class:kontiki::measurements::StaticRsCameraMeasurement	typeref:typename:double
+y	include/kontiki/sensors/camera.h	/^  Vector2 y;$/;"	m	struct:kontiki::sensors::internal::CameraEvaluation	typeref:typename:Vector2
+~View	include/kontiki/sfm/view_impl.h	/^View::~View() {$/;"	f	class:kontiki::sfm::View
