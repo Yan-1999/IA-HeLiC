@@ -19,6 +19,7 @@ This package runs on Ubuntu 20.04 (Focal Fossa) with [ROS Noetic](http://wiki.ro
 | [Livox-SDK](https://github.com/Livox-SDK/Livox-SDK) | 2.2.0 |
 | [OpenCV](https://opencv.org) | 4.2.0 |
 | [OpenMP](https://www.openmp.org) | |
+| [PCL](https://pointclouds.org) | 1.10.0 |
 | [ndt_omp](https://github.com/koide3/ndt_omp) | commit 0852c95 |
 | [Sophus](https://github.com/strasdat/Sophus) | 1.22.10 |
 
@@ -26,7 +27,7 @@ This package runs on Ubuntu 20.04 (Focal Fossa) with [ROS Noetic](http://wiki.ro
 
 1. Run the following command in the terminal:
     ```bash
-    sudo apt-get install libboost-dev libceres-dev libceres1 libeigen3-dev libgoogle-glog-dev libopencv-dev
+    sudo apt-get install libboost-dev libceres-dev libceres1 libeigen3-dev libgoogle-glog-dev libopencv-dev libpcl-dev
     ```
 1. Follow the installation guide of [Livox-SDK](https://github.com/Livox-SDK/Livox-SDK/blob/master/README.md).
 
