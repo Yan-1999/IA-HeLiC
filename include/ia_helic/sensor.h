@@ -11,9 +11,9 @@
 #include "Eigen/Core"
 #include "Eigen/Geometry"
 #include "fmt/format.h"
-#include "helix_calib/odom.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/utils.h"
 #include "kontiki/measurements/accelerometer_measurement.h"
 #include "kontiki/measurements/gyroscope_measurement.h"
 #include "kontiki/measurements/lidar_surfel_point.h"
@@ -30,14 +30,14 @@
 #include "ros/time.h"
 #include "rosbag/message_instance.h"
 
-namespace helix
+namespace ia_helic
 {
 class LiDAR
 {
 public:
   using Sensor = kontiki::sensors::VLP16LiDAR;
   
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
 private:
   LiDARLabel label_;
@@ -141,7 +141,7 @@ public:
   {
     if (!local_map_)
     {
-      HELIX_THROW("No local map!");
+      IA_HELIC_THROW("No local map!");
     }
     map_kd_tree_.setInputCloud(local_map_);
   }
@@ -180,7 +180,7 @@ public:
   {
     if (!local_map_)
     {
-      HELIX_THROW("Local map is empty!");
+      IA_HELIC_THROW("Local map is empty!");
     }
 
     local_surfel_map_ = std::make_shared<SurfelMap>(label_);
@@ -213,7 +213,7 @@ public:
    * \param[out] out_cloud Point cloud in map frame
    */
   void projectPointCloudToGlobalMap(const kontiki::trajectories::SplitTrajectory& traj, ros::Time map_time,
-                                    const RigidTransform& T_LtoS, helix::MapCloud& out_cloud);
+                                    const RigidTransform& T_LtoS, ia_helic::MapCloud& out_cloud);
 
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 };
@@ -282,10 +282,10 @@ public:
     std::sort(data_.begin(), data_.end(), [](const IMUData& lhs, const IMUData& rhs) { return lhs.t < rhs.t; });
   }
 };
-}  // namespace helix
+}  // namespace ia_helic
 
 template <typename PointT>
-void helix::LiDAR::loadROSBagCallback(const rosbag::MessageInstance& m)
+void ia_helic::LiDAR::loadROSBagCallback(const rosbag::MessageInstance& m)
 {
   sensor_msgs::PointCloud2::Ptr p_msg = m.instantiate<sensor_msgs::PointCloud2>();
 

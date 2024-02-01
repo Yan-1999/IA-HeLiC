@@ -3,8 +3,8 @@
 
 #include "Eigen/Core"
 #include "Eigen/Geometry"
-#include "helix_calib/ndt_aligner.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/ndt_aligner.h"
+#include "ia_helic/utils.h"
 #include "omp.h"
 #include "pcl/common/io.h"
 #include "pcl/make_shared.h"
@@ -18,7 +18,7 @@
 #include "pcl/impl/pcl_base.hpp"
 #endif
 
-void helix::NDTAligner::loadParams(ros::NodeHandle& nh, const std::string& prefix)
+void ia_helic::NDTAligner::loadParams(ros::NodeHandle& nh, const std::string& prefix)
 {
   nh.param(prefix + "/enable", enabled, true);
   nh.param(prefix + "/voxel_size", voxel_size, 0.2f);
@@ -28,7 +28,7 @@ void helix::NDTAligner::loadParams(ros::NodeHandle& nh, const std::string& prefi
   nh.param(prefix + "/ndt_iterations", ndt_iterations, 100);
 }
 
-void helix::NDTAligner::align(const MapCloud::ConstPtr& from, const MapCloud::ConstPtr& to, RigidTransform& io_T,
+void ia_helic::NDTAligner::align(const MapCloud::ConstPtr& from, const MapCloud::ConstPtr& to, RigidTransform& io_T,
                               MapCloud& out_cloud) const
 {
   std::array<MapCloud::ConstPtr, 2> input_clouds = { from, to };

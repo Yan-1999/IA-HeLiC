@@ -1,4 +1,4 @@
-#include "helix_calib/odom_aligner.h"
+#include "ia_helic/odom_aligner.h"
 #include <sys/wait.h>
 
 #include <array>
@@ -18,8 +18,8 @@
 #include "Eigen/Core"
 #include "Eigen/Dense"
 #include "Eigen/Geometry"
-#include "helix_calib/odom.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/utils.h"
 #include "opencv2/calib3d.hpp"
 #include "opencv2/core/mat.hpp"
 #include "opencv2/core/traits.hpp"
@@ -29,12 +29,12 @@
 #include "ros/time.h"
 #include "sophus/se3.hpp"
 
-void helix::OdomAligner::align(const helix::Odometry& odom_A, const helix::Odometry& odom_B,
-                               helix::RigidTransform& out_T_AtoB, ros::Time& out_ref_time)
+void ia_helic::OdomAligner::align(const ia_helic::Odometry& odom_A, const ia_helic::Odometry& odom_B,
+                               ia_helic::RigidTransform& out_T_AtoB, ros::Time& out_ref_time)
 {
   if (odom_A.poses().empty() || odom_B.poses().empty())
   {
-    HELIX_THROW("No odometry data!");
+    IA_HELIC_THROW("No odometry data!");
   }
     
   ros::Time min_t = odom_B.min_t(), max_t = odom_B.max_t();
@@ -48,7 +48,7 @@ void helix::OdomAligner::align(const helix::Odometry& odom_A, const helix::Odome
   }
   if (A_map_idx == odom_A.size())
   {
-    HELIX_THROW("Odometry time do not overlap.");
+    IA_HELIC_THROW("Odometry time do not overlap.");
   }
 
   // choose a time to be the common reference time
@@ -61,8 +61,8 @@ void helix::OdomAligner::align(const helix::Odometry& odom_A, const helix::Odome
   ret = odom_B.getPose(out_ref_time, get_pose_idx, T_BrtoBb0);
   assert(ret);
 
-  helix::RigidTransform T_Bb0toBr = T_BrtoBb0.transform().inverse();
-  helix::RigidTransform T_Aa0toAr = odom_A.poses()[A_map_idx].getTransform().inverse();
+  ia_helic::RigidTransform T_Bb0toBr = T_BrtoBb0.transform().inverse();
+  ia_helic::RigidTransform T_Aa0toAr = odom_A.poses()[A_map_idx].getTransform().inverse();
 
   std::vector<cv::Mat> T_Ar_to_Ai_cv_R, T_Bi_to_Br_cv_R, T_Ar_to_Ai_cv_t, T_Bi_to_Br_cv_t;
   cv::Mat T_AtoB_R_cv, T_AtoB_t_cv;
@@ -75,16 +75,16 @@ void helix::OdomAligner::align(const helix::Odometry& odom_A, const helix::Odome
   T_Bi_to_Br_cv_t.reserve(odom_A.size());
 
   std::size_t constraint_cnt = 0;
-  helix::PoseStamped T_Bi_to_Bb0;
+  ia_helic::PoseStamped T_Bi_to_Bb0;
   for (std::size_t i = A_map_idx; i < odom_A.size(); i++)
   {
     auto& T_Ai_to_Aa0 = odom_A.poses()[i];
     ret = odom_B.getPose(T_Ai_to_Aa0.t(), get_pose_idx, T_Bi_to_Bb0);
     if (ret)
     {
-      helix::RigidTransform T_Ai_to_Ar = T_Aa0toAr * T_Ai_to_Aa0.getTransform();
-      helix::RigidTransform T_Bi_to_Br = T_Bb0toBr * T_Bi_to_Bb0.transform();
-      helix::RigidTransform T_Ar_to_Ai = T_Ai_to_Ar.inverse();
+      ia_helic::RigidTransform T_Ai_to_Ar = T_Aa0toAr * T_Ai_to_Aa0.getTransform();
+      ia_helic::RigidTransform T_Bi_to_Br = T_Bb0toBr * T_Bi_to_Bb0.transform();
+      ia_helic::RigidTransform T_Ar_to_Ai = T_Ai_to_Ar.inverse();
       T_Ar_to_Ai_cv_R.emplace_back(3, 3, cv::DataType<double>::type);
       T_Bi_to_Br_cv_R.emplace_back(3, 3, cv::DataType<double>::type);
       T_Ar_to_Ai_cv_t.emplace_back(3, 1, cv::DataType<double>::type);
@@ -99,7 +99,7 @@ void helix::OdomAligner::align(const helix::Odometry& odom_A, const helix::Odome
   }
   if (constraint_cnt < 6)
   {
-    HELIX_THROW(fmt::format("Too few constraint! Got {}.", constraint_cnt));
+    IA_HELIC_THROW(fmt::format("Too few constraint! Got {}.", constraint_cnt));
   }
 
   cv::calibrateHandEye(T_Bi_to_Br_cv_R, T_Bi_to_Br_cv_t, T_Ar_to_Ai_cv_R, T_Ar_to_Ai_cv_t, T_AtoB_R_cv, T_AtoB_t_cv,

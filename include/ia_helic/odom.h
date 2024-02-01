@@ -10,16 +10,16 @@
 #include "Eigen/Geometry"
 #include "fmt/format.h"
 #include "geometry_msgs/PoseStamped.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/utils.h"
 #include "ros/time.h"
 
-namespace helix
+namespace ia_helic
 {
 class PoseStamped
 {
 protected:
   ros::Time t_;
-  helix::RigidTransform transform_;
+  ia_helic::RigidTransform transform_;
 
 public:
   PoseStamped()
@@ -70,11 +70,11 @@ public:
 class Odometry
 {
 public:
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
 private:
   bool is_sorted_;
-  helix::AlignedVector<PoseStamped> poses_;
+  ia_helic::AlignedVector<PoseStamped> poses_;
 
 public:
   void emplace_back(double t, double x, double y, double z, double qx, double qy, double qz, double qw)
@@ -112,13 +112,13 @@ public:
     is_sorted_ = true;
   }
 
-  helix::AlignedVector<PoseStamped>& poses()
+  ia_helic::AlignedVector<PoseStamped>& poses()
   {
     is_sorted_ = false;
     return poses_;
   }
 
-  const helix::AlignedVector<PoseStamped>& poses() const
+  const ia_helic::AlignedVector<PoseStamped>& poses() const
   {
     return poses_;
   }
@@ -201,4 +201,4 @@ public:
   void loadTUM(const std::string& filepath);
   void dumpTUM(const std::string& filepath);
 };
-}  // namespace helix
+}  // namespace ia_helic

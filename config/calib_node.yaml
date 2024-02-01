@@ -6,8 +6,8 @@
 lidar_types: [0, 1]
 
 lidar_odoms: # odometries here:
-  - $(find helix_calib)/input/mechanical.txt
-  - $(find helix_calib)/input/solid-state.txt
+  - $(find ia_helic)/input/mechanical.txt
+  - $(find ia_helic)/input/solid-state.txt
 
 topics:
   lidars:
@@ -39,5 +39,5 @@ optimization:
   lidar_weight: 2.0
 
 
-calib_file_path: $(find helix_calib)/result/calib_result_iter{iter}.yml
+calib_file_path: $(find ia_helic)/result/calib_result_iter{iter}.yml
 

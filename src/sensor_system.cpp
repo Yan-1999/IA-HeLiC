@@ -1,4 +1,4 @@
-#include "helix_calib/sensor_system.h"
+#include "ia_helic/sensor_system.h"
 
 #include <algorithm>
 #include <boost/throw_exception.hpp>
@@ -9,11 +9,11 @@
 #include <memory>
 
 #include "Eigen/Geometry"
-#include "helix_calib/odom.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/trajectory.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/trajectory.h"
+#include "ia_helic/utils.h"
 #include "pcl/common/io.h"
 #include "pcl/point_types.h"
 #include "pcl/kdtree/kdtree_flann.h"
@@ -24,7 +24,7 @@
 #include "pcl/kdtree/impl/kdtree_flann.hpp"
 #endif
 
-void helix::SensorSystem::alignCloudNDT(const helix::NDTAligner& ndt)
+void ia_helic::SensorSystem::alignCloudNDT(const ia_helic::NDTAligner& ndt)
 {
   if (ndt.is_enabled())
   {
@@ -33,7 +33,7 @@ void helix::SensorSystem::alignCloudNDT(const helix::NDTAligner& ndt)
     auto ref_cloud = lidars_[0].local_map();
     if (!ref_cloud)
     {
-      HELIX_THROW("No local map for LiDAR[0]!");
+      IA_HELIC_THROW("No local map for LiDAR[0]!");
     }
 
     pcl::copyPointCloud(*ref_cloud, *cloud_map_);
@@ -43,7 +43,7 @@ void helix::SensorSystem::alignCloudNDT(const helix::NDTAligner& ndt)
       auto cur_cloud = lidars_[i].local_map();
       if (!cur_cloud)
       {
-        HELIX_THROW(fmt::format("No local map for LiDAR[{}]!", i));
+        IA_HELIC_THROW(fmt::format("No local map for LiDAR[{}]!", i));
       }
       ROS_INFO("NDT Aligning for LiDAR[%zu] -> LiDAR[0]...", i);
       ndt.align(cur_cloud, ref_cloud, params_.L_to_L0()[i], ndt_out);
@@ -55,15 +55,15 @@ void helix::SensorSystem::alignCloudNDT(const helix::NDTAligner& ndt)
   }
   else
   {
-    HELIX_THROW("NDT aligner not enabled!");
+    IA_HELIC_THROW("NDT aligner not enabled!");
   }
 }
 
-void helix::SensorSystem::buildGlobalCloudMap(bool use_trajectory)
+void ia_helic::SensorSystem::buildGlobalCloudMap(bool use_trajectory)
 {
   if (!map_time_.isValid())
   {
-    HELIX_THROW("Map time is not valid!");
+    IA_HELIC_THROW("Map time is not valid!");
   }
   cloud_map_ = pcl::make_shared<MapCloud>();
   for (std::size_t i = 0; i < lidars_.size(); i++)
@@ -123,14 +123,14 @@ inline Eigen::Matrix<typename Derived::Scalar, 4, 4> RightQuatMatrix(const Eigen
   return m;
 }
 
-bool EstimateRotation(const helix::Trajectory& traj, const helix::Odometry& odom, Eigen::Quaterniond& q_ItoS)
+bool EstimateRotation(const ia_helic::Trajectory& traj, const ia_helic::Odometry& odom, Eigen::Quaterniond& q_ItoS)
 {
   constexpr int FLAGS = kontiki::trajectories::EvalOrientation;
   std::shared_ptr<kontiki::trajectories::SplitTrajectory> p_traj = traj.get();
 
   assert(p_traj);
 
-  helix::AlignedVector<Eigen::Matrix4d> A_vec;
+  ia_helic::AlignedVector<Eigen::Matrix4d> A_vec;
   for (size_t j = 1; j < odom.poses().size(); ++j)
   {
     size_t i = j - 1;
@@ -188,7 +188,7 @@ bool EstimateRotation(const helix::Trajectory& traj, const helix::Odometry& odom
   }
 }
 
-void helix::SensorSystem::initSystemTrajectoryIMU(double kont_distance, double time_padding)
+void ia_helic::SensorSystem::initSystemTrajectoryIMU(double kont_distance, double time_padding)
 {
   double min_time = imu_.data().front().t;
   double max_time = imu_.data().back().t;
@@ -208,12 +208,12 @@ void helix::SensorSystem::initSystemTrajectoryIMU(double kont_distance, double t
   }
   else
   {
-    HELIX_THROW("Cannot solve rotation from LiDAR[0] to IMU!");
+    IA_HELIC_THROW("Cannot solve rotation from LiDAR[0] to IMU!");
   }
 }
 
 /*
-void helix::SensorSystem::initSystemTrajectoryLidar0(double kont_distance)
+void ia_helic::SensorSystem::initSystemTrajectoryLidar0(double kont_distance)
 {
   double min_time = lidars_[0].odom().min_t().toSec();
   double max_time = lidars_[0].odom().max_t().toSec();
@@ -224,10 +224,10 @@ void helix::SensorSystem::initSystemTrajectoryLidar0(double kont_distance)
 }
 */
 
-void helix::SensorSystem::buildSurfelMap(int down_sample_rate, bool down_sample_farthest, double surfel_size,
+void ia_helic::SensorSystem::buildSurfelMap(int down_sample_rate, bool down_sample_farthest, double surfel_size,
                                          double associated_radius)
 {
-  helix::AlignedVector<std::size_t> planes;
+  ia_helic::AlignedVector<std::size_t> planes;
   std::vector<std::size_t> point_cnt_lidar(lidars_.size(), 0);
   surfel_map_.setSurfelSize(surfel_size);
   surfel_map_.setAssociateRadius(associated_radius);
@@ -285,17 +285,17 @@ void helix::SensorSystem::buildSurfelMap(int down_sample_rate, bool down_sample_
   }
 }
 
-void buildSurfelPointKDTree(const helix::AlignedVector<helix::SurfelPoint>& spoints,
-                            pcl::KdTreeFLANN<helix::MapPoint>& kd_tree)
+void buildSurfelPointKDTree(const ia_helic::AlignedVector<ia_helic::SurfelPoint>& spoints,
+                            pcl::KdTreeFLANN<ia_helic::MapPoint>& kd_tree)
 {
-  auto local_surfel_points = pcl::make_shared<helix::MapCloud>();
+  auto local_surfel_points = pcl::make_shared<ia_helic::MapCloud>();
   local_surfel_points->resize(spoints.size());
   std::transform(spoints.begin(), spoints.end(), local_surfel_points->begin(),
-                 [](const helix::SurfelPoint& sp) { return sp.map_point; });
+                 [](const ia_helic::SurfelPoint& sp) { return sp.map_point; });
   kd_tree.setInputCloud(local_surfel_points);
 }
 
-void helix::SensorSystem::associateCrossSurfelPoints()
+void ia_helic::SensorSystem::associateCrossSurfelPoints()
 {
   cross_surfel_maps_.resize(n_lidars() * n_lidars());
   AlignedVector<pcl::KdTreeFLANN<MapPoint>> spoint_kd_trees(lidars_.size());
@@ -330,12 +330,12 @@ void helix::SensorSystem::associateCrossSurfelPoints()
   }
 }
 
-void helix::SensorSystem::loadROSBag(const std::string& filepath, const std::vector<std::string>& lidar_topics,
+void ia_helic::SensorSystem::loadROSBag(const std::string& filepath, const std::vector<std::string>& lidar_topics,
                                      const std::string& imu_topic)
 {
   if (lidar_topics.size() < lidars_.size())
   {
-    HELIX_THROW(fmt::format("More LiDAR topics than required! Provide {} LiDAR topics, {} required.",
+    IA_HELIC_THROW(fmt::format("More LiDAR topics than required! Provide {} LiDAR topics, {} required.",
                             lidar_topics.size(), lidars_.size()));
   }
   else if (lidar_topics.size() > lidars_.size())
@@ -352,18 +352,18 @@ void helix::SensorSystem::loadROSBag(const std::string& filepath, const std::vec
     {
       case MECHANICAL_XYZIRT:
         loader.addCallback(lidar_topics[i],
-                           std::bind(&helix::LiDAR::loadROSBagCallback<PointXYZIRT>, &lidar, std::placeholders::_1));
+                           std::bind(&ia_helic::LiDAR::loadROSBagCallback<PointXYZIRT>, &lidar, std::placeholders::_1));
         break;
       case LIVOX_SOLID_STATE:
         loader.addCallback(lidar_topics[i],
-                           std::bind(&helix::LiDAR::loadROSBagLivoxCallback, &lidar, std::placeholders::_1));
+                           std::bind(&ia_helic::LiDAR::loadROSBagLivoxCallback, &lidar, std::placeholders::_1));
         break;
       case MECHANICAL_XYZ:
         loader.addCallback(lidar_topics[i],
-                           std::bind(&helix::LiDAR::loadROSBagCallback<pcl::PointXYZ>, &lidar, std::placeholders::_1));
+                           std::bind(&ia_helic::LiDAR::loadROSBagCallback<pcl::PointXYZ>, &lidar, std::placeholders::_1));
         break;
       default:
-        HELIX_THROW(fmt::format("Unkown LiDAR type: {}.", lidar.type()));
+        IA_HELIC_THROW(fmt::format("Unkown LiDAR type: {}.", lidar.type()));
     }
   }
   loader.addCallback(imu_topic, std::bind(&IMU::loadROSBagCallback, &imu_, std::placeholders::_1));

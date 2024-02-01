@@ -13,7 +13,7 @@
 #include "rosbag/query.h"
 #include "rosbag/view.h"
 
-namespace helix
+namespace ia_helic
 {
 class ROSBagLoader
 {
@@ -64,4 +64,4 @@ public:
     }
   }
 };
-}  // namespace helix
+}  // namespace ia_helic

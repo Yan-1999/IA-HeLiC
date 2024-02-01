@@ -1,4 +1,4 @@
-#include "helix_calib/trajectory.h"
+#include "ia_helic/trajectory.h"
 
 #include <algorithm>
 #include <cmath>
@@ -9,11 +9,11 @@
 #include <ostream>
 #include <vector>
 
-#include "helix_calib/calib_params.h"
-#include "helix_calib/ceres_callbacks.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/calib_params.h"
+#include "ia_helic/ceres_callbacks.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/utils.h"
 #include "kontiki/trajectories/split_trajectory.h"
 
 using namespace kontiki::trajectories;
@@ -21,9 +21,9 @@ using namespace kontiki::trajectories;
 /* --- measurement adding helper functions --- */
 template <typename TrajectoryModel>
 void addGyroscopeMeasurements(std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-                              std::shared_ptr<helix::IMU::Sensor> imu,
-                              const helix::AlignedVector<helix::IMUData>& imu_data,
-                              helix::AlignedVector<std::shared_ptr<helix::IMU::GyroMeasurement>>& measurements,
+                              std::shared_ptr<ia_helic::IMU::Sensor> imu,
+                              const ia_helic::AlignedVector<ia_helic::IMUData>& imu_data,
+                              ia_helic::AlignedVector<std::shared_ptr<ia_helic::IMU::GyroMeasurement>>& measurements,
                               double weight)
 {
   const double min_time = estimator->trajectory()->MinTime();
@@ -39,9 +39,9 @@ void addGyroscopeMeasurements(std::shared_ptr<kontiki::TrajectoryEstimator<Traje
     {
       continue;
     }
-    auto mg = std::make_shared<helix::IMU::GyroMeasurement>(imu, time, datum.gyro, weight);
+    auto mg = std::make_shared<ia_helic::IMU::GyroMeasurement>(imu, time, datum.gyro, weight);
     measurements.push_back(mg);
-    estimator->template AddMeasurement<helix::IMU::GyroMeasurement>(mg);
+    estimator->template AddMeasurement<ia_helic::IMU::GyroMeasurement>(mg);
     cnt++;
   }
   ROS_INFO("#Gyro: %zu.", cnt);
@@ -49,9 +49,9 @@ void addGyroscopeMeasurements(std::shared_ptr<kontiki::TrajectoryEstimator<Traje
 
 template <typename TrajectoryModel>
 void addAccelerometerMeasurements(std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-                                  std::shared_ptr<helix::IMU::Sensor> imu,
-                                  const helix::AlignedVector<helix::IMUData>& imu_data,
-                                  helix::AlignedVector<std::shared_ptr<helix::IMU::AccelMeasurement>>& measurements,
+                                  std::shared_ptr<ia_helic::IMU::Sensor> imu,
+                                  const ia_helic::AlignedVector<ia_helic::IMUData>& imu_data,
+                                  ia_helic::AlignedVector<std::shared_ptr<ia_helic::IMU::AccelMeasurement>>& measurements,
                                   double weight)
 {
   measurements.clear();
@@ -64,18 +64,18 @@ void addAccelerometerMeasurements(std::shared_ptr<kontiki::TrajectoryEstimator<T
     {
       continue;
     }
-    auto ma = std::make_shared<helix::IMU::AccelMeasurement>(imu, datum.t, datum.accel, weight);
+    auto ma = std::make_shared<ia_helic::IMU::AccelMeasurement>(imu, datum.t, datum.accel, weight);
     measurements.push_back(ma);
-    estimator->template AddMeasurement<helix::IMU::AccelMeasurement>(ma);
+    estimator->template AddMeasurement<ia_helic::IMU::AccelMeasurement>(ma);
   }
 }
 /*
 template <typename TrajectoryModel>
 void addGlobalSurfMeasurements(
     std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-    std::shared_ptr<helix::LiDAR::Sensor> lidar, helix::LiDARLabel lidar_label, const helix::SurfelMap& surfel_map,
-    helix::AlignedVector<std::shared_ptr<helix::Trajectory::GlobalSurfelMeasurement>>& measurements,
-    helix::AlignedVector<Eigen::Vector3d>& plane_param_vec, double weight)
+    std::shared_ptr<ia_helic::LiDAR::Sensor> lidar, ia_helic::LiDARLabel lidar_label, const ia_helic::SurfelMap& surfel_map,
+    ia_helic::AlignedVector<std::shared_ptr<ia_helic::Trajectory::GlobalSurfelMeasurement>>& measurements,
+    ia_helic::AlignedVector<Eigen::Vector3d>& plane_param_vec, double weight)
 {
   double map_time = surfel_map.map_time().toSec();
   const double min_time = std::max(map_time, estimator->trajectory()->MinTime());
@@ -88,11 +88,11 @@ void addGlobalSurfMeasurements(
       size_t plane_id = spoint.plane_id;
       Eigen::Vector3d point(spoint.raw_point.getVector3fMap().cast<double>());
 
-      auto msp = std::make_shared<helix::Trajectory::GlobalSurfelMeasurement>(
+      auto msp = std::make_shared<ia_helic::Trajectory::GlobalSurfelMeasurement>(
           lidar, point, plane_param_vec.at(plane_id).data(), time, map_time, 5.0, weight);
       msp->Lock(true);
       measurements.push_back(msp);
-      estimator->template AddMeasurement<helix::Trajectory::GlobalSurfelMeasurement>(msp);
+      estimator->template AddMeasurement<ia_helic::Trajectory::GlobalSurfelMeasurement>(msp);
     }
   }
 }
@@ -101,9 +101,9 @@ void addGlobalSurfMeasurements(
 template <typename TrajectoryModel>
 void addLocalSurfMeasurements(
     std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-    std::shared_ptr<helix::LiDAR::Sensor> lidar, const helix::SurfelMap& surfel_map,
-    helix::AlignedVector<std::shared_ptr<helix::Trajectory::LocalSurfelMeasurement>>& measurements,
-    helix::AlignedVector<Eigen::Vector3d>& plane_param_vec, double weight)
+    std::shared_ptr<ia_helic::LiDAR::Sensor> lidar, const ia_helic::SurfelMap& surfel_map,
+    ia_helic::AlignedVector<std::shared_ptr<ia_helic::Trajectory::LocalSurfelMeasurement>>& measurements,
+    ia_helic::AlignedVector<Eigen::Vector3d>& plane_param_vec, double weight)
 {
   double map_time = surfel_map.map_time().toSec();
   const double min_time = std::max(map_time, estimator->trajectory()->MinTime());
@@ -116,11 +116,11 @@ void addLocalSurfMeasurements(
       size_t plane_id = spoint.plane_id;
       Eigen::Vector3d point(spoint.raw_point.getVector3fMap().cast<double>());
 
-      auto msp = std::make_shared<helix::Trajectory::LocalSurfelMeasurement>(
+      auto msp = std::make_shared<ia_helic::Trajectory::LocalSurfelMeasurement>(
           lidar, point, plane_param_vec.at(plane_id).data(), time, map_time, 5.0, weight);
       msp->Lock(true);
       measurements.push_back(msp);
-      estimator->template AddMeasurement<helix::Trajectory::LocalSurfelMeasurement>(msp);
+      estimator->template AddMeasurement<ia_helic::Trajectory::LocalSurfelMeasurement>(msp);
     }
   }
 }
@@ -128,9 +128,9 @@ void addLocalSurfMeasurements(
 template <typename TrajectoryModel>
 void addCrossSurfMeasurements(
     std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-    std::shared_ptr<helix::LiDAR::Sensor> lidar_spoint, std::shared_ptr<helix::LiDAR::Sensor> lidar_surfel,
-    helix::AlignedVector<Eigen::Vector3d>& plane_param_vec, const helix::CrossSurfelMap& cross_surfel_map,
-    helix::AlignedVector<std::shared_ptr<helix::Trajectory::CrossSurfelMeasurement>>& measurements, double weight)
+    std::shared_ptr<ia_helic::LiDAR::Sensor> lidar_spoint, std::shared_ptr<ia_helic::LiDAR::Sensor> lidar_surfel,
+    ia_helic::AlignedVector<Eigen::Vector3d>& plane_param_vec, const ia_helic::CrossSurfelMap& cross_surfel_map,
+    ia_helic::AlignedVector<std::shared_ptr<ia_helic::Trajectory::CrossSurfelMeasurement>>& measurements, double weight)
 {
   double map_time = cross_surfel_map.map_time().toSec();
   const double min_time = std::max(map_time, estimator->trajectory()->MinTime());
@@ -143,11 +143,11 @@ void addCrossSurfMeasurements(
       size_t plane_id = spoint.plane_id;
       Eigen::Vector3d point(spoint.raw_point.getVector3fMap().cast<double>());
 
-      auto msp = std::make_shared<helix::Trajectory::CrossSurfelMeasurement>(
+      auto msp = std::make_shared<ia_helic::Trajectory::CrossSurfelMeasurement>(
           lidar_spoint, lidar_surfel, point, plane_param_vec.at(plane_id).data(), time, map_time, 5.0, weight);
       msp->Lock(true);
       measurements.push_back(msp);
-      estimator->template AddMeasurement<helix::Trajectory::CrossSurfelMeasurement>(msp);
+      estimator->template AddMeasurement<ia_helic::Trajectory::CrossSurfelMeasurement>(msp);
     }
   }
 }
@@ -155,10 +155,10 @@ void addCrossSurfMeasurements(
 /*
 template <typename TrajectoryModel>
 void addGlobalSurfelRefineCallback(std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-                                   std::shared_ptr<helix::LiDAR::Sensor> lidar)
+                                   std::shared_ptr<ia_helic::LiDAR::Sensor> lidar)
 {
   // Add callback for debug
-  std::unique_ptr<helix::CheckStateCallback> cb = std::make_unique<helix::CheckStateCallback>();
+  std::unique_ptr<ia_helic::CheckStateCallback> cb = std::make_unique<ia_helic::CheckStateCallback>();
   cb->addCheckState("q_LtoL0     :", 4, lidar->relative_orientation().coeffs().data());
   cb->addCheckState("p_LinL0     :", 3, lidar->relative_position().data());
   // imu not used
@@ -171,10 +171,10 @@ void addGlobalSurfelRefineCallback(std::shared_ptr<kontiki::TrajectoryEstimator<
 
 template <typename TrajectoryModel>
 void addLocalSurfelRefineCallback(std::shared_ptr<kontiki::TrajectoryEstimator<TrajectoryModel>> estimator,
-                                  std::shared_ptr<helix::LiDAR::Sensor> lidar, std::shared_ptr<helix::IMU::Sensor> imu)
+                                  std::shared_ptr<ia_helic::LiDAR::Sensor> lidar, std::shared_ptr<ia_helic::IMU::Sensor> imu)
 {
   // Add callback for debug
-  std::unique_ptr<helix::CheckStateCallback> cb = std::make_unique<helix::CheckStateCallback>();
+  std::unique_ptr<ia_helic::CheckStateCallback> cb = std::make_unique<ia_helic::CheckStateCallback>();
   cb->addCheckState("q_LtoI      :", 4, lidar->relative_orientation().coeffs().data());
   cb->addCheckState("p_LinI      :", 3, lidar->relative_position().data());
   cb->addCheckState("time_offset:", 1, &lidar->time_offset());
@@ -183,7 +183,7 @@ void addLocalSurfelRefineCallback(std::shared_ptr<kontiki::TrajectoryEstimator<T
   estimator->AddCallback(std::move(cb), true);
 }
 
-void helix::Trajectory::initSO3TrajWithGyro(IMU& imu)
+void ia_helic::Trajectory::initSO3TrajWithGyro(IMU& imu)
 {
   assert(!imu.data().empty() && "[initialSO3TrajWithGyro]: There's NO imu data for initialization.");
   auto estimator_SO3 = std::make_shared<SO3TrajEstimator>(traj_->SO3Spline());
@@ -206,8 +206,8 @@ void helix::Trajectory::initSO3TrajWithGyro(IMU& imu)
 }
 
 /*
-void helix::Trajectory::trajRefineWithGlobalSurfel(helix::AlignedVector<helix::LiDAR>& lidars,
-                                                   const helix::SurfelMap& surfel_map, CalibParams& params,
+void ia_helic::Trajectory::trajRefineWithGlobalSurfel(ia_helic::AlignedVector<ia_helic::LiDAR>& lidars,
+                                                   const ia_helic::SurfelMap& surfel_map, CalibParams& params,
                                                    bool opt_time_offset)
 {
   AlignedVector<std::shared_ptr<GlobalSurfelMeasurement>> surfel_measurements;
@@ -260,13 +260,13 @@ void helix::Trajectory::trajRefineWithGlobalSurfel(helix::AlignedVector<helix::L
 
 template <class SurfelMeasurementT>
 void getSurfelError(const kontiki::trajectories::SplitTrajectory& traj,
-                    const helix::AlignedVector<std::shared_ptr<SurfelMeasurementT>>& measurements,
-                    helix::ErrorStat& stat)
+                    const ia_helic::AlignedVector<std::shared_ptr<SurfelMeasurementT>>& measurements,
+                    ia_helic::ErrorStat& stat)
 {
   stat.size_ = measurements.size();
   if (stat.size_ > 0)
   {
-    helix::AlignedVector<double> errors(stat.size_);
+    ia_helic::AlignedVector<double> errors(stat.size_);
     for (auto& m : measurements)
     {
       errors.push_back(std::abs(m->template point2plane<kontiki::trajectories::SplitTrajectory>(traj)(0, 0)));
@@ -283,7 +283,7 @@ void getSurfelError(const kontiki::trajectories::SplitTrajectory& traj,
   }
 }
 
-void helix::Trajectory::trajRefineWithLocalAndCrossSurfel(AlignedVector<LiDAR>& lidars, IMU& imu, CalibParams& params,
+void ia_helic::Trajectory::trajRefineWithLocalAndCrossSurfel(AlignedVector<LiDAR>& lidars, IMU& imu, CalibParams& params,
                                                           const AlignedVector<CrossSurfelMap::Ptr>& cross_surfel_maps,
                                                           bool opt_time_offset, bool wo_imu, bool wo_cross_surfel,
                                                           bool wo_local_surfel)
@@ -291,7 +291,7 @@ void helix::Trajectory::trajRefineWithLocalAndCrossSurfel(AlignedVector<LiDAR>& 
   AlignedVector<std::shared_ptr<LocalSurfelMeasurement>> surfel_measurements;
   AlignedVector<std::shared_ptr<CrossSurfelMeasurement>> cross_surfel_measurements;
   AlignedVector<std::shared_ptr<IMU::AccelMeasurement>> acc_measurements;
-  AlignedVector<std::shared_ptr<helix::IMU::GyroMeasurement>> gyro_measurements;
+  AlignedVector<std::shared_ptr<ia_helic::IMU::GyroMeasurement>> gyro_measurements;
   AlignedVector<AlignedVector<Eigen::Vector3d>> plane_params_of_lidars(lidars.size());
 
   std::shared_ptr<SplitTrajEstimator> estimator_split;
@@ -336,7 +336,7 @@ void helix::Trajectory::trajRefineWithLocalAndCrossSurfel(AlignedVector<LiDAR>& 
     auto surfel_map = lidar.local_surfel_map();
     if (!surfel_map)
     {
-      HELIX_THROW(fmt::format("No surfel map for LiDAR {}!", lidar.label()));
+      IA_HELIC_THROW(fmt::format("No surfel map for LiDAR {}!", lidar.label()));
     }
     auto& plane_params = plane_params_of_lidars[label];
     plane_params.resize(surfel_map->surfels().size());
@@ -399,11 +399,11 @@ void helix::Trajectory::trajRefineWithLocalAndCrossSurfel(AlignedVector<LiDAR>& 
 }
 
 /*
-void helix::Trajectory::initTrajWithLidarOdom(const LiDAR& lidar)
+void ia_helic::Trajectory::initTrajWithLidarOdom(const LiDAR& lidar)
 {
   if (lidar.odom().empty())
   {
-    HELIX_THROW(fmt::format("No odometry data for LiDAR {}!", lidar.label()));
+    IA_HELIC_THROW(fmt::format("No odometry data for LiDAR {}!", lidar.label()));
   }
 
   AlignedVector<std::shared_ptr<OrientationMeasurement>> om_vec;

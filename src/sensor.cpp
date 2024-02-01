@@ -1,4 +1,4 @@
-#include "helix_calib/sensor.h"
+#include "ia_helic/sensor.h"
 
 #include <cmath>
 #include <cstdlib>
@@ -10,8 +10,8 @@
 #include <vector>
 
 #include "Eigen/Core"
-#include "helix_calib/odom.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/utils.h"
 #include "kontiki/trajectories/split_trajectory.h"
 #include "kontiki/trajectories/trajectory.h"
 #include "livox_ros_driver/CustomMsg.h"
@@ -37,7 +37,7 @@
 #include "pcl/kdtree/impl/kdtree_flann.hpp"
 #endif
 
-void helix::LiDAR::loadROSBagLivoxCallback(const rosbag::MessageInstance& m)
+void ia_helic::LiDAR::loadROSBagLivoxCallback(const rosbag::MessageInstance& m)
 {
   livox_ros_driver::CustomMsg::Ptr p_msg_cloud = m.instantiate<livox_ros_driver::CustomMsg>();
 
@@ -64,8 +64,8 @@ inline bool isfinite(const Eigen::Matrix<Scalar, 3, 1>& vec)
   return std::isfinite(vec(0)) && std::isfinite(vec(1)) && std::isfinite(vec(2));
 }
 
-void helix::LiDAR::projectPointCloudToGlobalMap(const kontiki::trajectories::SplitTrajectory& traj, ros::Time map_time,
-                                                const RigidTransform& T_LtoS, helix::MapCloud& out_cloud)
+void ia_helic::LiDAR::projectPointCloudToGlobalMap(const kontiki::trajectories::SplitTrajectory& traj, ros::Time map_time,
+                                                const RigidTransform& T_LtoS, ia_helic::MapCloud& out_cloud)
 {
   constexpr std::size_t BATCH_SIZE = 65536;
   constexpr double T_TOLERENCE = 0.0005;
@@ -73,7 +73,7 @@ void helix::LiDAR::projectPointCloudToGlobalMap(const kontiki::trajectories::Spl
 
   if (!raw_cloud_)
   {
-    HELIX_THROW("Raw cloud is not initialized!");
+    IA_HELIC_THROW("Raw cloud is not initialized!");
   }
 
   std::size_t point_cnt = 0;
@@ -143,19 +143,19 @@ void helix::LiDAR::projectPointCloudToGlobalMap(const kontiki::trajectories::Spl
   out_cloud.points.shrink_to_fit();
 }
 
-void helix::LiDAR::buildLocalMap(const Odometry& odom, ros::Time map_time)
+void ia_helic::LiDAR::buildLocalMap(const Odometry& odom, ros::Time map_time)
 {
   constexpr std::size_t BATCH_SIZE = 65536;
   constexpr double T_TOLERENCE = 0.0005;
 
   if (!raw_cloud_)
   {
-    HELIX_THROW("Raw cloud is not initialized!");
+    IA_HELIC_THROW("Raw cloud is not initialized!");
   }
 
   if (odom.empty())
   {
-    HELIX_THROW("Odometry is empty!");
+    IA_HELIC_THROW("Odometry is empty!");
   }
 
   local_map_time_ = map_time;
@@ -171,7 +171,7 @@ void helix::LiDAR::buildLocalMap(const Odometry& odom, ros::Time map_time)
   bool ret = odom_.getPose(map_time, index, ref_pose);
   if (!ret)
   {
-    HELIX_THROW("Map time is not in odometry!");
+    IA_HELIC_THROW("Map time is not in odometry!");
   }
 
   auto T_L0toM = ref_pose.transform().inverse().cast<float>();
@@ -182,7 +182,7 @@ void helix::LiDAR::buildLocalMap(const Odometry& odom, ros::Time map_time)
     std::size_t max_index = std::min(batch + BATCH_SIZE, n_raw_points);
     std::size_t index_odom = 0;
     Sophus::SE3f T_LktoL0;
-    helix::PoseStamped pose;
+    ia_helic::PoseStamped pose;
     double last_t = 0;
     MapCloud batch_cloud;
     batch_cloud.reserve(max_index);
@@ -221,7 +221,7 @@ void helix::LiDAR::buildLocalMap(const Odometry& odom, ros::Time map_time)
   local_map_->points.shrink_to_fit();
 }
 
-void helix::LiDAR::buildLocalMap(const kontiki::trajectories::SplitTrajectory& traj, ros::Time map_time,
+void ia_helic::LiDAR::buildLocalMap(const kontiki::trajectories::SplitTrajectory& traj, ros::Time map_time,
                                  const RigidTransform& T_LtoI)
 {
   constexpr double T_TOLERENCE = 0.0005;
@@ -230,7 +230,7 @@ void helix::LiDAR::buildLocalMap(const kontiki::trajectories::SplitTrajectory& t
 
   if (!raw_cloud_)
   {
-    HELIX_THROW("Raw cloud is not initialized!");
+    IA_HELIC_THROW("Raw cloud is not initialized!");
   }
 
   std::size_t point_cnt = 0;
@@ -301,7 +301,7 @@ void helix::LiDAR::buildLocalMap(const kontiki::trajectories::SplitTrajectory& t
   local_map_->points.shrink_to_fit();
 }
 
-void helix::IMU::loadROSBagCallback(const rosbag::MessageInstance& m)
+void ia_helic::IMU::loadROSBagCallback(const rosbag::MessageInstance& m)
 {
   auto p_msg_imu = m.instantiate<sensor_msgs::Imu>();
 

@@ -1,10 +1,10 @@
 #include <fmt/core.h>
 #include <cmath>
 
-#include "helix_calib/calib_result_writer.h"
-#include "helix_calib/odom.h"
+#include "ia_helic/calib_result_writer.h"
+#include "ia_helic/odom.h"
 
-std::ostream& helix::CalibWriter::writeCalibResults(std::ostream& os, helix::RigidTransform& T)
+std::ostream& ia_helic::CalibWriter::writeCalibResults(std::ostream& os, ia_helic::RigidTransform& T)
 {
   fmt::print(os,
              "{from_frame}:\n"

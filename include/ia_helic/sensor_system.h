@@ -8,14 +8,14 @@
 #include <vector>
 
 #include "fmt/core.h"
-#include "helix_calib/bag_loader.h"
-#include "helix_calib/calib_params.h"
-#include "helix_calib/ndt_aligner.h"
-#include "helix_calib/odom_aligner.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/trajectory.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/bag_loader.h"
+#include "ia_helic/calib_params.h"
+#include "ia_helic/ndt_aligner.h"
+#include "ia_helic/odom_aligner.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/trajectory.h"
+#include "ia_helic/utils.h"
 #include "opencv2/calib3d.hpp"
 #include "pcl/common/io.h"
 #include "pcl/common/transforms.h"
@@ -25,14 +25,14 @@
 #include "pcl/point_types.h"
 #include "ros/time.h"
 
-namespace helix
+namespace ia_helic
 {
 class SensorSystem
 {
 public:
   static constexpr int REF_LIDAR = 0;
 
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
 private:
   AlignedVector<LiDAR> lidars_;
@@ -153,7 +153,7 @@ public:
   {
     if (paths.size() != lidars_.size())
     {
-      HELIX_THROW(fmt::format("Path number do not match. Expect {}, got: {}.", lidars_.size()));
+      IA_HELIC_THROW(fmt::format("Path number do not match. Expect {}, got: {}.", lidars_.size()));
     }
     for (std::size_t i = 0; i < lidars_.size(); i++)
     {
@@ -176,7 +176,7 @@ public:
     map_time_ = std::max(ros::Time(imu_.data().front().t), map_time_);
   }
 
-  void alignCloudNDT(const helix::NDTAligner& ndt);
+  void alignCloudNDT(const ia_helic::NDTAligner& ndt);
 
   void buildGlobalCloudMap(bool use_trajectory);
 
@@ -252,4 +252,4 @@ public:
     return os;
   }
 };
-}  // namespace helix
+}  // namespace ia_helic

@@ -11,11 +11,11 @@
 
 #include "Eigen/Core"
 #include "Eigen/Geometry"
-#include "helix_calib/calib_params.h"
-#include "helix_calib/odom.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/calib_params.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/utils.h"
 #include "kontiki/measurements/lidar_common_surfel_point.h"
 #include "kontiki/measurements/lidar_cross_surfel_point.h"
 #include "kontiki/measurements/lidar_surfel_point.h"
@@ -27,7 +27,7 @@
 #include "kontiki/trajectories/uniform_so3_spline_trajectory.h"
 #include "kontiki/trajectory_estimator.h"
 
-namespace helix
+namespace ia_helic
 {
 struct ErrorStat
 {
@@ -43,7 +43,7 @@ struct ErrorStat
 class Trajectory
 {
 public:
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
   using SO3TrajEstimator = kontiki::TrajectoryEstimator<kontiki::trajectories::UniformSO3SplineTrajectory>;
   using R3TrajEstimator = kontiki::TrajectoryEstimator<kontiki::trajectories::UniformR3SplineTrajectory>;
@@ -197,7 +197,7 @@ public:
     std::fstream fs(filepath, mode);
     if (!fs.is_open())
     {
-      HELIX_THROW("Cannot open file: " + filepath);
+      IA_HELIC_THROW("Cannot open file: " + filepath);
     }
     fs << fmt::format(
               "Iteration: {iter}\n"
@@ -223,18 +223,18 @@ private:
   std::shared_ptr<kontiki::trajectories::SplitTrajectory> traj_;
 
   // persist measurements till solving
-  AlignedVector<std::shared_ptr<helix::IMU::GyroMeasurement>> gyro_measurements_;
-  AlignedVector<std::shared_ptr<helix::IMU::AccelMeasurement>> acc_measurements_;
+  AlignedVector<std::shared_ptr<ia_helic::IMU::GyroMeasurement>> gyro_measurements_;
+  AlignedVector<std::shared_ptr<ia_helic::IMU::AccelMeasurement>> acc_measurements_;
 
   Errors last_before_opt_;
   Errors last_after_opt_;
 };
-}  // namespace helix
+}  // namespace ia_helic
 
 namespace fmt
 {
 template <>
-struct formatter<helix::ErrorStat>
+struct formatter<ia_helic::ErrorStat>
 {
   constexpr format_parse_context::iterator parse(format_parse_context& ctx)
   {
@@ -246,7 +246,7 @@ struct formatter<helix::ErrorStat>
     return it;
   }
 
-  auto format(const helix::ErrorStat& error, format_context& ctx) const
+  auto format(const ia_helic::ErrorStat& error, format_context& ctx) const
   {
     return fmt::format_to(ctx.out(), "size: {}, avg: {}, std: {}", error.size_, error.avg_, error.std_);
   }

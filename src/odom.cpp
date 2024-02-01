@@ -1,4 +1,4 @@
-#include "helix_calib/odom.h"
+#include "ia_helic/odom.h"
 
 #include <cstddef>
 #include <fstream>
@@ -8,10 +8,10 @@
 #include <string>
 
 #include "fmt/format.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/utils.h"
 #include "ros/console.h"
 
-void helix::Odometry::loadTUM(const std::string& filepath)
+void ia_helic::Odometry::loadTUM(const std::string& filepath)
 {
   std::string buf;
   std::size_t pose_cnt = 0;
@@ -20,7 +20,7 @@ void helix::Odometry::loadTUM(const std::string& filepath)
 
   if (!fs.is_open())
   {
-    HELIX_THROW("Cannot open file: " + filepath);
+    IA_HELIC_THROW("Cannot open file: " + filepath);
   }
 
   ROS_INFO("Open TUM File: %s.", filepath.c_str());
@@ -42,14 +42,14 @@ void helix::Odometry::loadTUM(const std::string& filepath)
            max_t().toSec());
 }
 
-void helix::Odometry::dumpTUM(const std::string& filepath)
+void ia_helic::Odometry::dumpTUM(const std::string& filepath)
 {
   using namespace fmt::literals;
   std::fstream fs(filepath, std::ios_base::out | std::ios_base::trunc);
 
   if (!fs.is_open())
   {
-    HELIX_THROW("Cannot open file: " + filepath);
+    IA_HELIC_THROW("Cannot open file: " + filepath);
   }
 
   for (const auto& pose : poses_)

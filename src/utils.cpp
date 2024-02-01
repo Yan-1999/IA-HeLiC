@@ -1,4 +1,4 @@
-#include "helix_calib/utils.h"
+#include "ia_helic/utils.h"
 
 #include <cstddef>
 
@@ -8,21 +8,21 @@
 #include "sensor_msgs/PointCloud2.h"
 
 template <>
-helix::PointXYZL2T helix::PointXYZL2T::toXYZL2T<sensor_msgs::PointCloud2, pcl::PointXYZ>(
+ia_helic::PointXYZL2T ia_helic::PointXYZL2T::toXYZL2T<sensor_msgs::PointCloud2, pcl::PointXYZ>(
     LiDARLabel label, const sensor_msgs::PointCloud2& msg, const pcl::PointXYZ& point)
 {
   return PointXYZL2T(point.x, point.y, point.z, label, 0, msg.header.stamp.toSec());
 }
 
 template <>
-helix::PointXYZL2T helix::PointXYZL2T::toXYZL2T<sensor_msgs::PointCloud2, helix::PointXYZIRT>(
-    LiDARLabel label, const sensor_msgs::PointCloud2& msg, const helix::PointXYZIRT& point)
+ia_helic::PointXYZL2T ia_helic::PointXYZL2T::toXYZL2T<sensor_msgs::PointCloud2, ia_helic::PointXYZIRT>(
+    LiDARLabel label, const sensor_msgs::PointCloud2& msg, const ia_helic::PointXYZIRT& point)
 {
   return PointXYZL2T(point.x, point.y, point.z, label, 0, point.timestamp);
 }
 
 template <>
-helix::PointXYZL2T helix::PointXYZL2T::toXYZL2T<livox_ros_driver::CustomMsg, livox_ros_driver::CustomPoint>(
+ia_helic::PointXYZL2T ia_helic::PointXYZL2T::toXYZL2T<livox_ros_driver::CustomMsg, livox_ros_driver::CustomPoint>(
     LiDARLabel label, const livox_ros_driver::CustomMsg& msg, const livox_ros_driver::CustomPoint& point)
 {
   double t_base =
@@ -30,7 +30,7 @@ helix::PointXYZL2T helix::PointXYZL2T::toXYZL2T<livox_ros_driver::CustomMsg, liv
   return PointXYZL2T(point.x, point.y, point.z, label, 0, static_cast<double>(point.offset_time) * 1e-9f + t_base);
 }
 
-std::ostream& helix::printTUM(std::ostream& os, const geometry_msgs::PoseStamped& pose)
+std::ostream& ia_helic::printTUM(std::ostream& os, const geometry_msgs::PoseStamped& pose)
 {
   using namespace fmt::literals;
   ros::Time stamp = pose.header.stamp;
@@ -42,8 +42,8 @@ std::ostream& helix::printTUM(std::ostream& os, const geometry_msgs::PoseStamped
   return os;
 }
 
-std::ostream& helix::writeTransform(std::ostream& os, const std::string& child, const std::string& parent,
-                                    const helix::RigidTransform& T)
+std::ostream& ia_helic::writeTransform(std::ostream& os, const std::string& child, const std::string& parent,
+                                    const ia_helic::RigidTransform& T)
 {
   fmt::print(os,
              "{child}:\n"

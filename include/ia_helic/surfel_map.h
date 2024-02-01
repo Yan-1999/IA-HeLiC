@@ -9,7 +9,7 @@
 
 #include "Eigen/Core"
 #include "fmt/format.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/utils.h"
 #include "pcl/common/common.h"
 #include "pcl/common/io.h"
 #include "pcl/filters/crop_box.h"
@@ -26,7 +26,7 @@
 #include "pcl/filters/impl/crop_box.hpp"
 #endif
 
-namespace helix
+namespace ia_helic
 {
 struct Surfel
 {
@@ -60,7 +60,7 @@ struct SurfelPoint
 class SurfelMap
 {
 public:
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
   using ColoredPoint = pcl::PointXYZRGB;
   using ColoredCloud = pcl::PointCloud<ColoredPoint>;
@@ -184,7 +184,7 @@ public:
   {
     if (cloud->empty())
     {
-      HELIX_THROW("Input cloud is empty!");
+      IA_HELIC_THROW("Input cloud is empty!");
     }
 
     auto cloud_in_roi = pcl::make_shared<MapCloud>();
@@ -286,7 +286,7 @@ public:
   using ColoredPoint = pcl::PointXYZRGB;
   using ColoredCloud = pcl::PointCloud<ColoredPoint>;
 
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
 private:
   double associated_radius_ = 0.1;
@@ -334,4 +334,4 @@ public:
 
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 };
-}  // namespace helix
+}  // namespace ia_helic

@@ -11,12 +11,12 @@
 #include "boost/exception/diagnostic_information.hpp"
 #include "boost/throw_exception.hpp"
 #include "fmt/core.h"
-#include "helix_calib/calib_params.h"
-#include "helix_calib/ndt_aligner.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/sensor_system.h"
-#include "helix_calib/surfel_map.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/calib_params.h"
+#include "ia_helic/ndt_aligner.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/sensor_system.h"
+#include "ia_helic/surfel_map.h"
+#include "ia_helic/utils.h"
 #include "pcl/io/pcd_io.h"
 #include "pcl/point_cloud.h"
 #include "ros/init.h"
@@ -30,27 +30,27 @@ void writePCD(const std::string& out_path, const typename pcl::PointCloud<PointT
   ROS_INFO("Written PCD file: %s.", out_path.c_str());
 }
 
-void writeSurfelMapPCD(const std::string& out_path, const helix::SurfelMap::ConstPtr map)
+void writeSurfelMapPCD(const std::string& out_path, const ia_helic::SurfelMap::ConstPtr map)
 {
-  helix::SurfelMap::ColoredCloud cloud;
+  ia_helic::SurfelMap::ColoredCloud cloud;
   map->getColoredSurfels(cloud);
   ROS_INFO("Writting PCD File: %s...", out_path.c_str());
   pcl::io::savePCDFile(out_path, cloud);
   ROS_INFO("Written PCD file: %s.", out_path.c_str());
 }
 
-void writeSurfelPointsPCD(const std::string& out_path, const helix::SurfelMap::ConstPtr map)
+void writeSurfelPointsPCD(const std::string& out_path, const ia_helic::SurfelMap::ConstPtr map)
 {
-  helix::MapCloud cloud;
+  ia_helic::MapCloud cloud;
   map->getDownSampledSurfelPoints(cloud);
   ROS_INFO("Writting PCD File: %s...", out_path.c_str());
   pcl::io::savePCDFile(out_path, cloud);
   ROS_INFO("Written PCD file: %s.", out_path.c_str());
 }
 
-void writeCrossSurfelPointsPCD(const std::string& out_path, const helix::CrossSurfelMap::ConstPtr map)
+void writeCrossSurfelPointsPCD(const std::string& out_path, const ia_helic::CrossSurfelMap::ConstPtr map)
 {
-  helix::CrossSurfelMap::ColoredCloud cloud;
+  ia_helic::CrossSurfelMap::ColoredCloud cloud;
   map->getColoredSurfelPoints(cloud);
   ROS_INFO("Writting PCD File: %s...", out_path.c_str());
   pcl::io::savePCDFile(out_path, cloud);
@@ -60,15 +60,15 @@ void writeCrossSurfelPointsPCD(const std::string& out_path, const helix::CrossSu
 int main(int argc, char** argv)
 {
   using namespace std::string_literals;
-  using namespace helix::ros_param;
+  using namespace ia_helic::ros_param;
   using namespace fmt::literals;
 
   ros::init(argc, argv, "calib_node");
   ros::NodeHandle nh("~");
 
-  std::filesystem::path this_package = ros::package::getPath("helix_calib");
-  std::vector<helix::CalibParams> params_vec;
-  helix::NDTAligner ndt;
+  std::filesystem::path this_package = ros::package::getPath("ia_helic");
+  std::vector<ia_helic::CalibParams> params_vec;
+  ia_helic::NDTAligner ndt;
   std::vector<std::thread> pcd_threads;
 
   try
@@ -78,9 +78,9 @@ int main(int argc, char** argv)
     getEssentialParam(nh, "lidar_types", lidar_types);
     if (lidar_types.empty())
     {
-      BOOST_THROW_EXCEPTION(helix::Exception("No LiDAR!"));
+      BOOST_THROW_EXCEPTION(ia_helic::Exception("No LiDAR!"));
     }
-    helix::SensorSystem sys(lidar_types.size());
+    ia_helic::SensorSystem sys(lidar_types.size());
 
     std::string calib_file_path =
         nh.param<std::string>("calib_file_path", this_package / "result" / "calib_result_iter{iter}.yml");
@@ -122,7 +122,7 @@ int main(int argc, char** argv)
 
     if (roi_max.size() < 3 && roi_min.size() < 3)
     {
-      BOOST_THROW_EXCEPTION(helix::Exception("ROI number of dimentions is less than 3!"));
+      BOOST_THROW_EXCEPTION(ia_helic::Exception("ROI number of dimentions is less than 3!"));
     }
 
     int64_t dx = static_cast<int64_t>((roi_max[0] - roi_min[0]) / surfel_size) + 1;
@@ -181,7 +181,7 @@ int main(int argc, char** argv)
         for (std::size_t i = 0; i < sys.lidars().size(); i++)
         {
           std::string out_path = fmt::format(local_map_path, "iter"_a = iteration, "label"_a = i);
-          pcd_threads.emplace_back(writePCD<helix::MapPoint>, out_path, sys.lidars()[i].local_map());
+          pcd_threads.emplace_back(writePCD<ia_helic::MapPoint>, out_path, sys.lidars()[i].local_map());
         }
       }
       if (enable_ndt_align)
@@ -274,7 +274,7 @@ int main(int argc, char** argv)
         ROS_INFO("Building Global Map...");
         sys.buildGlobalCloudMap(true);
         std::string out_path = fmt::format(global_map_path, "iter"_a = iteration);
-        pcd_threads.emplace_back(writePCD<helix::MapPoint>, out_path, sys.cloud_map());
+        pcd_threads.emplace_back(writePCD<ia_helic::MapPoint>, out_path, sys.cloud_map());
       }
       sys.clearMaps();
     }

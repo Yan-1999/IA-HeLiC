@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
   <arg name="bag_path" />
-  <node pkg="helix_calib" name="helix_calib" type="calib_node" output="screen">
-    <rosparam command="load" file="$(find helix_calib)/config/calib_node.yaml" subst_value="true" />
+  <node pkg="ia_helic" name="ia_helic" type="calib_node" output="screen">
+    <rosparam command="load" file="$(find ia_helic)/config/calib_node.yaml" subst_value="true" />
     <param name="bag_path" value="$(arg bag_path)" />
   </node>
 </launch>

@@ -1,15 +1,15 @@
 #pragma once
 
 #include <vector>
-#include "helix_calib/odom.h"
-#include "helix_calib/sensor.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/sensor.h"
+#include "ia_helic/utils.h"
 #include "pcl/filters/crop_box.h"
 #include "pcl/point_types.h"
 #include "pcl/point_cloud.h"
 #include "ros/node_handle.h"
 
-namespace helix
+namespace ia_helic
 {
 class NDTAligner
 {
@@ -50,4 +50,4 @@ public:
 
   void loadParams(ros::NodeHandle& nh, const std::string& prefix);
 };
-}  // namespace helix
+}  // namespace ia_helic

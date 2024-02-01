@@ -4,7 +4,7 @@
 #include "ceres/iteration_callback.h"
 #include "ceres/internal/port.h"
 
-namespace helix
+namespace ia_helic
 {
 
 class CheckStateCallback : public ceres::IterationCallback
@@ -49,4 +49,4 @@ private:
   size_t iteration_;
 };
 
-}  // namespace helix
+}  // namespace ia_helic

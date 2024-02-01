@@ -1,4 +1,4 @@
-#include "helix_calib/surfel_map.h"
+#include "ia_helic/surfel_map.h"
 
 #include <algorithm>
 #include <atomic>
@@ -11,9 +11,9 @@
 
 #include "Eigen/Core"
 #include "fmt/format.h"
-#include "helix_calib/farthest_point_sampling.h"
-#include "helix_calib/utils.h"
-#include "helix_calib/sensor_system.h"
+#include "ia_helic/farthest_point_sampling.h"
+#include "ia_helic/utils.h"
+#include "ia_helic/sensor_system.h"
 #include "omp.h"
 #include "pcl/ModelCoefficients.h"
 #include "pcl/common/distances.h"
@@ -30,14 +30,14 @@
 #include "pclomp/voxel_grid_covariance_omp_impl.hpp"
 #endif
 
-template class pclomp::NormalDistributionsTransform<helix::MapPoint, helix::MapPoint>;
-template class pclomp::VoxelGridCovariance<helix::MapPoint>;
+template class pclomp::NormalDistributionsTransform<ia_helic::MapPoint, ia_helic::MapPoint>;
+template class pclomp::VoxelGridCovariance<ia_helic::MapPoint>;
 
 int checkPlaneType(const Eigen::Vector3d& eigen_value, const Eigen::Matrix3d& eigen_vector, const double& plane_lambda)
 {
   Eigen::Vector3d sorted_vec;
   Eigen::Vector3i ind;
-  helix::argsortDesc(eigen_value, sorted_vec, ind);
+  ia_helic::argsortDesc(eigen_value, sorted_vec, ind);
 
   double p = 2 * (sorted_vec[1] - sorted_vec[2]) / (sorted_vec[2] + sorted_vec[1] + sorted_vec[0]);
 
@@ -50,7 +50,7 @@ int checkPlaneType(const Eigen::Vector3d& eigen_value, const Eigen::Matrix3d& ei
   Eigen::Vector3d plane_normal = eigen_vector.block<3, 1>(0, min_idx);
   plane_normal = plane_normal.array().abs();
 
-  helix::argsortDesc(plane_normal, sorted_vec, ind);
+  ia_helic::argsortDesc(plane_normal, sorted_vec, ind);
   return ind[2];
 }
 
@@ -85,7 +85,7 @@ bool fitPlane(const typename pcl::PointCloud<PointT>::Ptr& cloud, Eigen::Vector4
   return true;
 }
 
-void helix::SurfelMap::build(const pclomp::NormalDistributionsTransform<MapPoint, MapPoint>& ndt, ros::Time map_time)
+void ia_helic::SurfelMap::build(const pclomp::NormalDistributionsTransform<MapPoint, MapPoint>& ndt, ros::Time map_time)
 {
   Eigen::Vector4d surf_coeff;
   map_time_ = map_time;
@@ -120,9 +120,9 @@ double point2PlaneDistance(const Eigen::Vector3d& pt, const Eigen::Vector4d& pla
   return dist;
 }
 
-void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
-                              const helix::AlignedVector<helix::Surfel>& surfels, double associate_radius,
-                              helix::AlignedVector<std::atomic_int>& out_surfel_id_vec)
+void associatePointsToSurfels(const pcl::KdTreeFLANN<ia_helic::MapPoint>& kd_tree,
+                              const ia_helic::AlignedVector<ia_helic::Surfel>& surfels, double associate_radius,
+                              ia_helic::AlignedVector<std::atomic_int>& out_surfel_id_vec)
 {
   auto& cloud_map = *(kd_tree.getInputCloud());
   assert(out_surfel_id_vec.size() == cloud_map.size());
@@ -142,7 +142,7 @@ void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
     auto& box_max = surfels[s_idx].box_max;
     double radius = 0.5 * (box_max - box_min).norm();
     auto center_xyz = (0.5 * (box_max + box_min)).cast<float>();
-    helix::MapPoint center{ center_xyz(0), center_xyz(1), center_xyz(2), helix::ELiDARLabel::UNKNOWN_LIDAR, 0, 0 };
+    ia_helic::MapPoint center{ center_xyz(0), center_xyz(1), center_xyz(2), ia_helic::ELiDARLabel::UNKNOWN_LIDAR, 0, 0 };
     kd_tree.radiusSearch(center, radius, indices, dummy);
     for (std::size_t p_idx : indices)
     {
@@ -160,10 +160,10 @@ void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
   }
 }
 
-void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
-                              const helix::AlignedVector<helix::Surfel>& surfels,
-                              helix::RigidTransform T_spoint_to_surfel, double associate_radius,
-                              helix::AlignedVector<std::atomic_int>& out_surfel_id_vec)
+void associatePointsToSurfels(const pcl::KdTreeFLANN<ia_helic::MapPoint>& kd_tree,
+                              const ia_helic::AlignedVector<ia_helic::Surfel>& surfels,
+                              ia_helic::RigidTransform T_spoint_to_surfel, double associate_radius,
+                              ia_helic::AlignedVector<std::atomic_int>& out_surfel_id_vec)
 {
   auto& cloud_map = *(kd_tree.getInputCloud());
   assert(out_surfel_id_vec.size() == cloud_map.size());
@@ -171,7 +171,7 @@ void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
   {
     out_surfel_id_vec[i] = -1;
   }
-  helix::RigidTransform T_surfel_to_spoint = T_spoint_to_surfel.inverse();
+  ia_helic::RigidTransform T_surfel_to_spoint = T_spoint_to_surfel.inverse();
 
 #pragma omp parallel for
   for (int s_idx = 0; s_idx < surfels.size(); s_idx++)
@@ -184,10 +184,10 @@ void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
     Eigen::Vector3d box_max = surfels[s_idx].box_max;
     double radius = 0.5 * (box_max - box_min).norm();
     Eigen::Vector3d center_xyz = T_surfel_to_spoint * (0.5 * (box_max + box_min));
-    helix::MapPoint center{ static_cast<float>(center_xyz(0)),
+    ia_helic::MapPoint center{ static_cast<float>(center_xyz(0)),
                             static_cast<float>(center_xyz(1)),
                             static_cast<float>(center_xyz(2)),
-                            helix::ELiDARLabel::UNKNOWN_LIDAR,
+                            ia_helic::ELiDARLabel::UNKNOWN_LIDAR,
                             0,
                             0 };
     kd_tree.radiusSearch(center, radius, indices, dummy);
@@ -206,16 +206,16 @@ void associatePointsToSurfels(const pcl::KdTreeFLANN<helix::MapPoint>& kd_tree,
   }
 }
 
-void helix::SurfelMap::associateMultipleClouds(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
+void ia_helic::SurfelMap::associateMultipleClouds(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
                                                const AlignedVector<RawCloud::ConstPtr>& raw_clouds)
 {
   if (surfels_.empty())
   {
-    HELIX_THROW("Surfels map is empty! ");
+    IA_HELIC_THROW("Surfels map is empty! ");
   }
   if (raw_clouds.empty())
   {
-    HELIX_THROW("`raw_clouds[]` is empty!");
+    IA_HELIC_THROW("`raw_clouds[]` is empty!");
   }
 
   auto& cloud_map = *(kd_tree.getInputCloud());
@@ -244,15 +244,15 @@ void helix::SurfelMap::associateMultipleClouds(const pcl::KdTreeFLANN<MapPoint>&
             [](const SurfelPoint& lhs, const SurfelPoint& rhs) { return lhs.raw_point.t < rhs.raw_point.t; });
 }
 
-void helix::SurfelMap::associateInliers(const RawCloud::ConstPtr raw_cloud)
+void ia_helic::SurfelMap::associateInliers(const RawCloud::ConstPtr raw_cloud)
 {
   if (surfels_.empty())
   {
-    HELIX_THROW("Surfels map is empty!");
+    IA_HELIC_THROW("Surfels map is empty!");
   }
   if (raw_cloud->empty())
   {
-    HELIX_THROW("Raw cloud is empty!");
+    IA_HELIC_THROW("Raw cloud is empty!");
   }
   spoints_.reserve(raw_cloud->size());
   spoints_in_surfel_.resize(surfels_.size());
@@ -278,15 +278,15 @@ void helix::SurfelMap::associateInliers(const RawCloud::ConstPtr raw_cloud)
             [](const SurfelPoint& lhs, const SurfelPoint& rhs) { return lhs.raw_point.t < rhs.raw_point.t; });
 }
 
-void helix::SurfelMap::associateCloud(const pcl::KdTreeFLANN<MapPoint>& kd_tree, const RawCloud::ConstPtr raw_cloud)
+void ia_helic::SurfelMap::associateCloud(const pcl::KdTreeFLANN<MapPoint>& kd_tree, const RawCloud::ConstPtr raw_cloud)
 {
   if (surfels_.empty())
   {
-    HELIX_THROW("Surfels map is empty!");
+    IA_HELIC_THROW("Surfels map is empty!");
   }
   if (raw_cloud->empty())
   {
-    HELIX_THROW("Raw cloud is empty!");
+    IA_HELIC_THROW("Raw cloud is empty!");
   }
 
   auto& cloud_map = *(kd_tree.getInputCloud());
@@ -313,7 +313,7 @@ void helix::SurfelMap::associateCloud(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
             [](const SurfelPoint& lhs, const SurfelPoint& rhs) { return lhs.raw_point.t < rhs.raw_point.t; });
 }
 
-void helix::SurfelMap::getColoredSurfels(ColoredCloud& cloud) const
+void ia_helic::SurfelMap::getColoredSurfels(ColoredCloud& cloud) const
 {
   constexpr std::array<int, 6> COLOR_LIST = {
     0xFF0000, 0xFF00FF, 0x436EEE, 0xBF3EFF, 0xB4EEB4, 0xFFE7BA,
@@ -337,11 +337,11 @@ void helix::SurfelMap::getColoredSurfels(ColoredCloud& cloud) const
   }
 }
 
-void helix::SurfelMap::downSampleSimple(int rate)
+void ia_helic::SurfelMap::downSampleSimple(int rate)
 {
   if (spoints_.empty())
   {
-    HELIX_THROW("No surfel points!");
+    IA_HELIC_THROW("No surfel points!");
   }
 
   spoints_in_surfel_.clear();
@@ -353,14 +353,14 @@ void helix::SurfelMap::downSampleSimple(int rate)
   }
 }
 
-void helix::SurfelMap::downSampleFarthest(int rate, std::size_t n_lidar, double time_span)
+void ia_helic::SurfelMap::downSampleFarthest(int rate, std::size_t n_lidar, double time_span)
 {
   using PointT = pcl::PointXYZ;
   using PointCloud = pcl::PointCloud<PointT>;
 
   if (spoints_.empty())
   {
-    HELIX_THROW("No surfel points!");
+    IA_HELIC_THROW("No surfel points!");
   }
 
   pcl::Indices indices;
@@ -404,18 +404,18 @@ void helix::SurfelMap::downSampleFarthest(int rate, std::size_t n_lidar, double 
   }
 }
 
-void helix::CrossSurfelMap::associate(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
+void ia_helic::CrossSurfelMap::associate(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
                                       const RigidTransform& T_spoint_to_surfel, const MapCloud& raw_cloud)
 {
   auto& surfels = surfel_map_->surfels();
   LiDARLabel label = surfel_map_->label();
   if (surfels.empty())
   {
-    HELIX_THROW("Surfels map is empty!");
+    IA_HELIC_THROW("Surfels map is empty!");
   }
   if (raw_cloud.empty())
   {
-    HELIX_THROW("`raw_clouds` is empty!");
+    IA_HELIC_THROW("`raw_clouds` is empty!");
   }
 
   auto& spoint_cadidate = *(kd_tree.getInputCloud());
@@ -440,7 +440,7 @@ void helix::CrossSurfelMap::associate(const pcl::KdTreeFLANN<MapPoint>& kd_tree,
             [](const SurfelPoint& lhs, const SurfelPoint& rhs) { return lhs.raw_point.t < rhs.raw_point.t; });
 }
 
-void helix::CrossSurfelMap::getColoredSurfelPoints(ColoredCloud& cloud) const
+void ia_helic::CrossSurfelMap::getColoredSurfelPoints(ColoredCloud& cloud) const
 {
   constexpr std::array<int, 6> COLOR_LIST = {
     0xFF0000, 0xFF00FF, 0x436EEE, 0xBF3EFF, 0xB4EEB4, 0xFFE7BA,

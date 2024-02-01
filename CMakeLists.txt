@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.5)
-project(helix_calib)
+project(ia_helic)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -10,14 +10,12 @@ find_package(Boost REQUIRED)
 find_package(Ceres REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV 4 REQUIRED)
-find_package(OpenMP)
+find_package(OpenMP REQUIRED)
 find_package(Sophus REQUIRED)
 find_package(fmt REQUIRED)
 
-if (OPENMP_FOUND)
-    set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
-    set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
-endif()
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${OpenMP_C_FLAGS}")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${OpenMP_CXX_FLAGS}")
 
 find_package(catkin REQUIRED COMPONENTS
   roscpp

@@ -6,15 +6,15 @@
 #include <stdexcept>
 #include <string>
 
-#include "helix_calib/odom.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/utils.h"
 
-namespace helix
+namespace ia_helic
 {
 class OdomAligner
 {
 public:
-    HELIX_MAKE_EXCEPTION
+    IA_HELIC_MAKE_EXCEPTION
 
   OdomAligner(cv::HandEyeCalibrationMethod method = cv::HandEyeCalibrationMethod::CALIB_HAND_EYE_TSAI) : method_(method)
   {
@@ -27,10 +27,10 @@ public:
    * \param out_T_AtoB extric parameter transforming a point from `A` to `B`
    * \param out_ref_time the time used as the frame base
    */
-  void align(const helix::Odometry& odom_A, const helix::Odometry& odom_B, helix::RigidTransform& out_T_AtoB,
+  void align(const ia_helic::Odometry& odom_A, const ia_helic::Odometry& odom_B, ia_helic::RigidTransform& out_T_AtoB,
              ros::Time& out_ref_time);
 
 private:
   cv::HandEyeCalibrationMethod method_;
 };
-}  // namespace helix
+}  // namespace ia_helic

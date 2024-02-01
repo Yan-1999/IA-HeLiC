@@ -24,7 +24,7 @@
 #include "ros/time.h"
 #include "sophus/se3.hpp"
 
-namespace helix
+namespace ia_helic
 {
 class Exception : public std::runtime_error
 {
@@ -36,10 +36,10 @@ public:
 
 namespace ros_param
 {
-class NoROSParamException : public helix::Exception
+class NoROSParamException : public ia_helic::Exception
 {
 public:
-  NoROSParamException(const std::string& key) : helix::Exception("Could not find " + key + " parameter.")
+  NoROSParamException(const std::string& key) : ia_helic::Exception("Could not find " + key + " parameter.")
   {
   }
 };
@@ -54,16 +54,16 @@ void getEssentialParam(ros::NodeHandle& nh, const std::string& key, T& param)
 }
 }  // namespace ros_param
 
-#define HELIX_MAKE_EXCEPTION                                                                                           \
-  class Exception : public ::helix::Exception                                                                          \
+#define IA_HELIC_MAKE_EXCEPTION                                                                                           \
+  class Exception : public ::ia_helic::Exception                                                                          \
   {                                                                                                                    \
   public:                                                                                                              \
-    Exception(const std::string& what) : ::helix::Exception(what)                                                      \
+    Exception(const std::string& what) : ::ia_helic::Exception(what)                                                      \
     {                                                                                                                  \
     }                                                                                                                  \
   };
 
-#define HELIX_THROW(what) BOOST_THROW_EXCEPTION(Exception(what))
+#define IA_HELIC_THROW(what) BOOST_THROW_EXCEPTION(Exception(what))
 
 /*Type of LiDARs*/
 enum ELiDARType : int
@@ -109,9 +109,9 @@ struct EIGEN_ALIGN16 PointXYZL2T
   static PointXYZL2T toXYZL2T(LiDARLabel label, const MsgT& msg, const PointT& point);
 };
 
-using RawPoint = helix::PointXYZL2T;
+using RawPoint = ia_helic::PointXYZL2T;
 using RawCloud = pcl::PointCloud<RawPoint>;
-using MapPoint = helix::PointXYZL2T;
+using MapPoint = ia_helic::PointXYZL2T;
 using MapCloud = pcl::PointCloud<MapPoint>;
 using RigidTransform = Sophus::SE3d;
 
@@ -120,7 +120,7 @@ using AlignedVector = std::vector<T, Eigen::aligned_allocator<T>>;
 
 std::ostream& printTUM(std::ostream& os, const geometry_msgs::PoseStamped& pose);
 std::ostream& writeTransform(std::ostream& os, const std::string& child, const std::string& parent,
-                             const helix::RigidTransform& T);
+                             const ia_helic::RigidTransform& T);
 
 // This function is written for Eigen 3.3,
 // which does not have `Eigen::Vector<>` and `Eigen::Matrix<>::begin()` and `Eigen::Matrix<>::end()`.
@@ -136,13 +136,13 @@ void argsortDesc(const Eigen::Matrix<Scalar, Rows, 1>& vec, Eigen::Matrix<Scalar
   }
 }
 
-}  // namespace helix
+}  // namespace ia_helic
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(helix::PointXYZIRT,
+POINT_CLOUD_REGISTER_POINT_STRUCT(ia_helic::PointXYZIRT,
                                   (float, x, x)(float, y, y)(float, z, z)(float, intensity, intensity)(
                                       std::uint16_t, ring, ring)(double, timestamp, timestamp))
 
-POINT_CLOUD_REGISTER_POINT_STRUCT(helix::PointXYZL2T,
-                                  (float, x, x)(float, y, y)(float, z, z)(helix::LiDARLabel, label,
+POINT_CLOUD_REGISTER_POINT_STRUCT(ia_helic::PointXYZL2T,
+                                  (float, x, x)(float, y, y)(float, z, z)(ia_helic::LiDARLabel, label,
                                                                           label)(std::uint32_t, pindex, pindex)(double,
                                                                                                                 t, t))

@@ -7,15 +7,15 @@
 
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include "helix_calib/odom.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/odom.h"
+#include "ia_helic/utils.h"
 
-namespace helix
+namespace ia_helic
 {
 class [[deprecated]] CalibWriter
 {
 public:
-  HELIX_MAKE_EXCEPTION
+  IA_HELIC_MAKE_EXCEPTION
 
 private:
   std::string from_frame_;
@@ -26,8 +26,8 @@ public:
   {
   }
 
-  std::ostream& writeCalibResults(std::ostream& os, helix::RigidTransform& T);
-  void writeCalibYAML(std::string& filepath, helix::RigidTransform& T)
+  std::ostream& writeCalibResults(std::ostream& os, ia_helic::RigidTransform& T);
+  void writeCalibYAML(std::string& filepath, ia_helic::RigidTransform& T)
   {
     std::fstream fs(filepath, std::ios_base::out | std::ios_base::trunc);
     if (fs.is_open())
@@ -36,8 +36,8 @@ public:
     }
     else
     {
-      HELIX_THROW("Cannot open file: " + filepath);
+      IA_HELIC_THROW("Cannot open file: " + filepath);
     }
   }
 };
-}  // namespace helix
+}  // namespace ia_helic

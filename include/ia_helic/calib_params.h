@@ -7,9 +7,9 @@
 #include "Eigen/Core"
 #include "Eigen/src/Core/IO.h"
 #include "fmt/format.h"
-#include "helix_calib/utils.h"
+#include "ia_helic/utils.h"
 
-namespace helix
+namespace ia_helic
 {
 struct CalibParams
 {
@@ -130,4 +130,4 @@ public:
 
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 };
-}  // namespace helix
+}  // namespace ia_helic
