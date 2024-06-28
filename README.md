@@ -101,3 +101,9 @@ And now you are ready for calibration:
 ```bash
 # subsitute with your bag path
 roslaunch ia_helic calib_node.launch bag_path:=/path/to/your/bag/seqX.bag
+```
+
+## Acknowledgements
+
+This implementation is based on the work of [LVI-ExC](https://github.com/peterWon/LVI-ExC) and [LI-Calib](https://github.com/APRIL-ZJU/lidar_IMU_calib).
+
