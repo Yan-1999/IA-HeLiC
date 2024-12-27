@@ -1,6 +1,6 @@
 # IA-HeLiC
 
-## IMU-assisted Target-free Extrinsic Calibration of Heterogeneous LiDARs Based on Continuous-time Optimization
+## \[ICIP 2024\] IMU-assisted Target-free Extrinsic Calibration of Heterogeneous LiDARs Based on Continuous-time Optimization
 
 This is the repo. of [IA-HeLiC](https://cslinzhang.github.io/IA-HeLiC), a calibration framework of heterogeneous LiDAR systems assisted by IMU. In this repo., we provided a ROS catkin package implementing IA-HeLiC.
 
